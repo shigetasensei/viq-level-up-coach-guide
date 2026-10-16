@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Level Up Coach's Guide · VEX IQ 2026–27</title>
+<meta name="description" content="An unofficial coach's guide to the VEX IQ Robotics Competition 2026–27 game, Level Up: scoring, match flow, searchable rules, inspection checklist and event formats.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Level Up Coach's Guide, top of page">
+      <span class="beans" aria-hidden="true"><i class="b-red"></i><i class="b-blue"></i><i class="b-yellow"></i></span>
+      <span>Level Up <small>Coach's Guide</small></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" aria-label="Sections">
+      <a href="#game">The game</a>
+      <a href="#scoring">Scoring</a>
+      <a href="#match">Match</a>
+      <a href="#rules">Rules</a>
+      <a href="#robot">Robot</a>
+      <a href="#coaching">Coaching</a>
+      <a href="#events">Events</a>
+      <a href="#resources">Resources</a>
+      <a href="#updates">Updates</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">VEX IQ Robotics Competition · 2026–27</p>
+      <h1>Level Up,<br>explained for coaches.</h1>
+      <p class="lede">Everything you need to coach a team through this season's game: how scoring works, how a Match flows, what the robot inspector checks, and a searchable plain-language guide to every rule — linked back to the official manual.</p>
+      <p class="status" id="versionStatus" role="status">
+        <span class="dot" aria-hidden="true"></span>
+        <span id="versionStatusText">Checked against Game Manual v2.1</span>
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#briefing">5-minute briefing</a>
+        <a class="btn" href="#rules">Search the rules</a>
+      </div>
+    </div>
+    <ul class="facts" aria-label="Level Up at a glance">
+      <li><b>6′ × 8′</b><span>Field</span></li>
+      <li><b>60 s</b><span>Match length</span></li>
+      <li><b>2 teams</b><span>per Alliance</span></li>
+      <li><b>38</b><span>Bean Bags in play</span></li>
+      <li><b>11″×20″×15″</b><span>Start size</span></li>
+      <li><b>6</b><span>Motors max</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== BRIEFING ========== -->
+<section id="briefing" class="band">
+  <div class="wrap">
+    <h2>The 5-minute briefing</h2>
+    <p class="sub">If you read nothing else, read this. Each point links to the part of the guide that goes deeper.</p>
+    <ol class="steps">
+      <li><h3>Move Bean Bags into Goals</h3><p>That's the whole objective. Higher Goals score more: 1, 3, 6, 12 and 16 points per bag. <a href="#scoring">Scoring →</a></p></li>
+      <li><h3>Color matters</h3><p>Red and blue bags only score in their own color's Goals. Yellow scores anywhere, and only yellow scores on L4. <a href="#game">Colors →</a></p></li>
+      <li><h3>One bag at a time</h3><p>A robot may Possess or Plow only one Bean Bag at a time. This shapes every design and strategy decision. <a href="#match">Match →</a></p></li>
+      <li><h3>Two robots, one score</h3><p>Teamwork Matches pair two teams for 60 seconds. Both teams receive the same Alliance score. <a href="#events">Events →</a></p></li>
+      <li><h3>Students lead, you guide</h3><p>Students design, build, program and strategize. Adults can't be in the Driver Station or direct play during a Match. <a href="#coaching">Coaching →</a></p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== THE GAME ========== -->
+<section id="game">
+  <div class="wrap">
+    <h2>The game</h2>
+    <p class="sub">The Field is 6′ × 8′ (six by eight tiles). Higher Goals earn more points, but most Bean Bags have to travel a long way to reach them, and the Field offers longer open routes and shorter, tighter shortcuts.</p>
+
+    <div class="two">
+      <figure class="card goals-fig">
+        <svg viewBox="0 0 520 330" role="img" aria-labelledby="goalsT goalsD">
+          <title id="goalsT">Goal types in side view</title>
+          <desc id="goalsD">Schematic side view: a flat Floor Goal worth 1 point, a three-step Pyramid Goal with L1 worth 3, L2 worth 6 and L3 worth 12, and a tall L4 Goal worth 16 for yellow Bean Bags only.</desc>
+          <line x1="6" y1="270" x2="514" y2="270" class="svg-floor"/>
+          <!-- floor goal -->
+          <rect x="14" y="256" width="86" height="14" rx="3" class="svg-fgoal"/>
+          <text x="57" y="238" text-anchor="middle" class="svg-pts">1 pt</text>
+          <text x="57" y="296" text-anchor="middle" class="svg-lab">Floor Goal</text>
+          <!-- pyramid -->
+          <rect x="130" y="242" width="150" height="28" class="svg-step"/>
+          <rect x="160" y="206" width="120" height="36" class="svg-step"/>
+          <rect x="190" y="170" width="90" height="36" class="svg-step"/>
+          <text x="140" y="262" class="svg-in">L1</text>
+          <text x="170" y="229" class="svg-in">L2</text>
+          <text x="200" y="193" class="svg-in">L3</text>
+          <text x="292" y="262" class="svg-pts">3 pts</text>
+          <text x="292" y="229" class="svg-pts">6 pts</text>
+          <text x="292" y="193" class="svg-pts">12 pts</text>
+          <text x="205" y="296" text-anchor="middle" class="svg-lab">Pyramid Goal</text>
+          <!-- L4 -->
+          <rect x="446" y="60" width="8" height="210" class="svg-pole"/>
+          <rect x="420" y="48" width="60" height="12" rx="2" class="svg-fgoal"/>
+          <text x="450" y="30" text-anchor="middle" class="svg-pts">16 pts</text>
+          <text x="450" y="296" text-anchor="middle" class="svg-lab">L4 Goal</text>
+          <text x="450" y="316" text-anchor="middle" class="svg-lab2">yellow only</text>
+        </svg>
+        <figcaption>Schematic, not to scale. Check the manual's Field figures and Appendix A for exact layout and dimensions.</figcaption>
+      </figure>
+
+      <div>
+        <h3>What's on the Field</h3>
+        <table class="plain">
+          <tbody>
+            <tr><th scope="row">Bean Bags</th><td>38 total: 16 red + 16 blue (8 of each start on the Field, 8 of each are loaded) and 6 yellow (2 are the robots' Preloads, 4 start on the Field)</td></tr>
+            <tr><th scope="row">Goals</th><td>2 Floor Goals, 2 Pyramid Goals (one red, one blue), 2 L4 Goals</td></tr>
+            <tr><th scope="row">Load Zones</th><td>2 (one red, one blue) where Loaders add Bean Bags</td></tr>
+            <tr><th scope="row">Other</th><td>Two wall structures and two Floor barriers shape the routes robots can take</td></tr>
+          </tbody>
+        </table>
+        <p class="note">A Bean Bag is roughly 3″ × 4″ and about 40 g.</p>
+      </div>
+    </div>
+
+    <h3>Which bags score where?</h3>
+    <div class="table-scroll">
+    <table class="matrix" aria-describedby="matrixNote">
+      <thead>
+        <tr><th scope="col">Bean Bag</th><th scope="col">Red Floor / Pyramid Goal</th><th scope="col">Blue Floor / Pyramid Goal</th><th scope="col">L4 Goal</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row"><span class="chip red">Red</span></th><td class="yes"><b aria-hidden="true">✓</b> Scores</td><td class="no"><b aria-hidden="true">✕</b> No score</td><td class="no"><b aria-hidden="true">✕</b> No score</td></tr>
+        <tr><th scope="row"><span class="chip blue">Blue</span></th><td class="no"><b aria-hidden="true">✕</b> No score</td><td class="yes"><b aria-hidden="true">✓</b> Scores</td><td class="no"><b aria-hidden="true">✕</b> No score</td></tr>
+        <tr><th scope="row"><span class="chip yellow">Yellow</span></th><td class="yes"><b aria-hidden="true">✓</b> Scores</td><td class="yes"><b aria-hidden="true">✓</b> Scores</td><td class="yes"><b aria-hidden="true">✓</b> Scores (only color that can)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="note" id="matrixNote">Yellow is the flexible, scarce resource: only 6 of the 38 Bean Bags are yellow, and 2 of those are the robots' Preloads. Brief any color-blind students on the Goal labels (L1–L4, red/blue side) and on bag position rather than relying on color alone.</p>
+
+    <h3>Terms you'll hear constantly</h3>
+    <dl class="glossary">
+      <div><dt>Preload</dt><dd>The one yellow Bean Bag each robot starts the Match touching.</dd></div>
+      <div><dt>Loader</dt><dd>The third Drive Team Member, who adds Bean Bags to the Field through the Load Zone.</dd></div>
+      <div><dt>Possession</dt><dd>A Bean Bag is fully supported by the robot, or moves along with the robot however it turns and drives.</dd></div>
+      <div><dt>Plowing</dt><dd>Intentionally pushing an object across the Floor without possessing it.</dd></div>
+      <div><dt>Alliance</dt><dd>Two teams paired for a Teamwork Match; both get the same score.</dd></div>
+      <div><dt>Minor / Major Violation</dt><dd>Minor: no Disqualification. Major: results in a Disqualification. Score-affecting violations are generally Major.</dd></div>
+      <div><dt>Score Affecting</dt><dd>A violation that improved the Alliance's score by the end of the Match.</dd></div>
+      <div><dt>Skills Stop Time</dt><dd>Time remaining when a team opts to end a Skills run early; used only as a tiebreaker.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ========== SCORING ========== -->
+<section id="scoring" class="band">
+  <div class="wrap">
+    <h2>Scoring</h2>
+    <p class="sub">Scores are judged visually by the Head Referee after the Match ends, once everything has come to rest. No video review.</p>
+
+    <div class="two">
+      <div>
+        <table class="points">
+          <thead><tr><th scope="col">Where a bag scores</th><th scope="col">Points each</th><th scope="col">Who can score there</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Floor Goal</th><td>1</td><td>Matching color or yellow</td></tr>
+            <tr><th scope="row">L1 Goal</th><td>3</td><td>Matching color or yellow</td></tr>
+            <tr><th scope="row">L2 Goal</th><td>6</td><td>Matching color or yellow</td></tr>
+            <tr><th scope="row">L3 Goal</th><td>12</td><td>Matching color or yellow</td></tr>
+            <tr><th scope="row">L4 Goal</th><td>16</td><td>Yellow only</td></tr>
+          </tbody>
+        </table>
+
+        <details class="rule-detail" open>
+          <summary>What makes a bag count? <span class="ref">SC3 · SC4 · SC5</span></summary>
+          <ul>
+            <li><b>Never touching a robot</b> when scoring is judged.</li>
+            <li><b>Floor Goal:</b> entirely inside the Goal's boundaries. A bag overhanging the border doesn't count.</li>
+            <li><b>L1–L3:</b> resting on that level's surface, or supported (directly or indirectly) by a bag that is. It must not be touching anything outside the Field.</li>
+            <li><b>L4:</b> resting on the L4 surface or on a bag that is, and it must be yellow.</li>
+            <li><b>Stacks:</b> a bag that counts on two levels earns only the higher level's points.</li>
+            <li><b>Color:</b> must match the Goal, or be yellow (L4: yellow only).</li>
+          </ul>
+        </details>
+      </div>
+
+      <form class="card calc" id="calc" aria-labelledby="calcT" onsubmit="return false">
+        <h3 id="calcT">Alliance score calculator</h3>
+        <p class="note">Enter how many bags are scored at each level at the end of the Match.</p>
+        <div class="calc-rows">
+          <label for="c0">Floor Goal <small>×1</small></label><input id="c0" type="number" min="0" inputmode="numeric" value="0" data-pts="1">
+          <label for="c1">L1 Goal <small>×3</small></label><input id="c1" type="number" min="0" inputmode="numeric" value="0" data-pts="3">
+          <label for="c2">L2 Goal <small>×6</small></label><input id="c2" type="number" min="0" inputmode="numeric" value="0" data-pts="6">
+          <label for="c3">L3 Goal <small>×12</small></label><input id="c3" type="number" min="0" inputmode="numeric" value="0" data-pts="12">
+          <label for="c4">L4 Goal <small>×16</small></label><input id="c4" type="number" min="0" inputmode="numeric" value="0" data-pts="16">
+        </div>
+        <p class="total"><span>Total</span> <output id="calcTotal" for="c0 c1 c2 c3 c4">0</output></p>
+        <p class="note" id="calcNote">Try an example to see how point values trade off against effort.</p>
+        <div class="row-btns">
+          <button type="button" class="btn" id="calcExample">Load an example</button>
+          <button type="button" class="btn ghost" id="calcReset">Reset</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="callout">
+      <h3>Coaching angle: points per trip</h3>
+      <p>Because a robot can carry only one bag per trip, every cycle is one bag. An L3 bag is worth 12 Floor Goal bags, but the trip is longer and the placement harder. The GDC's own design note says the best strategies balance <em>how many</em> points per bag, <em>how quickly</em> you score, and <em>how reliably</em> your robot can repeat the cycle. That's a great conversation to have with your team's strategist.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MATCH ========== -->
+<section id="match">
+  <div class="wrap">
+    <h2>How a Match works</h2>
+    <p class="sub">A Teamwork Match is 60 seconds of driver-controlled play by two robots working as an Alliance. There is no autonomous period in Teamwork Matches.</p>
+
+    <figure class="timeline" aria-labelledby="tlCap">
+      <div class="tl-bar" role="img" aria-label="Timeline of a 60 second Match: Driver 1 drives from 1:00 to 0:35, controller hand-off window from 0:35 to 0:25, Driver 2 drives from 0:25 to 0:00.">
+        <div class="seg s1"><b>Driver 1</b><span>drives up to 35 s</span></div>
+        <div class="seg s2"><b>Hand-off</b><span>10 s window</span></div>
+        <div class="seg s3"><b>Driver 2</b><span>drives the rest</span></div>
+      </div>
+      <div class="tl-ticks" aria-hidden="true"><span>1:00</span><span>0:35</span><span>0:25</span><span>0:00</span></div>
+      <figcaption id="tlCap">The controller must change hands between 0:35 and 0:25 remaining (rule GG11). The Loader works the whole Match.</figcaption>
+    </figure>
+
+    <div class="grid3">
+      <article class="card">
+        <h3>Drive Team</h3>
+        <p>Up to <b>three students</b> per team in the Driver Station: Driver 1, Driver 2 and a Loader. Only they may be there. Adults other than event staff may not.</p>
+        <p class="rule-ref">GG1 · GG11</p>
+      </article>
+      <article class="card">
+        <h3>Starting</h3>
+        <p>Robot within 11″×20″×15″, stationary, touching only the Floor, the Field Perimeter and its yellow Preload. Team 1/red starts beside the blue Pyramid Goal; Team 2/blue beside the red one.</p>
+        <p class="rule-ref">SG1 · SG5</p>
+      </article>
+      <article class="card">
+        <h3>Growing mid-Match</h3>
+        <p>Height is unlimited after the start. Length may grow to 24″, but the robot must <b>never</b> exceed an 11″×24″ footprint, even while swinging a lift out.</p>
+        <p class="rule-ref">SG2 · SG3</p>
+      </article>
+      <article class="card">
+        <h3>Loading</h3>
+        <p>One bag at a time through the matching-color Load Zone, flat on the Floor, fully inside the Zone, and only when the Zone is empty. Never place a bag directly on a robot.</p>
+        <p class="rule-ref">SG7</p>
+      </article>
+      <article class="card">
+        <h3>Out of the Field</h3>
+        <p>Bags that leave the Field aren't coming back, and a bag that falls inside the Pyramid structure counts as out. Resetting a stuck robot permanently removes any bag it was controlling.</p>
+        <p class="rule-ref">SG4 · GG10</p>
+      </article>
+      <article class="card">
+        <h3>The buzzer</h3>
+        <p>Robots and drivers must stop at 0:00. A bag released before 0:00 still counts when it comes to rest. Scoring from motion after 0:00 never counts, and in Teamwork Matches it is also a (Minor) violation.</p>
+        <p class="rule-ref">GG12</p>
+      </article>
+    </div>
+
+    <h3>Teamwork vs. Robot Skills</h3>
+    <div class="table-scroll">
+    <table class="plain wide">
+      <thead><tr><th scope="col"></th><th scope="col">Teamwork Match</th><th scope="col">Driving Skills</th><th scope="col">Autonomous Coding Skills</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Robots</th><td>Two (one Alliance)</td><td>One</td><td>One</td></tr>
+        <tr><th scope="row">Length</th><td>1:00, driver controlled</td><td>1:00, driver controlled</td><td>1:00, autonomous only</td></tr>
+        <tr><th scope="row">Loading</th><td>Red and blue Load Zones</td><td>Red Load Zone only; 1–3 Loaders</td><td>Red Load Zone only</td></tr>
+        <tr><th scope="row">Start position</th><td>Beside the opposing-color Pyramid Goal</td><td>Beside the red Pyramid Goal</td><td>Beside the red Pyramid Goal</td></tr>
+        <tr><th scope="row">Robot handling</th><td>Only for a GG10 reset, with the Head Referee's permission</td><td>Same as Teamwork</td><td>Handle as often as desired; always back to a legal start (no new Preload)</td></tr>
+        <tr><th scope="row">Start the run</th><td>Timer starts, drivers drive</td><td>Timer starts, drivers drive</td><td>Press a button on the Brain or trigger a sensor. No controller</td></tr>
+        <tr><th scope="row">Per event</th><td>Qualification + optional Finals</td><td>Exactly 3 runs</td><td>Exactly 3 runs</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="note">In Skills, 8 Bean Bags (4 red, 4 blue) start in the red Driver Station for loading, and the layout of other objects differs from Teamwork Matches (manual Figure RSC3-1). Points scored after the buzzer don't count in any Match type, but in Skills doing so is not a violation.</p>
+  </div>
+</section>
+
+<!-- ========== RULES EXPLORER ========== -->
+<section id="rules" class="band">
+  <div class="wrap">
+    <h2>Rules explorer</h2>
+    <p class="sub">Every rule in the current manual, summarized in plain language. Search, filter, and jump to the official text. <strong>The official rule always wins</strong>: use these summaries to find and understand, then confirm on the official page.</p>
+
+    <div class="rules-tools">
+      <label class="search" for="ruleSearch"><span class="visually-hidden">Search rules</span>
+        <input id="ruleSearch" type="search" placeholder="Search rules: e.g. “controller”, “3D printed”, “L4”, “no show”" autocomplete="off">
+      </label>
+      <div class="filters" role="group" aria-label="Filter by rule category" id="ruleFilters"></div>
+    </div>
+    <p class="count" id="ruleCount" role="status" aria-live="polite"></p>
+    <div class="rule-list" id="ruleList"></div>
+    <p class="empty" id="ruleEmpty" hidden>No rules match that search. Try a different word, or clear the filters.</p>
+  </div>
+</section>
+
+<!-- ========== ROBOT ========== -->
+<section id="robot">
+  <div class="wrap">
+    <h2>Robot &amp; inspection</h2>
+    <p class="sub">A robot must pass inspection before any Match, and again after significant changes. Use this as a pre-inspection checklist. Your progress is saved in this browser only.</p>
+
+    <div class="two">
+      <div class="card checklist" id="checklist">
+        <div class="cl-head">
+          <h3>Pre-inspection checklist</h3>
+          <div class="progress" aria-hidden="true"><i id="clBar"></i></div>
+          <p class="note" id="clCount" role="status">0 of 0 checked</p>
+        </div>
+        <fieldset>
+          <legend>Size &amp; identity</legend>
+          <label><input type="checkbox" data-id="size"> Fits 11″ × 20″ × 15″ at the start, in every configuration to be used <span class="ref">R3</span></label>
+          <label><input type="checkbox" data-id="expand"> Never exceeds an 11″ × 24″ footprint during the Match, including lift swing <span class="ref">SG2</span></label>
+          <label><input type="checkbox" data-id="plates"> Exactly two license plates (3.5″ × 1.5″), opposing sides, always visible <span class="ref">R4</span></label>
+          <label><input type="checkbox" data-id="onerobot"> This is the team's only robot; no spare assembled robot at the event <span class="ref">R1</span></label>
+        </fieldset>
+        <fieldset>
+          <legend>Electronics</legend>
+          <label><input type="checkbox" data-id="brain"> One VEX IQ Brain only; no other processors, even as decoration <span class="ref">R6</span></label>
+          <label><input type="checkbox" data-id="fw"> Firmware current: VEXos 2.2.1+ (Gen 1) or 1.0.8+ (Gen 2) <span class="ref">R8</span></label>
+          <label><input type="checkbox" data-id="motors"> Six or fewer Smart Motors, counting any not plugged in <span class="ref">R9</span></label>
+          <label><input type="checkbox" data-id="battery"> One VEX IQ battery (or AA holder); no spares attached <span class="ref">R10</span></label>
+          <label><input type="checkbox" data-id="controller"> One unmodified controller (button/stick attachments OK) <span class="ref">R11</span></label>
+        </fieldset>
+        <fieldset>
+          <legend>Parts &amp; construction</legend>
+          <label><input type="checkbox" data-id="parts"> Only official VEX IQ parts, plus the extras R14 allows <span class="ref">R12 · R14</span></label>
+          <label><input type="checkbox" data-id="no3d"> No 3-D-printed parts anywhere, including decorations and plate holders <span class="ref">R13</span></label>
+          <label><input type="checkbox" data-id="mods"> No modified parts, except cut shafts/tubing and bent flexible items <span class="ref">R17</span></label>
+          <label><input type="checkbox" data-id="bands"> Any non-VEX rubber bands are ≤ 7.5″ long and ≤ 0.25″ wide <span class="ref">R14</span></label>
+          <label><input type="checkbox" data-id="pneu"> If using pneumatics: ≤ 2 Air Tanks, ≤ 1 Pump, kit parts only <span class="ref">R16</span></label>
+          <label><input type="checkbox" data-id="decor"> Decorations are non-functional and backed by legal materials <span class="ref">R15</span></label>
+          <label><input type="checkbox" data-id="safe"> Nothing that can damage the Field, bags or other robots <span class="ref">R13 · S1</span></label>
+        </fieldset>
+        <fieldset>
+          <legend>Gameplay readiness</legend>
+          <label><input type="checkbox" data-id="release"> Bean Bags release easily with the robot powered off <span class="ref">R5</span></label>
+          <label><input type="checkbox" data-id="onebag"> Mechanisms can't hold or push more than one bag at a time <span class="ref">SG6</span></label>
+          <label><input type="checkbox" data-id="preload"> Robot starts with one yellow Preload touching only the robot <span class="ref">SG5</span></label>
+          <label><input type="checkbox" data-id="student"> Students designed, built and programmed the robot <span class="ref">G2</span></label>
+        </fieldset>
+        <div class="row-btns">
+          <button type="button" class="btn ghost" id="clReset">Clear checklist</button>
+          <button type="button" class="btn" onclick="window.print()">Print</button>
+        </div>
+      </div>
+
+      <div>
+        <h3>Quick limits</h3>
+        <table class="plain">
+          <tbody>
+            <tr><th scope="row">Start size</th><td>11″ W × 20″ L × 15″ H (279.4 × 508 × 381 mm)</td></tr>
+            <tr><th scope="row">In-Match footprint</th><td>Never more than 11″ × 24″; height unlimited</td></tr>
+            <tr><th scope="row">Motors</th><td>6 max</td></tr>
+            <tr><th scope="row">Brain / battery / controller</th><td>1 / 1 / 1</td></tr>
+            <tr><th scope="row">Air tanks / pumps</th><td>2 / 1</td></tr>
+            <tr><th scope="row">License plate</th><td>3.5″ × 1.5″, two per robot</td></tr>
+            <tr><th scope="row">Rubber bands (non-VEX)</th><td>≤ 7.5″ × 0.25″</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Common inspection stumbling blocks</h3>
+        <ul class="tips">
+          <li><b>Uninspected configurations.</b> If the robot can fold, swap attachments or start in several poses, show the inspector <em>each one</em>. You can't be inspected in one and start in another.</li>
+          <li><b>“Hidden” extras.</b> Extra motors, batteries or Brains count even if unplugged or unused.</li>
+          <li><b>3-D printing.</b> Banned for everything, including license plates, holders and decorations.</li>
+          <li><b>Decorations that do a job.</b> If removing the decoration would change how the robot performs, inspectors may treat it as functional.</li>
+          <li><b>Firmware.</b> The minimum can change mid-season; you get a 14-day grace period.</li>
+          <li><b>Parts lists.</b> Use the official Legal and Illegal Parts documents (see <a href="#resources">Resources</a>); they update independently of the manual.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== COACHING ========== -->
+<section id="coaching" class="band">
+  <div class="wrap">
+    <h2>Coaching the team</h2>
+    <p class="sub">VEX IQ is a student-centered program. Your job is to teach, mentor and keep the team organized, not to do the work.</p>
+
+    <div class="two do-dont">
+      <div class="card do">
+        <h3><span aria-hidden="true">✓</span> You can</h3>
+        <ul>
+          <li>Teach concepts: engineering, programming, strategy, notebooking.</li>
+          <li>Ask questions that help students find their own answers.</li>
+          <li>Give tips (not solutions) and help the team plan time.</li>
+          <li>Cheer positively during a Match.</li>
+          <li>Post rules questions to the official Q&amp;A from the team's events.vex.com account.</li>
+          <li>Be present for the whole event, as the supervising adult.</li>
+        </ul>
+      </div>
+      <div class="card dont">
+        <h3><span aria-hidden="true">✕</span> You can't</h3>
+        <ul>
+          <li>Build, repair, design or program the robot, or write the notebook or strategy.</li>
+          <li>Enter the Driver Station during a Match.</li>
+          <li>Direct, command or advise the Drive Team <em>during</em> a Match.</li>
+          <li>Speak to the Head Referee about a score or ruling. Only the Drive Team Members may.</li>
+          <li>Ask scorekeepers or other staff to explain a ruling.</li>
+          <li>Expect video or photo review. It isn't used.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Penalty traps worth drilling</h3>
+    <p class="sub tight">These are the situations where teams most easily collect violations. Each ties to a rule you can read in full in the explorer.</p>
+    <div class="grid3 traps">
+      <article class="card"><h4>Second bag in the robot</h4><p>Carrying or pushing more than one bag stops the robot cold until the extra is shed.</p><p class="rule-ref">SG6</p></article>
+      <article class="card"><h4>Late or early hand-off</h4><p>The controller must switch between 0:35 and 0:25. The first Driver may not touch controls afterwards.</p><p class="rule-ref">GG11</p></article>
+      <article class="card"><h4>Hands in the Field</h4><p>No reaching in during a Match, except for loading and approved resets.</p><p class="rule-ref">GG4</p></article>
+      <article class="card"><h4>Loading mistakes</h4><p>Wrong-color Zone, bag overlapping the Zone line, loading while another bag touches the Zone, or placing a bag onto a robot.</p><p class="rule-ref">SG7</p></article>
+      <article class="card"><h4>Scoring after the buzzer</h4><p>Motion past 0:00 earns a violation in Teamwork Matches, and any points from it are ignored.</p><p class="rule-ref">GG12</p></article>
+      <article class="card"><h4>Footprint creep</h4><p>A lift that swings out beyond 11″ × 24″ mid-Match breaks the size limit even if it ends within bounds.</p><p class="rule-ref">SG2</p></article>
+      <article class="card"><h4>No-shows</h4><p>A robot that isn't at the Field for its Match scores zero and is never dropped from rankings.</p><p class="rule-ref">GG2 · T10</p></article>
+      <article class="card"><h4>Arguing a call</h4><p>Appeals happen at the Field, right after the Match, by the Drive Team. After the final decision, it's final.</p><p class="rule-ref">GG14 · T3</p></article>
+    </div>
+
+    <h3>Practice ideas</h3>
+    <p class="sub tight">These are suggestions from this guide's author, not part of the manual.</p>
+    <ul class="ideas">
+      <li><b>One-bag discipline.</b> Run cycles with a referee-minded teammate watching for any second bag being Possessed or Plowed.</li>
+      <li><b>Hand-off at a fixed point.</b> Pick a repeatable moment (e.g. 0:30) to pass the controller, then rehearse it until it's automatic.</li>
+      <li><b>Load rhythm.</b> Practice the Loader and Driver together: bag placed, hand clear, robot approaches.</li>
+      <li><b>Size and swing check.</b> Measure the robot at start and at the worst-case extension of every mechanism.</li>
+      <li><b>Reset drill.</b> Rehearse a GG10 reset: controller down, wait for permission, legal start position.</li>
+      <li><b>Buzzer drill.</b> Finish every practice run with a hard stop at 0:00, and practice releasing a bag just before it.</li>
+      <li><b>Referee Q&amp;A role-play.</b> Have students practice calmly asking the Head Referee a question after a Match.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== EVENTS ========== -->
+<section id="events">
+  <div class="wrap">
+    <h2>Events &amp; rankings</h2>
+    <p class="sub">How a competition day is structured and how teams are ranked.</p>
+
+    <div class="grid3">
+      <article class="card">
+        <h3>Qualification Matches</h3>
+        <p>Teams are paired with randomly assigned partners. Local qualifiers run at least <b>6</b> Matches per team; Championship events run at least <b>8</b>. Teams are ranked by <b>average score</b>.</p>
+        <p class="rule-ref">T8 · T9 · T10 · T12</p>
+      </article>
+      <article class="card">
+        <h3>Finals</h3>
+        <p>Finals Alliances pair ranked teams in order (1st &amp; 2nd, 3rd &amp; 4th, …). Each Alliance plays one Match; the highest score wins. Events that send teams to Worlds need at least 5 Finals Matches in a division with 10+ teams.</p>
+        <p class="rule-ref">T12 · T13 · T14</p>
+      </article>
+      <article class="card">
+        <h3>Robot Skills</h3>
+        <p>Each team gets exactly <b>three Driving</b> and <b>three Autonomous Coding</b> runs, first come first served. Your ranking score is your best Driving plus your best Autonomous run.</p>
+        <p class="rule-ref">T15 · T17</p>
+      </article>
+    </div>
+
+    <h3>Dropped scores in Qualification ranking</h3>
+    <div class="table-scroll">
+    <table class="plain narrow">
+      <thead><tr><th scope="col">Qualification Matches played</th><th scope="col">Lowest scores excluded</th></tr></thead>
+      <tbody>
+        <tr><td>4–7</td><td>1</td></tr>
+        <tr><td>8–11</td><td>2</td></tr>
+        <tr><td>12–15</td><td>3</td></tr>
+        <tr><td>16 or more</td><td>4</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="note">No-show Matches are never excluded. Ties are broken by removing each team's lowest score and recomputing the average, repeating through all scores; any remaining tie is a random draw (T11). In leagues, teams that play under 60% of available Matches rank below teams that play more.</p>
+
+    <h3>Disqualifications at a glance</h3>
+    <ul class="tips">
+      <li><b>Qualification Match:</b> the offending team scores zero. Its partner still keeps the Alliance points.</li>
+      <li><b>Finals Match:</b> the whole Alliance scores zero.</li>
+      <li><b>Robot Skills:</b> a DQ means a zero for that run.</li>
+      <li><b>No-show:</b> zero for that team; the partner plays on and scores.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== RESOURCES ========== -->
+<section id="resources" class="band">
+  <div class="wrap">
+    <h2>Official resources</h2>
+    <p class="sub">The Game Manual PDF is the most authoritative source, followed by the official Q&amp;A. Everything else (including this site) comes after.</p>
+    <div class="links">
+      <a class="link-card" href="https://link.vex.com/docs/26-27/viqrc/game-manual" rel="noopener"><b>Latest Game Manual (PDF)</b><span>VEX's permanent link, always the current version</span></a>
+      <a class="link-card" href="https://events.vex.com/storage/game_manual/VEX_IQ_Robotics_Competition_2026-2027_Level_Up/rules/index.html" rel="noopener"><b>Online rules index</b><span>Each rule as its own page on events.vex.com</span></a>
+      <a class="link-card" href="https://www.vexrobotics.com/iq/competition/viqc-current-game" rel="noopener"><b>VEX IQ Level Up game page</b><span>Overview, manual and season resources</span></a>
+      <a class="link-card" href="https://www.vexforum.com/t/viqrc-level-up-game-manual-updates/146820" rel="noopener"><b>Manual update announcements</b><span>Changelog for every version, on the VEX Forum</span></a>
+      <a class="link-card" href="https://link.vex.com/docs/26-27/viqrc/game-manual-obsolete" rel="noopener"><b>Previous (obsolete) manuals</b><span>Useful during the 7-day grace period after an update</span></a>
+      <a class="link-card" href="https://events.vex.com/robot-competitions/vex-iq-competition" rel="noopener"><b>VEX IQ on events.vex.com</b><span>Event search, team registration, official Q&amp;A (login required)</span></a>
+      <a class="link-card" href="https://link.vex.com/docs/viqrc/illegal-parts" rel="noopener"><b>Illegal Parts list</b><span>Updated independently of the manual</span></a>
+      <a class="link-card" href="https://link.vex.com/firmware" rel="noopener"><b>Latest firmware</b><span>Keep Brains at or above the minimum VEXos</span></a>
+      <a class="link-card" href="https://www.vexforum.com/t/2026-2027-vex-iq-robotics-competition-game-level-up/146038" rel="noopener"><b>Game announcement thread</b><span>VEX Forum discussion of the reveal</span></a>
+      <a class="link-card" href="https://kb.vex.com/hc/en-us/articles/39835904038804-Strategies-for-Introducing-a-VEX-IQ-Robotics-Competition-Game" rel="noopener"><b>Introducing a competition game</b><span>VEX Library strategies for coaches and educators</span></a>
+      <a class="link-card" href="https://library.globalrobotics.org/hc/en-us/articles/51135030810772-Field-Build-Instructions-for-VEX-IQ-Level-Up" rel="noopener"><b>Field build instructions</b><span>Third-party (Global Robotics) guide to building a practice Field</span></a>
+      <a class="link-card" href="https://plc.pd.vex.com/t/score-points-and-score-more-2026-2027-viqrc-virtual-skills/2115" rel="noopener"><b>Virtual Skills (VEXcode VR)</b><span>VEX PD post on the season's virtual skills challenge</span></a>
+    </div>
+    <p class="note">Some VEX sites block automated requests. If a link shows a security check, just complete it in your browser.</p>
+  </div>
+</section>
+
+<!-- ========== UPDATES ========== -->
+<section id="updates">
+  <div class="wrap">
+    <h2>Manual updates</h2>
+    <p class="sub">Each version is official and must be used at events until its replacement takes effect. Updates are released on Thursdays and take effect after a 7-day grace period (events starting before then use the previous version).</p>
+
+    <div class="table-scroll">
+    <table class="versions" id="versionTable">
+      <thead><tr><th scope="col">Version</th><th scope="col">Released</th><th scope="col">Effective</th><th scope="col">What it is</th><th scope="col">Status</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    </div>
+    <p class="note">Dates are from the manual's published schedule; the version highlighted as “In effect” is calculated from today's date in your browser. Always confirm on the official page, because unscheduled updates are possible.</p>
+
+    <h3>Changes so far</h3>
+    <div class="changelog">
+      <details><summary>v2.1 · Oct 8, 2026</summary><ul><li>Clarified Appendix E (team classifications and student roles).</li><li>Minor typo and formatting fixes.</li></ul></details>
+      <details open><summary>v2.0 · Sep 3, 2026</summary><ul>
+        <li>Floor Goal and Load Zone boundaries redefined (SC3b, SG7b, definitions, figures). A bag must now be entirely within the Goal's volume.</li>
+        <li>SG5: if a robot is absent from a Teamwork Match, its Preload may be placed anywhere fully inside that team's Load Zone.</li>
+        <li>SG6: a robot in violation of the one-bag limit must immediately stop everything except shedding the extra bag. Definitions of Plowing and Possession revised to clarify intent.</li>
+        <li>GG12 clarified. R7 changed to a recommendation (no longer a requirement) that the power button be accessible. “Lubricating” removed as an example of an illegal modification in R17.</li>
+      </ul></details>
+      <details><summary>v1.1 · Aug 6, 2026</summary><ul>
+        <li>GG11: Drivers may serve as Loaders under certain conditions, and a one-person drive team may drive and load for the first 35 seconds.</li>
+        <li>SC3, SG1b, SG6 and SG7b clarified. Figures SG-1 and R3-1 updated to show which robot starts where.</li>
+        <li>Rules G1, G2 and G4 reworded; old G5 deleted. Violation notes moved from Appendix D into their rules.</li>
+        <li>Manual redesigned to plain text for accessibility.</li>
+      </ul></details>
+      <details><summary>v1.0 · Jul 2, 2026</summary><ul>
+        <li>SC4: bags scoring on more than one level now receive points for the <b>higher</b> level. SC5 revised.</li>
+        <li>SG2 clarified to apply only during the Match. SG4: a bag inside the Pyramid Goal counts as out of the Field. SG7 revised.</li>
+        <li>T6: pins may mark bag locations; torn bags and Pyramid/L4 sheets may be repaired.</li>
+      </ul></details>
+      <details><summary>v0.2 · Jun 4, 2026</summary><ul><li>Plowing definition and SG6 clarified; start position figures corrected.</li></ul></details>
+      <details><summary>v0.1 · Apr 30, 2026</summary><ul><li>Initial release.</li></ul></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><b>Unofficial guide.</b> This site is an independent coaching aid and is not affiliated with or endorsed by VEX Robotics, Innovation First, Inc. or the REC Foundation. Rule summaries are paraphrased and may contain errors or go out of date. The official Game Manual and the official Q&amp;A are the only authoritative sources for rulings. VEX, VEX IQ and related names are trademarks of Innovation First, Inc.</p>
+    <p class="small">Content checked against Game Manual v2.1 (live rules site and published changelog) on October 16, 2026.</p>
+  </div>
+</footer>
+
+<script src="rules-data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
