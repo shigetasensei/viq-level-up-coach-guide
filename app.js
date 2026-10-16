@@ -175,30 +175,33 @@
     el.textContent = el.textContent;
   });
 
-  /* ---------- checklist ---------- */
-  $$("#checklist label").forEach(function (lab) {
-    var box = lab.querySelector("input"), wrap = document.createElement("span");
-    while (box.nextSibling) wrap.appendChild(box.nextSibling);
-    lab.appendChild(wrap);
-  });
-  var boxes = $$("#checklist input[type=checkbox]");
-  var saved = store("levelup-checklist") || {};
-  function updateProgress() {
-    var done = boxes.filter(function (b) { return b.checked; }).length;
-    $("#clBar").style.width = (boxes.length ? done / boxes.length * 100 : 0) + "%";
-    $("#clCount").textContent = done + " of " + boxes.length + " checked";
-  }
-  boxes.forEach(function (b) {
-    b.checked = !!saved[b.dataset.id];
-    b.addEventListener("change", function () {
-      saved[b.dataset.id] = b.checked; store("levelup-checklist", saved); updateProgress();
+  /* ---------- checklists (state saved per list in this browser) ---------- */
+  function initChecklist(root, key) {
+    if (!root) return;
+    $$("label", root).forEach(function (lab) {
+      var box = lab.querySelector("input"), wrap = document.createElement("span");
+      while (box.nextSibling) wrap.appendChild(box.nextSibling);
+      lab.appendChild(wrap);
     });
-  });
-  $("#clReset").addEventListener("click", function () {
-    boxes.forEach(function (b) { b.checked = false; });
-    saved = {}; store("levelup-checklist", saved); updateProgress();
-  });
-  updateProgress();
+    var boxes = $$("input[type=checkbox]", root);
+    var saved = store(key) || {};
+    function update() {
+      var done = boxes.filter(function (b) { return b.checked; }).length;
+      $(".progress i", root).style.width = (boxes.length ? done / boxes.length * 100 : 0) + "%";
+      $(".cl-count", root).textContent = done + " of " + boxes.length + " checked";
+    }
+    boxes.forEach(function (b) {
+      b.checked = !!saved[b.dataset.id];
+      b.addEventListener("change", function () { saved[b.dataset.id] = b.checked; store(key, saved); update(); });
+    });
+    $(".cl-reset", root).addEventListener("click", function () {
+      boxes.forEach(function (b) { b.checked = false; });
+      saved = {}; store(key, saved); update();
+    });
+    update();
+  }
+  initChecklist($("#checklist"), "levelup-checklist");
+  initChecklist($("#rookieList"), "levelup-rookie-checklist");
 
   /* ---------- version table (status computed from today's date) ---------- */
   var VERSIONS = [

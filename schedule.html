@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Event Schedule Planner · Level Up Coach's Guide</title>
+<meta name="description" content="Visualize a VEX IQ competition day: build a practice qualification schedule or import the real one, then see your team's matches, rest gaps, skills windows, finals and awards on a timeline.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="sched-page">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="Level Up Coach's Guide, home">
+      <span class="beans" aria-hidden="true"><i class="b-red"></i><i class="b-blue"></i><i class="b-yellow"></i></span>
+      <span>Level Up <small>Coach's Guide</small></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" aria-label="Sections">
+      <a href="index.html#new">New teams</a>
+      <a href="index.html#game">The game</a>
+      <a href="index.html#scoring">Scoring</a>
+      <a href="index.html#lab">3D lab</a>
+      <a href="index.html#match">Match</a>
+      <a href="index.html#rules">Rules</a>
+      <a href="index.html#robot">Robot</a>
+      <a href="index.html#coaching">Coaching</a>
+      <a href="index.html#events">Events</a>
+      <a href="schedule.html" class="active" aria-current="page">Schedule</a>
+      <a href="index.html#resources">Resources</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero small">
+  <div class="wrap">
+    <p class="eyebrow">Plan your competition day</p>
+    <h1>Event schedule planner</h1>
+    <p class="lede">See what a tournament day looks like for your team: when you play, who your partners are, how long you rest between matches, and when to fit in Robot Skills runs.</p>
+    <p class="status"><span class="dot" aria-hidden="true"></span><span>Practice tool. The official schedule comes from the Event Partner's Tournament Manager. <a href="index.html#rule-T8">T8</a></span></p>
+  </div>
+</section>
+
+<!-- ========== SETUP ========== -->
+<section id="setup">
+  <div class="wrap">
+    <h2>1. Set up your event</h2>
+    <p class="sub">Either generate a practice schedule from a team list, or import the real match list once your Event Partner publishes it. All timings are editable, because cycle times, lunch and Skills hours vary by event.</p>
+
+    <form id="setupForm" class="setup-grid" autocomplete="off">
+      <div class="card">
+        <h3>Teams</h3>
+        <div class="seg-toggle" role="group" aria-label="Schedule source">
+          <button type="button" id="srcGen" aria-pressed="true">Generate practice schedule</button>
+          <button type="button" id="srcImp" aria-pressed="false">Import real schedule</button>
+        </div>
+
+        <div id="genBox">
+          <label for="teams">Team numbers <small>(one per line or separated by commas)</small></label>
+          <textarea id="teams" rows="6" spellcheck="false" placeholder="e.g. 1234A, 5678B, 9012C"></textarea>
+          <div class="row-btns">
+            <button type="button" class="btn" id="sample">Use 24 sample teams</button>
+            <button type="button" class="btn ghost" id="clearTeams">Clear</button>
+          </div>
+        </div>
+
+        <div id="impBox" hidden>
+          <label for="importText">Paste the match list <small>(CSV: Match, Time, Field, Team 1, Team 2)</small></label>
+          <textarea id="importText" rows="8" spellcheck="false" placeholder="Q1, 9:00 AM, 1, 1234A, 5678B&#10;Q2, 9:00 AM, 2, 9012C, 3456D&#10;Q3, 9:06 AM, 1, 1234A, 7890E"></textarea>
+          <p class="note">Team 1 is the red team and Team 2 the blue team (rule GG1). Time may be 12-hour (9:06 AM) or 24-hour (13:05). Copying rows from a spreadsheet works too.</p>
+        </div>
+
+        <label for="mine">Your team number(s) <small>(highlighted everywhere)</small></label>
+        <input type="text" id="mine" placeholder="e.g. 1234A" spellcheck="false">
+        <p class="note">Click any team number in the Field board to add or remove it.</p>
+      </div>
+
+      <div class="card">
+        <h3>Matches</h3>
+        <div class="fields-grid">
+          <div><label for="startTime">First match</label><input type="time" id="startTime" value="09:00"></div>
+          <div><label for="cycle">Minutes per match</label><input type="number" id="cycle" min="3" max="20" value="6"></div>
+          <div><label for="fields">Teamwork fields</label><input type="number" id="fields" min="1" max="8" value="2"></div>
+          <div><label for="mpt">Matches per team</label><input type="number" id="mpt" min="1" max="20" value="6"></div>
+          <div><label for="lunchStart">Lunch starts</label><input type="time" id="lunchStart" value="12:00"></div>
+          <div><label for="lunchLen">Lunch minutes</label><input type="number" id="lunchLen" min="0" max="120" value="45"></div>
+        </div>
+        <div class="row-btns" id="genOnly">
+          <label class="inline" for="seed">Shuffle seed</label>
+          <input type="number" id="seed" value="1" min="1" max="99999" class="seed">
+          <button type="button" class="btn" id="reshuffle">Reshuffle</button>
+        </div>
+        <p class="note">Local qualifiers run at least 6 Qualification Matches per team and Championship events at least 8 (<a href="index.html#rule-T9">T9</a>).</p>
+      </div>
+
+      <div class="card">
+        <h3>Day plan</h3>
+        <div class="fields-grid">
+          <div><label for="checkin">Check-in opens</label><input type="time" id="checkin" value="07:45"></div>
+          <div><label for="lead">Queue lead (min)</label><input type="number" id="lead" min="0" max="30" value="10"></div>
+          <div><label for="skOpen">Skills opens</label><input type="time" id="skOpen" value="08:30"></div>
+          <div><label for="skClose">Skills closes</label><input type="time" id="skClose" value="14:30"></div>
+          <div><label for="skRun">Minutes per Skills run</label><input type="number" id="skRun" min="1" max="10" value="3"></div>
+          <div><label for="skFields">Skills fields</label><input type="number" id="skFields" min="1" max="6" value="1"></div>
+          <div><label for="finN">Finals Matches</label><input type="number" id="finN" min="0" max="20" value="5"></div>
+          <div><label for="finBreak">Break before Finals</label><input type="number" id="finBreak" min="0" max="90" value="20"></div>
+          <div><label for="awardLen">Awards minutes</label><input type="number" id="awardLen" min="0" max="90" value="30"></div>
+        </div>
+        <p class="note">Each team gets exactly three Driving and three Autonomous Coding Skills runs (<a href="index.html#rule-T15">T15</a>). Finals Alliances pair the ranked teams in order and play one at a time (<a href="index.html#rule-T14">T14</a>).</p>
+      </div>
+
+      <div class="build-bar">
+        <button type="submit" class="btn primary">Build schedule</button>
+        <button type="button" class="btn" id="copyLink">Copy shareable link</button>
+        <button type="button" class="btn" id="dlCsv">Download CSV</button>
+        <button type="button" class="btn" onclick="window.print()">Print</button>
+        <span id="formMsg" role="status" aria-live="polite"></span>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ========== RESULTS ========== -->
+<div id="results" hidden>
+
+<section class="band" id="overview">
+  <div class="wrap">
+    <h2>2. The day at a glance</h2>
+    <ul class="kpis" id="kpis"></ul>
+    <ul class="warns" id="warns" aria-label="Notes about this schedule"></ul>
+
+    <h3>Day plan</h3>
+    <div id="dayPlan"></div>
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="wrap">
+    <h2>3. Your team's timeline</h2>
+    <p class="sub">Each block is a Qualification Match: <b>Q</b> number, <b>F</b> field, then <b>R</b> (red Driver Station, Team 1) or <b>B</b> (blue, Team 2). A dashed block marked * is an extra Qualification Match that doesn't affect ranking (<a href="index.html#rule-T10">T10</a>). Select a block for details.</p>
+    <div class="tl-tools">
+      <label for="zoom">Zoom</label><input type="range" id="zoom" min="8" max="30" value="18">
+      <label class="inline" for="showAll"><input type="checkbox" id="showAll"> Show every team</label>
+    </div>
+    <div id="lanes"></div>
+    <div class="detail" id="detail" role="status" aria-live="polite">Select a block on the timeline to see its details.</div>
+  </div>
+</section>
+
+<section class="band" id="mymatches">
+  <div class="wrap">
+    <h2>4. Your match list</h2>
+    <div class="stack">
+      <div id="myTables"></div>
+      <div class="card" id="freeBox">
+        <h3>Free windows for Skills runs</h3>
+        <p class="note">Gaps in your matches (leaving your queue lead before each one) that fall while Skills is open and are long enough for a run plus a couple of minutes' buffer. Finals teams aren't known until rankings are final.</p>
+        <div id="freeWin"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="board">
+  <div class="wrap">
+    <h2>5. Field board</h2>
+    <p class="sub">Every Qualification Match by time and field. Select a team number to highlight it everywhere on this page.</p>
+    <div class="tl-tools">
+      <label class="inline" for="onlyMine"><input type="checkbox" id="onlyMine"> Only rows with my teams</label>
+    </div>
+    <div class="table-scroll"><table class="boardtbl" id="boardTbl"><caption class="visually-hidden">Qualification Match schedule by time and field</caption></table></div>
+  </div>
+</section>
+
+<section class="band" id="report">
+  <div class="wrap">
+    <h2>6. Schedule fairness report</h2>
+    <p class="sub">Every team's matches, partners and rest. Use it to spot teams with back-to-back matches or repeated partners.</p>
+    <div class="table-scroll"><table class="plain wide" id="reportTbl"></table></div>
+  </div>
+</section>
+
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><b>Unofficial planning tool.</b> Generated schedules are illustrations. Real events use Tournament Manager, so partners, order and timing will differ. Always follow the schedule your Event Partner publishes. This site is not affiliated with VEX Robotics, Innovation First, Inc. or the REC Foundation.</p>
+    <p class="small"><a href="index.html">← Back to the Coach's Guide</a> · Your team list stays in this browser (local storage) unless you copy a shareable link.</p>
+  </div>
+</footer>
+
+<script src="schedule.js"></script>
+</body>
+</html>
