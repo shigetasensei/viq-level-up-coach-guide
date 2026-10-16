@@ -20,6 +20,7 @@
     <nav id="nav" aria-label="Sections">
       <a href="#game">The game</a>
       <a href="#scoring">Scoring</a>
+      <a href="#lab">3D lab</a>
       <a href="#match">Match</a>
       <a href="#rules">Rules</a>
       <a href="#robot">Robot</a>
@@ -209,6 +210,92 @@
     <div class="callout">
       <h3>Coaching angle: points per trip</h3>
       <p>Because a robot can carry only one bag per trip, every cycle is one bag. An L3 bag is worth 12 Floor Goal bags, but the trip is longer and the placement harder. The GDC's own design note says the best strategies balance <em>how many</em> points per bag, <em>how quickly</em> you score, and <em>how reliably</em> your robot can repeat the cycle. That's a great conversation to have with your team's strategist.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 3D LAB ========== -->
+<section id="lab" class="stage">
+  <div class="wrap">
+    <p class="eyebrow">Interactive</p>
+    <h2>3D scoring lab</h2>
+    <p class="sub">Drop Bean Bags onto the Goals and watch the scoring rules apply. Then switch to quiz mode and test whether you can call the score before the explanation appears.</p>
+
+    <div class="lab-grid">
+      <div class="lab-view">
+        <div class="lab-canvas" id="labCanvas" role="img" aria-label="Interactive 3D model of the Level Up Goals: a red and a blue Floor Goal, a red and a blue three-level Pyramid Goal, and a tall L4 Goal. Use the buttons beside it to place Bean Bags.">
+          <p class="lab-fallback" id="labFallback" hidden>The 3D view needs WebGL, which isn't available in this browser. The scoring tables above explain the same rules.</p>
+        </div>
+        <div class="lab-views" role="group" aria-label="Camera views">
+          <button type="button" data-view="overview">Overview</button>
+          <button type="button" data-view="floor">Floor Goals</button>
+          <button type="button" data-view="red">Red Pyramid</button>
+          <button type="button" data-view="blue">Blue Pyramid</button>
+          <button type="button" data-view="l4">L4 Goal</button>
+        </div>
+        <p class="lab-hint">Drag to rotate, scroll or pinch to zoom, and click a surface to drop a bag. Teaching model: sizes and layout are simplified and the Goals are not arranged as on the real Field (see the manual's Field figures).</p>
+      </div>
+
+      <div class="lab-panel">
+        <div class="lab-modes" role="group" aria-label="Mode">
+          <button type="button" id="modeSandbox" aria-pressed="true">Sandbox</button>
+          <button type="button" id="modeQuiz" aria-pressed="false">Quiz me</button>
+        </div>
+
+        <div id="labSandbox">
+          <fieldset>
+            <legend>1. Pick a Bean Bag</legend>
+            <div class="bag-picker" id="bagPicker">
+              <button type="button" data-color="red" aria-pressed="true"><i class="b-red"></i>Red</button>
+              <button type="button" data-color="blue" aria-pressed="false"><i class="b-blue"></i>Blue</button>
+              <button type="button" data-color="yellow" aria-pressed="false"><i class="b-yellow"></i>Yellow</button>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>2. Set the conditions</legend>
+            <label class="chk"><input type="checkbox" id="optOverhang"><span>Hangs over the Goal border <small>(Floor Goals only)</small></span></label>
+            <label class="chk"><input type="checkbox" id="optTouching"><span>Still touching a robot at the end</span></label>
+          </fieldset>
+          <fieldset>
+            <legend>3. Drop it on a Goal</legend>
+            <div class="target-groups" id="targetGroups"></div>
+          </fieldset>
+          <div class="lab-total"><span>Score</span> <output id="labTotal" aria-live="polite">0</output></div>
+          <ol class="lab-log" id="labLog" aria-live="polite"></ol>
+          <p class="lab-empty" id="labEmpty">No Bean Bags yet. Pick a color and drop one on a Goal.</p>
+          <div class="row-btns">
+            <button type="button" class="btn" id="labUndo">Undo</button>
+            <button type="button" class="btn" id="labClear">Clear all</button>
+          </div>
+        </div>
+
+        <div id="labQuiz" hidden>
+          <p class="quiz-score" id="quizScore" role="status">Answered 0 · Correct 0</p>
+          <p class="quiz-q" id="quizQ"></p>
+          <div class="quiz-answers" id="quizAnswers" role="group" aria-label="Choose the points this bag scores"></div>
+          <div class="quiz-feedback" id="quizFeedback" role="status" aria-live="polite" hidden></div>
+          <div class="row-btns"><button type="button" class="btn" id="quizNext" hidden>Next question</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lab-notes">
+      <div><h3>Try these</h3>
+        <ul>
+          <li>Drop a <b>blue</b> bag on the <b>red</b> Pyramid. It earns nothing.</li>
+          <li>Drop a <b>yellow</b> bag on <b>L4</b>, then a red one. Only yellow scores there.</li>
+          <li>Tick <b>hangs over the border</b> and drop a bag in a Floor Goal.</li>
+          <li>Drop several bags on one Pyramid level: bags resting on other bags score at that level too.</li>
+        </ul>
+      </div>
+      <div><h3>What it teaches</h3>
+        <ul>
+          <li>Color matching, with yellow as the wildcard (<a href="#rule-SC3">SC3</a>, <a href="#rule-SC4">SC4</a>).</li>
+          <li>L4 is yellow only (<a href="#rule-SC5">SC5</a>).</li>
+          <li>A bag touching a robot never counts, so release it before the Match ends.</li>
+          <li>A bag counted on two levels earns the higher level only (<a href="#rule-SC4">SC4</a>), which the lab doesn't model.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -558,5 +645,8 @@
 
 <script src="rules-data.js"></script>
 <script src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="lab.js"></script>
 </body>
 </html>
