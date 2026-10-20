@@ -12,29 +12,6 @@
     } catch (e) { return null; }
   }
 
-  /* ---------- mobile nav ---------- */
-  var nav = $("#nav"), toggle = $(".nav-toggle");
-  toggle.addEventListener("click", function () {
-    var open = nav.classList.toggle("open");
-    toggle.setAttribute("aria-expanded", open);
-  });
-  nav.addEventListener("click", function (e) {
-    if (e.target.tagName === "A") { nav.classList.remove("open"); toggle.setAttribute("aria-expanded", "false"); }
-  });
-
-  /* ---------- scrollspy ---------- */
-  var links = $$("nav a");
-  var targets = links.map(function (a) { return $(a.getAttribute("href")); });
-  if ("IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (!en.isIntersecting) return;
-        links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + en.target.id); });
-      });
-    }, { rootMargin: "-30% 0px -60% 0px" });
-    targets.forEach(function (t) { t && io.observe(t); });
-  }
-
   /* ---------- score calculator ---------- */
   var inputs = $$("#calc input[type=number]");
   var totalEl = $("#calcTotal");
@@ -136,6 +113,9 @@
     countEl.textContent = "Showing " + out.length + " of " + RULES.length + " rules";
     emptyEl.hidden = out.length > 0;
   }
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "/" && !/^(INPUT|TEXTAREA|SELECT)$/.test((document.activeElement || {}).tagName)) { e.preventDefault(); search.focus(); search.scrollIntoView({ block: "center" }); }
+  });
   var timer;
   search.addEventListener("input", function () { clearTimeout(timer); timer = setTimeout(render, 80); });
   render();
@@ -159,6 +139,7 @@
 
   // make rule references like "SG6" inside cards clickable
   $$(".rule-ref").forEach(function (el) {
+    if (el.querySelector("a")) return;
     el.innerHTML = el.textContent.split(/\s*·\s*/).map(function (id) {
       id = id.trim();
       return /^[A-Z]+\d+$/.test(id) ? '<a href="#rule-' + id + '">' + id + "</a>" : id;

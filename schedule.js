@@ -7,10 +7,6 @@
   const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
   const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
 
-  /* ---------- nav toggle ---------- */
-  const nav = $("#nav"), toggle = $(".nav-toggle");
-  toggle.addEventListener("click", () => { toggle.setAttribute("aria-expanded", nav.classList.toggle("open")); });
-
   /* ---------- helpers ---------- */
   function toMin(v) {
     if (!v) return null;

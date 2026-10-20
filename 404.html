@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wrong Goal · 404 · Level Up Coach's Field Manual</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a0e1d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400..700&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0e1d'/%3E%3Crect x='10' y='20' width='14' height='24' rx='5' fill='%23ff3b52' transform='rotate(-10 17 32)'/%3E%3Crect x='25' y='16' width='14' height='28' rx='5' fill='%233a74ff'/%3E%3Crect x='40' y='20' width='14' height='24' rx='5' fill='%23ffc20e' transform='rotate(10 47 32)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/viq-level-up-coach-guide/styles.css">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .nf { min-height: 100svh; display: grid; align-content: center; padding: clamp(100px, 18vh, 180px) 0 80px; position: relative; overflow: hidden; isolation: isolate; }
+  .nf .num { font: 800 clamp(7rem, 25vw, 19rem)/.74 var(--f-display); letter-spacing: -.07em; color: transparent; background: linear-gradient(180deg, rgb(241 238 227 / .22), rgb(241 238 227 / .03)); -webkit-background-clip: text; background-clip: text; margin: 0; font-stretch: 75%; font-variation-settings: "opsz" 96, "wdth" 75; }
+  .nf h1 { font: 800 clamp(2.6rem, 8vw, 7rem)/.88 var(--f-display); letter-spacing: -.05em; text-transform: uppercase; margin: 0 0 18px; color: var(--yellow); font-stretch: 75%; font-variation-settings: "opsz" 96, "wdth" 75; }
+  .nf p { color: #cfd5ea; max-width: 46ch; font-size: 1.15rem; }
+  .nf .row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .nf .row .btn { color: #f1eee3; border-color: rgb(255 255 255 / .38); }
+  .nf .row .btn-primary { color: #0a0e1d; }
+  .drop { position: absolute; right: clamp(24px, 12vw, 200px); top: -80px; width: 92px; height: 74px; border-radius: 34% 34% 40% 40% / 40% 40% 50% 50%; background: var(--blue); box-shadow: inset 0 -10px 0 rgb(0 0 0 / .18), inset 0 10px 0 rgb(255 255 255 / .25); animation: fall 2.6s cubic-bezier(.5, 0, 1, .6) 1 .4s forwards, settle 1.2s var(--ease) 3s both; z-index: 1; }
+  .goal { position: absolute; right: clamp(0px, 8vw, 150px); bottom: clamp(60px, 14vh, 150px); width: clamp(220px, 28vw, 380px); height: 26px; border-radius: 8px; background: var(--red); box-shadow: 0 0 0 3px rgb(255 59 82 / .35), 0 30px 80px rgb(255 59 82 / .35); }
+  .zero { position: absolute; right: clamp(60px, 16vw, 260px); bottom: clamp(120px, 24vh, 260px); font: 800 clamp(2rem, 5vw, 4rem)/1 var(--f-display); color: var(--red); opacity: 0; animation: zero 1.8s var(--ease) 2.9s forwards; z-index: 2; }
+  @keyframes fall { 0% { transform: translateY(0) rotate(-24deg); } 100% { transform: translateY(calc(100svh - clamp(60px, 14vh, 150px) - 190px)) rotate(8deg); } }
+  @keyframes settle { 0% { transform: translateY(calc(100svh - clamp(60px, 14vh, 150px) - 190px)) rotate(8deg) scale(1.1, .8); } 100% { transform: translateY(calc(100svh - clamp(60px, 14vh, 150px) - 190px)) rotate(8deg); } }
+  @keyframes zero { 0% { opacity: 0; transform: translateY(20px); } 30% { opacity: 1; transform: none; } 100% { opacity: 0; transform: translateY(-60px); } }
+  @media (prefers-reduced-motion: reduce) { .drop { animation: none; top: auto; bottom: calc(clamp(60px, 14vh, 150px) + 26px); } .zero { animation: none; opacity: 1; } }
+</style>
+</head>
+<body>
+<header class="site-header scrolled" id="siteHeader" style="position:fixed">
+  <a class="brand" href="./" aria-label="Level Up, back to the guide">
+    <span class="beans" aria-hidden="true"><i class="b-red"></i><i class="b-blue"></i><i class="b-yellow"></i></span>
+    <span>Level Up <small>Coach's field manual</small></span>
+  </a>
+</header>
+<main>
+  <section class="nf on-ink">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="goal" aria-hidden="true"></div>
+    <div class="drop" aria-hidden="true"></div>
+    <div class="zero" aria-hidden="true">0 pts</div>
+    <div class="wrap" style="position:relative;z-index:2">
+      <p class="mono" style="color:var(--yellow);margin-bottom:10px">Error 404 · wrong color, wrong Goal</p>
+      <p class="num" aria-hidden="true">404</p>
+      <h1>That bag doesn't score.</h1>
+      <p>The page you wanted isn't here. It may have moved, or the link may have a typo. The guide itself is one click away.</p>
+      <div class="row">
+        <a class="btn btn-primary" href="./">Back to the field manual <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn" href="./schedule.html">Open the schedule planner</a>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

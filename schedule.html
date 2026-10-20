@@ -2,53 +2,80 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Event Schedule Planner · Level Up Coach's Guide</title>
-<meta name="description" content="Visualize a VEX IQ competition day: build a practice qualification schedule or import the real one, then see your team's matches, rest gaps, skills windows, finals and awards on a timeline.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Plan the Day · Event Schedule Planner · Level Up Coach's Field Manual</title>
+<meta name="description" content="Visualize a VEX IQ competition day: build a practice qualification schedule or import the real one, then see your team's matches, rest gaps, Skills windows, Finals and awards on a timeline.">
+<meta name="theme-color" content="#0a0e1d">
+<meta property="og:title" content="Plan the Day · Event Schedule Planner">
+<meta property="og:description" content="See when your team plays, who your partners are, how long you rest and where Skills runs fit, for VEX IQ 2026–27.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shigetasensei.github.io/viq-level-up-coach-guide/schedule.html">
+<meta property="og:image" content="https://shigetasensei.github.io/viq-level-up-coach-guide/og.png">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="420">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Plan the Day · Event Schedule Planner">
+<meta name="twitter:description" content="See when your team plays, who your partners are, how long you rest and where Skills runs fit, for VEX IQ 2026–27.">
+<meta name="twitter:image" content="https://shigetasensei.github.io/viq-level-up-coach-guide/og.png">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400..700&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0e1d'/%3E%3Crect x='10' y='20' width='14' height='24' rx='5' fill='%23ff3b52' transform='rotate(-10 17 32)'/%3E%3Crect x='25' y='16' width='14' height='28' rx='5' fill='%233a74ff'/%3E%3Crect x='40' y='20' width='14' height='24' rx='5' fill='%23ffc20e' transform='rotate(10 47 32)'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');try{if(sessionStorage.getItem('curtain')){document.documentElement.classList.add('entering');sessionStorage.removeItem('curtain');}}catch(e){}</script>
 </head>
 <body class="sched-page">
 <a class="skip" href="#main">Skip to content</a>
+<div class="curtain" aria-hidden="true"></div>
+<div class="progress-top" aria-hidden="true"><i></i></div>
 
-<header class="site-header">
-  <div class="wrap bar">
-    <a class="brand" href="index.html" aria-label="Level Up Coach's Guide, home">
-      <span class="beans" aria-hidden="true"><i class="b-red"></i><i class="b-blue"></i><i class="b-yellow"></i></span>
-      <span>Level Up <small>Coach's Guide</small></span>
-    </a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
-    <nav id="nav" aria-label="Sections">
-      <a href="index.html#new">New teams</a>
-      <a href="index.html#game">The game</a>
-      <a href="index.html#scoring">Scoring</a>
-      <a href="index.html#lab">3D lab</a>
-      <a href="index.html#match">Match</a>
-      <a href="index.html#rules">Rules</a>
-      <a href="index.html#robot">Robot</a>
-      <a href="index.html#coaching">Coaching</a>
-      <a href="index.html#events">Events</a>
-      <a href="schedule.html" class="active" aria-current="page">Schedule</a>
-      <a href="index.html#resources">Resources</a>
-    </nav>
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="index.html" aria-label="Level Up, back to the guide">
+    <span class="beans" aria-hidden="true"><i class="b-red"></i><i class="b-blue"></i><i class="b-yellow"></i></span>
+    <span>Level Up <small>Coach's field manual</small></span>
+  </a>
+  <p class="hdr-mid mono" aria-hidden="true"><b>L4</b> Schedule planner</p>
+  <div class="hdr-right">
+    <a class="hdr-link" href="index.html#rules">Rules</a>
+    <a class="hdr-link" href="schedule.html" aria-current="page">Schedule</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span class="ml-t">Menu</span><span class="ml" aria-hidden="true"></span></button>
   </div>
 </header>
 
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu" aria-hidden="true">
+  <nav class="menu-grid" aria-label="Sections">
+    <div class="menu-group"><p class="mg">L0 <span>Brief</span></p><ul><li><a href="index.html#briefing">5-minute briefing</a></li></ul></div>
+    <div class="menu-group"><p class="mg">L1 <span>Start</span></p><ul><li><a href="index.html#new">New teams</a></li></ul></div>
+    <div class="menu-group"><p class="mg">L2 <span>Play</span></p><ul><li><a href="index.html#game">The game</a></li><li><a href="index.html#scoring">Scoring</a></li><li><a href="index.html#lab">3D lab</a></li><li><a href="index.html#match">The Match</a></li></ul></div>
+    <div class="menu-group"><p class="mg">L3 <span>Master</span></p><ul><li><a href="index.html#rules">Rules explorer</a></li><li><a href="index.html#robot">Robot &amp; inspection</a></li><li><a href="index.html#coaching">Coaching</a></li></ul></div>
+    <div class="menu-group"><p class="mg">L4 <span>Compete</span></p><ul><li><a href="index.html#events">Events &amp; rankings</a></li><li><a href="schedule.html">Schedule planner</a></li><li><a href="index.html#resources">Resources</a></li><li><a href="index.html#updates">Manual updates</a></li></ul></div>
+  </nav>
+  <div class="menu-foot mono"><span>Unofficial guide · checked against Game Manual v2.1</span><a href="https://link.vex.com/docs/26-27/viqrc/game-manual" rel="noopener">Official manual ↗</a></div>
+</div>
+
 <main id="main">
 
-<section class="hero small">
+<section class="page-hero on-ink" id="top">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
   <div class="wrap">
-    <p class="eyebrow">Plan your competition day</p>
-    <h1>Event schedule planner</h1>
-    <p class="lede">See what a tournament day looks like for your team: when you play, who your partners are, how long you rest between matches, and when to fit in Robot Skills runs.</p>
-    <p class="status"><span class="dot" aria-hidden="true"></span><span>Practice tool. The official schedule comes from the Event Partner's Tournament Manager. <a href="index.html#rule-T8">T8</a></span></p>
+    <p class="hero-eyebrow mono"><i></i>L4 · Compete <b>16 pts</b></p>
+    <h1 data-title><span class="visually-hidden">Plan the day: event schedule planner</span><span aria-hidden="true" class="pg-title"><span class="ln"><span>Plan</span></span> <span class="ln"><span>the day<i>.</i></span></span></span></h1>
+    <p class="lede">See when your team plays, who your partners are, how long you rest between Matches and where Robot Skills runs fit, before event day arrives.</p>
+    <div class="hero-strip" aria-hidden="true"><i style="--w:6"></i><i style="--w:6" class="b"></i><i style="--w:6" class="r"></i><i style="--w:6"></i><i style="--w:6" class="b"></i><i style="--w:10" class="lunch"></i><i style="--w:6"></i><i style="--w:6" class="r"></i><i style="--w:6" class="b"></i><i style="--w:6"></i><i style="--w:14" class="sk"></i><i style="--w:8" class="fin"></i></div>
+    <p class="status mono"><span class="dot" aria-hidden="true"></span><span>Practice tool. Your Event Partner's Tournament Manager makes the official schedule. <a href="index.html#rule-T8">T8</a></span></p>
   </div>
 </section>
 
 <!-- ========== SETUP ========== -->
 <section id="setup">
   <div class="wrap">
-    <h2>1. Set up your event</h2>
-    <p class="sub">Either generate a practice schedule from a team list, or import the real match list once your Event Partner publishes it. All timings are editable, because cycle times, lunch and Skills hours vary by event.</p>
+    <header class="sec-head">
+      <p class="kicker mono" data-reveal><em>01</em> Set up your event</p>
+      <h2 data-split>Teams, timing, go.</h2>
+      <p class="sub" data-reveal>Generate a practice schedule from a team list, or paste the real match list when your Event Partner publishes it. Every timing is editable, because cycle times, lunch and Skills hours vary by event.</p>
+    </header>
 
     <form id="setupForm" class="setup-grid" autocomplete="off">
       <div class="card">
@@ -113,7 +140,7 @@
       </div>
 
       <div class="build-bar">
-        <button type="submit" class="btn primary">Build schedule</button>
+        <button type="submit" class="btn primary magnetic">Build schedule <span class="arr" aria-hidden="true">→</span></button>
         <button type="button" class="btn" id="copyLink">Copy shareable link</button>
         <button type="button" class="btn" id="dlCsv">Download CSV</button>
         <button type="button" class="btn" onclick="window.print()">Print</button>
@@ -128,7 +155,10 @@
 
 <section class="band" id="overview">
   <div class="wrap">
-    <h2>2. The day at a glance</h2>
+    <header class="sec-head">
+      <p class="kicker mono"><em>02</em> The day at a glance</p>
+      <h2>Your day, in one look.</h2>
+    </header>
     <ul class="kpis" id="kpis"></ul>
     <ul class="warns" id="warns" aria-label="Notes about this schedule"></ul>
 
@@ -139,8 +169,11 @@
 
 <section id="timeline">
   <div class="wrap">
-    <h2>3. Your team's timeline</h2>
-    <p class="sub">Each block is a Qualification Match: <b>Q</b> number, <b>F</b> field, then <b>R</b> (red Driver Station, Team 1) or <b>B</b> (blue, Team 2). A dashed block marked * is an extra Qualification Match that doesn't affect ranking (<a href="index.html#rule-T10">T10</a>). Select a block for details.</p>
+    <header class="sec-head">
+      <p class="kicker mono"><em>03</em> Your team's timeline</p>
+      <h2>Every Match, in order.</h2>
+      <p class="sub">Each block is a Qualification Match: <b>Q</b> number, <b>F</b> field, then <b>R</b> (red Driver Station, Team 1) or <b>B</b> (blue, Team 2). A dashed block marked * is an extra Qualification Match that doesn't affect ranking (<a href="index.html#rule-T10">T10</a>). Select a block for details.</p>
+    </header>
     <div class="tl-tools">
       <label for="zoom">Zoom</label><input type="range" id="zoom" min="8" max="30" value="18">
       <label class="inline" for="showAll"><input type="checkbox" id="showAll"> Show every team</label>
@@ -152,11 +185,14 @@
 
 <section class="band" id="mymatches">
   <div class="wrap">
-    <h2>4. Your match list</h2>
+    <header class="sec-head">
+      <p class="kicker mono"><em>04</em> Your match list</p>
+      <h2>Where to be, and when.</h2>
+    </header>
     <div class="stack">
       <div id="myTables"></div>
       <div class="card" id="freeBox">
-        <h3>Free windows for Skills runs</h3>
+        <h3 style="margin-top:0">Free windows for Skills runs</h3>
         <p class="note">Gaps in your matches (leaving your queue lead before each one) that fall while Skills is open and are long enough for a run plus a couple of minutes' buffer. Finals teams aren't known until rankings are final.</p>
         <div id="freeWin"></div>
       </div>
@@ -166,8 +202,11 @@
 
 <section id="board">
   <div class="wrap">
-    <h2>5. Field board</h2>
-    <p class="sub">Every Qualification Match by time and field. Select a team number to highlight it everywhere on this page.</p>
+    <header class="sec-head">
+      <p class="kicker mono"><em>05</em> Field board</p>
+      <h2>The whole field, by the minute.</h2>
+      <p class="sub">Every Qualification Match by time and field. Select a team number to highlight it everywhere on this page.</p>
+    </header>
     <div class="tl-tools">
       <label class="inline" for="onlyMine"><input type="checkbox" id="onlyMine"> Only rows with my teams</label>
     </div>
@@ -177,8 +216,11 @@
 
 <section class="band" id="report">
   <div class="wrap">
-    <h2>6. Schedule fairness report</h2>
-    <p class="sub">Every team's matches, partners and rest. Use it to spot teams with back-to-back matches or repeated partners.</p>
+    <header class="sec-head">
+      <p class="kicker mono"><em>06</em> Schedule fairness report</p>
+      <h2>Spot the tough draws.</h2>
+      <p class="sub">Every team's matches, partners and rest. Use it to spot teams with back-to-back matches or repeated partners.</p>
+    </header>
     <div class="table-scroll"><table class="plain wide" id="reportTbl"></table></div>
   </div>
 </section>
@@ -187,13 +229,25 @@
 
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer on-ink">
   <div class="wrap">
-    <p><b>Unofficial planning tool.</b> Generated schedules are illustrations. Real events use Tournament Manager, so partners, order and timing will differ. Always follow the schedule your Event Partner publishes. This site is not affiliated with VEX Robotics, Innovation First, Inc. or the REC Foundation.</p>
-    <p class="small"><a href="index.html">← Back to the Coach's Guide</a> · Your team list stays in this browser (local storage) unless you copy a shareable link.</p>
+    <p class="foot-mark" aria-hidden="true">Level Up<i>.</i></p>
+    <div class="foot-top">
+      <p>Plan the day, then let the students play it.</p>
+      <a class="btn btn-primary magnetic" href="index.html">Back to the field manual <span class="arr" aria-hidden="true">→</span></a>
+    </div>
+    <div class="foot-cols">
+      <p class="small"><b>Unofficial planning tool.</b> Generated schedules are illustrations. Real events use Tournament Manager, so partners, order and timing will differ. Always follow the schedule your Event Partner publishes. This site is not affiliated with VEX Robotics, Innovation First, Inc. or the REC Foundation.</p>
+      <ul><li><b>Guide</b></li><li><a href="index.html#new">New teams</a></li><li><a href="index.html#scoring">Scoring</a></li><li><a href="index.html#rules">Rules explorer</a></li></ul>
+      <ul><li><b>Official</b></li><li><a href="https://link.vex.com/docs/26-27/viqrc/game-manual" rel="noopener">Game Manual (PDF)</a></li><li><a href="https://events.vex.com/robot-competitions/vex-iq-competition" rel="noopener">events.vex.com</a></li></ul>
+    </div>
+    <p class="small mono" style="margin-top:32px;color:var(--text-soft)">Your team list stays in this browser (local storage) unless you copy a shareable link.</p>
   </div>
 </footer>
 
-<script src="schedule.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="schedule.js"></script>
+<script defer src="motion.js"></script>
 </body>
 </html>
