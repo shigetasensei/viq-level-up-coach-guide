@@ -16,12 +16,15 @@ The page is a climb. Chapters are the game's own Goal levels (L1 Start · L2 Pla
 | --- | --- |
 | `index.html` | The guide (single page, 12 sections, 4 chapters) |
 | `schedule.html` | Event schedule planner (generate a practice schedule or import the real one) |
+| `students.html` | Student zone: team jobs table, student and inspection checklists, robot upgrade ideas |
 | `404.html` | "That bag doesn't score." |
 | `styles.css` | Design system: ink + paper tokens, type, components, motion, print |
 | `field3d.js` | Shared Three.js scene (Goals, pillow-shaped Bean Bags, lights, shadows) |
 | `hero3d.js` | Scripted hero loop + live score counter |
 | `lab.js` | Interactive 3D scoring lab: sandbox and quiz |
 | `motion.js` | Header, full-screen menu, level HUD, GSAP reveals, match clock, size envelope, page curtain |
+| `lists.js` | Shared checklists: saved ticks, print-one-checklist |
+| `students.js` | Student zone job picker |
 | `app.js` | Calculator, rules explorer, checklists, version table |
 | `schedule.js` | Schedule generator, importer, timelines, field board, fairness report |
 | `rules-data.js` | Plain-language summaries of every rule (SC1–T19) with links to the official text |

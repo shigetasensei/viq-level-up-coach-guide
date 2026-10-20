@@ -38,6 +38,7 @@
   </a>
   <p class="hdr-mid mono" id="hdrChapter" aria-hidden="true"><b>L0</b> Brief</p>
   <div class="hdr-right">
+    <a class="hdr-link" href="students.html">Students</a>
     <a class="hdr-link" href="#rules">Rules</a>
     <a class="hdr-link" href="schedule.html">Schedule</a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span class="ml-t">Menu</span><span class="ml" aria-hidden="true"></span></button>
@@ -47,7 +48,7 @@
 <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu" aria-hidden="true">
   <nav class="menu-grid" aria-label="Sections">
     <div class="menu-group"><p class="mg">L0 <span>Brief</span></p><ul><li><a href="#briefing">5-minute briefing</a></li></ul></div>
-    <div class="menu-group"><p class="mg">L1 <span>Start</span></p><ul><li><a href="#new">New teams</a></li></ul></div>
+    <div class="menu-group"><p class="mg">L1 <span>Start</span></p><ul><li><a href="#new">New teams</a></li><li><a href="students.html">Student zone</a></li></ul></div>
     <div class="menu-group"><p class="mg">L2 <span>Play</span></p><ul><li><a href="#game">The game</a></li><li><a href="#scoring">Scoring</a></li><li><a href="#lab">3D lab</a></li><li><a href="#match">The Match</a></li></ul></div>
     <div class="menu-group"><p class="mg">L3 <span>Master</span></p><ul><li><a href="#rules">Rules explorer</a></li><li><a href="#robot">Robot &amp; inspection</a></li><li><a href="#notebook">Engineering notebook</a></li><li><a href="#coaching">Coaching</a></li></ul></div>
     <div class="menu-group"><p class="mg">L4 <span>Compete</span></p><ul><li><a href="#events">Events &amp; rankings</a></li><li><a href="schedule.html">Schedule planner</a></li><li><a href="#resources">Resources</a></li><li><a href="#updates">Manual updates</a></li></ul></div>
@@ -149,7 +150,7 @@
       </div>
 
       <div>
-        <div class="card checklist" id="rookieList">
+        <div class="card checklist" id="rookieList" data-store="levelup-rookie-checklist">
           <div class="cl-head">
             <h3>First-season checklist</h3>
             <div class="progress" aria-hidden="true"><i class="cl-bar"></i></div>
@@ -265,7 +266,7 @@
     <h3>Questions rookie coaches ask</h3>
     <div class="faq">
       <details><summary>Do the same students have to drive every Match?</summary>
-        <p>No. You can put different students in the Driver 1, Driver 2 and Loader roles from Match to Match, and the manual's glossary says there is no requirement that the same students serve as Drivers in multiple Matches. The rules are: all Drive Team Members must be students on your own team, no student can fill more than one Drive Team role in the same Match, and within a Match the two Drivers must hand over the controller between 0:35 and 0:25 remaining (<a href="#rule-GG1">GG1</a>, <a href="#rule-GG11">GG11</a>). Many teams rotate roles so every student gets field time and drivers don't get tired, but a consistent pair can also build chemistry. Both are legal, so decide as a team and let students choose.</p></details>
+        <p>No. You can put different students in the Driver 1, Driver 2 and Loader roles from Match to Match, and the manual's glossary says there is no requirement that the same students serve as Drivers in multiple Matches. The rules are: all Drive Team Members must be students on your own team, a Driver who isn't driving at that moment may also act as the Loader, and within a Match the two Drivers must hand over the controller between 0:35 and 0:25 remaining (<a href="#rule-GG1">GG1</a>, <a href="#rule-GG11">GG11</a>). Many teams rotate roles so every student gets field time and drivers don't get tired, but a consistent pair can also build chemistry. Both are legal, so decide as a team and let students choose.</p></details>
       <details><summary>Do I have to read the whole manual?</summary>
         <p>The manual is long, and VEX's guidance is to treat it as a reference. Start with the Quick Reference Guide at the front, give students the Simplified Edition appendix, then use this site's <a href="#rules">rules explorer</a> to look things up as questions come up. Everyone who drives should know the one-bag limit, the hand-off, and the Load Zone rules.</p></details>
       <details><summary>What if our robot isn't finished by the event?</summary>
@@ -273,7 +274,7 @@
       <details><summary>Can I help fix the robot or fix the code?</summary>
         <p>No. Adults can teach and ask questions but may not do the building, programming, notebook or strategy. Doing so can become a violation as soon as that robot scores (<a href="#rule-G2">G2</a>). The <a href="#coaching">coaching section</a> has a quick do/don't list.</p></details>
       <details><summary>Our team has only three students. Is that enough?</summary>
-        <p>Yes. A Team is three or more students. In a Match each team uses two Drivers and one Loader, so with three students everyone is on the Drive Team. Each student can fill only one Drive Team role in a given Match.</p></details>
+        <p>Yes. A Team is three or more students. In a Match each team uses two Drivers and one Loader, so with three students everyone is on the Drive Team. The Driver who isn't driving at that moment may also act as the Loader (<a href="#rule-GG11">GG11</a>).</p></details>
       <details><summary>What if we disagree with a call?</summary>
         <p>Only the Drive Team Members from that Match may raise it with the Head Referee, right after the Match, from the Driver Station. The Head Referee's decision is final (<a href="#rule-GG14">GG14</a>). Practice the polite version at home.</p></details>
       <details><summary>Does a rookie team need to win to be successful?</summary>
@@ -708,7 +709,7 @@
 
 
     <div class="two">
-      <div class="card checklist" id="checklist">
+      <div class="card checklist" id="checklist" data-store="levelup-checklist">
         <div class="cl-head">
           <h3>Pre-inspection checklist</h3>
           <div class="progress" aria-hidden="true"><i class="cl-bar"></i></div>
@@ -834,7 +835,7 @@
       <!-- CHECK -->
       <div class="tabpanel" role="tabpanel" id="nbp-check" aria-labelledby="nbt-check" tabindex="0" hidden>
         <div class="two">
-          <div class="card checklist" id="nbList">
+          <div class="card checklist" id="nbList" data-store="levelup-notebook-checklist">
             <div class="cl-head">
               <h3>Notebook self-check</h3>
               <div class="progress" aria-hidden="true"><i class="cl-bar"></i></div>
@@ -1236,6 +1237,7 @@
 </aside>
 
 <script defer src="rules-data.js"></script>
+<script defer src="lists.js"></script>
 <script defer src="app.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
