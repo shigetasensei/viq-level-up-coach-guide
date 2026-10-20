@@ -310,6 +310,41 @@ body.menu-open .site-header { transform: none; background: transparent; backdrop
 .ch-dots i.on { background: var(--yellow); border-color: var(--yellow); }
 @media (max-width: 760px) { .ch-main { grid-template-columns: minmax(0, 1fr); gap: 4px; } .ch-big { order: -1; font-size: clamp(9rem, 56vw, 18rem); margin-bottom: -.06em; } .ch-name { font-size: clamp(4.4rem, 27vw, 9rem); } .ch-top span:last-child { display: none; } }
 
+/* ---------- engineering notebook (tabs) ---------- */
+.tablist { display: flex; flex-wrap: wrap; gap: 6px; padding: 6px; border: 1.5px solid var(--line-strong); border-radius: 999px; width: fit-content; max-width: 100%; margin-bottom: clamp(28px, 4vw, 48px); background: var(--card); }
+.tablist [role=tab] { font: 650 .92rem/1 var(--f-body); padding: 13px 20px; border-radius: 999px; border: 0; background: transparent; color: var(--text); cursor: pointer; transition: background .3s, color .3s; white-space: nowrap; }
+.tablist [role=tab]:hover { background: var(--paper-2); }
+.tablist [role=tab][aria-selected=true] { background: var(--text); color: var(--paper); }
+@media (max-width: 760px) { .tablist { border-radius: 22px; width: 100%; } .tablist [role=tab] { flex: 1 1 auto; padding: 12px 14px; font-size: .86rem; } }
+.tabpanel { animation: fadeUp .6s var(--ease) backwards; }
+.tabpanel[hidden] { display: none; }
+.tabpanel:focus-visible { outline-offset: 8px; }
+.tag { display: inline-block; font: 500 .62rem/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; padding: 4px 7px; border-radius: 6px; vertical-align: .12em; margin-right: 6px; white-space: nowrap; }
+.tag.official { background: var(--text); color: var(--paper); }
+.tag.suggested { border: 1px solid var(--line-strong); color: var(--text-soft); }
+.nb-habits { list-style: none; padding: 0; }
+.nb-habits li { padding: 14px 0; border-top: 1px solid var(--line); margin: 0; }
+.nb-habits li:last-child { border-bottom: 1px solid var(--line); }
+.nb-page { margin: 0; background: #fffdf5; color: #1b2038; border-radius: 6px 18px 18px 6px; padding: 22px 26px 22px 54px; position: relative; box-shadow: 0 1px 0 rgb(0 0 0 / .05), 0 24px 60px -24px rgb(10 14 29 / .45); background-image: repeating-linear-gradient(transparent 0 33px, rgb(58 116 255 / .16) 33px 34px); transform: rotate(-.6deg); }
+.nb-page::before { content: ""; position: absolute; left: 34px; top: 0; bottom: 0; width: 2px; background: rgb(255 59 82 / .45); }
+.nb-page::after { content: ""; position: absolute; left: 10px; top: 24px; width: 12px; height: 12px; border-radius: 50%; background: var(--paper-2); box-shadow: 0 90px 0 var(--paper-2), 0 180px 0 var(--paper-2), 0 270px 0 var(--paper-2), inset 0 1px 2px rgb(0 0 0 / .25); }
+.nb-head { display: flex; justify-content: space-between; gap: 12px; font: 500 .72rem/34px var(--f-mono); letter-spacing: .06em; text-transform: uppercase; color: #5a6180; border-bottom: 2px solid rgb(27 32 56 / .75); margin-bottom: 0; }
+.nb-row { display: grid; grid-template-columns: 104px 1fr; gap: 12px; line-height: 34px; font-family: "Caveat", "Segoe Print", "Bradley Hand", cursive; font-size: 1.12rem; }
+.nb-row b { font: 500 .66rem/34px var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: #6a3b57; }
+.nb-row span { min-width: 0; }
+.nb-page figcaption { font: 500 .8rem/1.45 var(--f-body); color: #5a6180; margin-top: 16px; padding-top: 6px; background: #fffdf5; }
+.nb-kpis { margin-bottom: clamp(28px, 4vw, 44px); }
+.scale { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line-strong); border-radius: var(--radius); overflow: hidden; }
+.scale > div { padding: clamp(18px, 2vw, 28px); border-right: 1px solid var(--line); background: var(--card); }
+.scale > div:last-child { border-right: 0; }
+.scale > div.hl { background: var(--yellow); color: #0a0e1d; }
+.scale > div.hl span { color: #0a0e1d; }
+.scale b { display: block; font: 800 1.6rem/1 var(--f-display); letter-spacing: -.035em; margin-bottom: 10px; }
+.scale span { color: var(--text-soft); font-size: .92rem; line-height: 1.5; display: block; }
+@media (max-width: 900px) { .scale { grid-template-columns: repeat(2, minmax(0, 1fr)); } .scale > div:nth-child(2) { border-right: 0; } .scale > div:nth-child(-n+2) { border-bottom: 1px solid var(--line); } }
+@media (max-width: 520px) { .scale { grid-template-columns: minmax(0, 1fr); } .scale > div { border-right: 0; border-bottom: 1px solid var(--line); } .scale > div:last-child { border-bottom: 0; } }
+@media print { .tabpanel[hidden] { display: block !important; } .tablist { display: none; } }
+
 /* ---------- goal cards + bag stats ---------- */
 .goal-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(14px, 1.6vw, 22px); margin-bottom: clamp(56px, 8vw, 120px); }
 .goal-card { background: var(--ink); color: #f1eee3; border-radius: var(--radius); padding: clamp(24px, 2.6vw, 38px); position: relative; overflow: hidden; display: flex; flex-direction: column; min-height: 400px; transition: transform .6s var(--ease); isolation: isolate; }

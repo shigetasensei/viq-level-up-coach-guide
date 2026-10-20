@@ -183,6 +183,38 @@
   }
   initChecklist($("#checklist"), "levelup-checklist");
   initChecklist($("#rookieList"), "levelup-rookie-checklist");
+  initChecklist($("#nbList"), "levelup-notebook-checklist");
+
+  /* ---------- tabs (WAI-ARIA tabs pattern) ---------- */
+  $$("[data-nbtabs]").forEach(function (root) {
+    var tabs = $$('[role="tab"]', root);
+    function select(tab, focus) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute("aria-selected", on ? "true" : "false");
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+      });
+      if (focus) tab.focus();
+    }
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener("click", function () { select(tab); });
+      tab.addEventListener("keydown", function (e) {
+        var k = e.key, n = -1;
+        if (k === "ArrowRight") n = (i + 1) % tabs.length;
+        else if (k === "ArrowLeft") n = (i - 1 + tabs.length) % tabs.length;
+        else if (k === "Home") n = 0;
+        else if (k === "End") n = tabs.length - 1;
+        if (n > -1) { e.preventDefault(); select(tabs[n], true); }
+      });
+    });
+    // deep links such as #notebook-check open that tab
+    function fromHash() {
+      var m = location.hash.match(/^#notebook-(write|check|sum|honest|score)$/);
+      if (m) { select(document.getElementById("nbt-" + m[1])); root.scrollIntoView({ block: "start" }); }
+    }
+    window.addEventListener("hashchange", fromHash); fromHash();
+  });
 
   /* ---------- version table (status computed from today's date) ---------- */
   var VERSIONS = [
