@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Referee Zone · Level Up Coach's Field Manual</title>
+<meta name="description" content="For volunteer referees at VEX IQ Level Up events: your role, a Match run-through, what to watch for, how to read the score, tough moments, and a printable referee checklist.">
+<meta name="theme-color" content="#0a0e1d">
+<meta property="og:title" content="Referee Zone · Level Up">
+<meta property="og:description" content="A volunteer referee guide for VEX IQ Level Up: Match flow, watch list, scoring and a printable checklist.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shigetasensei.github.io/viq-level-up-coach-guide/referee.html">
+<meta property="og:image" content="https://shigetasensei.github.io/viq-level-up-coach-guide/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400..700&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0e1d'/%3E%3Crect x='10' y='20' width='14' height='24' rx='5' fill='%23ff3b52' transform='rotate(-10 17 32)'/%3E%3Crect x='25' y='16' width='14' height='28' rx='5' fill='%233a74ff'/%3E%3Crect x='40' y='20' width='14' height='24' rx='5' fill='%23ffc20e' transform='rotate(10 47 32)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');try{if(sessionStorage.getItem('curtain')){document.documentElement.classList.add('entering');sessionStorage.removeItem('curtain');}}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="curtain" aria-hidden="true"></div>
+<div class="progress-top" aria-hidden="true"><i></i></div>
+
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="index.html" aria-label="Level Up, back to the guide">
+    <span class="beans" aria-hidden="true"><i class="b-red"></i><i class="b-blue"></i><i class="b-yellow"></i></span>
+    <span>Level Up <small>Coach's field manual</small></span>
+  </a>
+  <p class="hdr-mid mono" aria-hidden="true"><b>L4</b> Referee zone</p>
+  <div class="hdr-right">
+    <a class="hdr-link" href="timer.html">Timer</a>
+    <a class="hdr-link" href="students.html">Students</a>
+    <a class="hdr-link" href="referee.html" aria-current="page">Referees</a>
+    <a class="hdr-link" href="index.html#rules">Rules</a>
+    <a class="hdr-link" href="schedule.html">Schedule</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span class="ml-t">Menu</span><span class="ml" aria-hidden="true"></span></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu" aria-hidden="true">
+  <nav class="menu-grid" aria-label="Sections">
+    <div class="menu-group"><p class="mg">L0 <span>Brief</span></p><ul><li><a href="index.html#briefing">5-minute briefing</a></li></ul></div>
+    <div class="menu-group"><p class="mg">L1 <span>Start</span></p><ul><li><a href="index.html#new">New teams</a></li><li><a href="students.html">Student zone</a></li></ul></div>
+    <div class="menu-group"><p class="mg">L2 <span>Play</span></p><ul><li><a href="index.html#game">The game</a></li><li><a href="index.html#scoring">Scoring</a></li><li><a href="index.html#lab">3D lab</a></li><li><a href="index.html#match">The Match</a></li><li><a href="timer.html">Match timer</a></li></ul></div>
+    <div class="menu-group"><p class="mg">L3 <span>Master</span></p><ul><li><a href="index.html#rules">Rules explorer</a></li><li><a href="index.html#robot">Robot &amp; inspection</a></li><li><a href="index.html#notebook">Engineering notebook</a></li><li><a href="index.html#coaching">Coaching</a></li></ul></div>
+    <div class="menu-group"><p class="mg">L4 <span>Compete</span></p><ul><li><a href="index.html#events">Events &amp; rankings</a></li><li><a href="schedule.html">Schedule planner</a></li><li><a href="referee.html">Referee zone</a></li><li><a href="index.html#resources">Resources</a></li><li><a href="index.html#updates">Manual updates</a></li></ul></div>
+  </nav>
+  <div class="menu-foot mono"><span>Unofficial guide · checked against Game Manual v2.1</span><a href="https://link.vex.com/docs/26-27/viqrc/game-manual" rel="noopener">Official manual ↗</a></div>
+</div>
+
+<main id="main">
+
+<section class="page-hero on-ink" id="top">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="hero-eyebrow mono"><i></i>Referee zone <b>for volunteers</b></p>
+    <h1><span class="visually-hidden">Referee zone: a guide for volunteer referees at VEX IQ Level Up events</span><span aria-hidden="true" class="pg-title"><span class="ln"><span>Calm eyes.</span></span> <span class="ln"><span>Fair calls<i>.</i></span></span></span></h1>
+    <p class="lede">Helping at a VEX IQ event as a referee? Here is what you need on the day: the game in two minutes, how a Match runs, what to watch for, how the score is read, and what to say when a team has a question.</p>
+    <ul class="jump" aria-label="Jump to a part of this page">
+      <li><a href="#role"><b>1</b> Your role</a></li>
+      <li><a href="#game"><b>2</b> The game</a></li>
+      <li><a href="#flow"><b>3</b> A Match, step by step</a></li>
+      <li><a href="#watch"><b>4</b> Watch list</a></li>
+      <li><a href="#score"><b>5</b> Reading the score</a></li>
+      <li><a href="#tough"><b>6</b> Tough moments</a></li>
+      <li><a href="#skills"><b>7</b> Skills</a></li>
+      <li><a href="#checklist"><b>8</b> Checklist</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== ROLE ========== -->
+<section id="role">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker mono" data-reveal><em>01</em> Your role</p>
+      <h2 data-split>You keep the game fair.</h2>
+      <p class="sub" data-reveal>Referees do not coach, cheer or help a team win. You make sure every team plays by the same rules, and you make it a good day for the students. Facts marked <span class="tag official">Official</span> come from the Game Manual; ideas marked <span class="tag suggested">Suggested</span> are this guide's author's.</p>
+    </header>
+    <div class="grid3" data-stagger>
+      <article class="card">
+        <h3>Head Referee</h3>
+        <p><span class="tag official">Official</span> Has the <b>last word</b> on gameplay and robot rulings, and is the only person who explains rules, disqualifications or violations to teams. Must be 16 or older, approved by the Event Partner and certified for this season.</p>
+        <p class="rule-ref"><a href="index.html#rule-T1">T1</a><a href="index.html#rule-T2">T2</a></p>
+      </article>
+      <article class="card">
+        <h3>Scorekeeper Referee</h3>
+        <p><span class="tag official">Official</span> Records scores for the Head Referee. Must be 15 or older. Scorekeepers do not explain rulings to teams.</p>
+        <p class="rule-ref"><a href="index.html#rule-T2">T2</a><a href="index.html#rule-GG14">GG14</a></p>
+      </article>
+      <article class="card">
+        <h3>Field volunteers</h3>
+        <p><span class="tag suggested">Suggested</span> Queuing teams, resetting the Field, running the timer and watching one robot each. Your Head Referee or Event Partner decides who does what, so ask before the first Match.</p>
+        <p class="rule-ref"><a href="index.html#rule-T4">T4</a></p>
+      </article>
+    </div>
+    <div class="grid3" data-stagger style="margin-top:20px">
+      <article class="card">
+        <h3>Don't see a violation? Say nothing.</h3>
+        <p><span class="tag suggested">Suggested</span> Watch, don't hunt. Rules give the benefit of the doubt for accidents and for things that are too close to call.</p>
+        <p class="rule-ref"><a href="index.html#rule-G3">G3</a><a href="index.html#rule-GG12">GG12</a></p>
+      </article>
+      <article class="card">
+        <h3>The Head Referee decides</h3>
+        <p><span class="tag official">Official</span> If you see something, tell the Head Referee. Do not rule on it, argue it, or explain it to the team yourself.</p>
+        <p class="rule-ref"><a href="index.html#rule-T1">T1</a></p>
+      </article>
+      <article class="card">
+        <h3>Not your own team</h3>
+        <p><span class="tag suggested">Suggested</span> If you coach, teach or are related to a team, ask not to referee or score its Matches. It keeps the call clean for everyone, including you.</p>
+      </article>
+    </div>
+    <p class="note" style="margin-top:20px">Certification and training are run by the event's organizer (in many regions, the REC Foundation). Ask your Event Partner which course you need, and read the Game Manual's referee notes before the event. This page is a quick guide, not a replacement for either.</p>
+  </div>
+</section>
+
+<!-- ========== GAME ========== -->
+<section id="game" class="band">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker mono" data-reveal><em>02</em> The game</p>
+      <h2 data-split>Level Up in two minutes.</h2>
+      <p class="sub" data-reveal>Two robots on one Alliance work together for 60 seconds, moving Bean Bags into Goals. Higher Goals are worth more.</p>
+    </header>
+    <div class="table-scroll" data-reveal>
+      <table class="plain wide">
+        <caption class="visually-hidden">Points per Bean Bag by Goal</caption>
+        <thead><tr><th scope="col">Goal</th><th scope="col">Points per bag</th><th scope="col">Which bags count</th><th scope="col">Rule</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Floor Goal</th><td><b>1</b></td><td>Yellow, or the Goal's own color (red or blue)</td><td><a href="index.html#rule-SC3">SC3</a></td></tr>
+          <tr><th scope="row">Pyramid L1</th><td><b>3</b></td><td>Yellow, or the Pyramid's color</td><td><a href="index.html#rule-SC4">SC4</a></td></tr>
+          <tr><th scope="row">Pyramid L2</th><td><b>6</b></td><td>Yellow, or the Pyramid's color</td><td><a href="index.html#rule-SC4">SC4</a></td></tr>
+          <tr><th scope="row">Pyramid L3</th><td><b>12</b></td><td>Yellow, or the Pyramid's color</td><td><a href="index.html#rule-SC4">SC4</a></td></tr>
+          <tr><th scope="row">L4 Goal</th><td><b>16</b></td><td><b>Yellow only</b></td><td><a href="index.html#rule-SC5">SC5</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid3" data-stagger style="margin-top:clamp(28px,4vw,48px)">
+      <article class="card">
+        <h3>One bag at a time</h3>
+        <p>A robot may Possess or Plow only <b>one</b> Bean Bag at a time. This is the rule you will watch most. Brief, incidental contact that barely moves a bag is not Plowing.</p>
+        <p class="rule-ref"><a href="index.html#rule-SG6">SG6</a></p>
+      </article>
+      <article class="card">
+        <h3>Drive Team of three</h3>
+        <p>Each team has up to three students in the Driver Station: Driver 1, Driver 2 and a Loader. No adults other than event staff, and no communication devices in use.</p>
+        <p class="rule-ref"><a href="index.html#rule-GG1">GG1</a></p>
+      </article>
+      <article class="card">
+        <h3>The hand-off</h3>
+        <p>Drivers hand over the controller between <b>0:35 and 0:25</b> remaining. No Driver may drive more than 35 seconds.</p>
+        <p class="rule-ref"><a href="index.html#rule-GG11">GG11</a></p>
+      </article>
+    </div>
+    <p class="row-btns" style="margin-top:28px"><a class="btn" href="index.html#game">Read the full game section →</a> <a class="btn ghost" href="index.html#lab">Practice in the 3D lab →</a></p>
+  </div>
+</section>
+
+<!-- ========== FLOW ========== -->
+<section id="flow">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker mono" data-reveal><em>03</em> A Match, step by step</p>
+      <h2 data-split>Same routine, every Match.</h2>
+      <p class="sub" data-reveal>A steady routine keeps the event on time and treats every team the same. Your Head Referee may change the details, so follow their lead.</p>
+    </header>
+    <ol class="brief-list">
+      <li data-reveal><span class="bn mono">01</span><h3>Check the Field.</h3><p>Before teams arrive: nothing is broken or loose, and Bean Bags and Goals are in their starting places. Field parts can vary by about ½″ between Fields, which is normal. Tell the Head Referee about anything that could change play. <span class="rule-ref"><a href="index.html#rule-T5">T5</a><a href="index.html#rule-GG4">GG4</a></span></p></li>
+      <li data-reveal><span class="bn mono">02</span><h3>Teams arrive.</h3><p>The robot must be in the Driver Station or on the Field for the team's Match, even if it is broken. A team that doesn't show scores 0, but its partner still plays and scores. Only the Drive Team (up to three students) stands in the Driver Station. <span class="rule-ref"><a href="index.html#rule-GG1">GG1</a><a href="index.html#rule-GG2">GG2</a></span></p></li>
+      <li data-reveal><span class="bn mono">03</span><h3>Set the robots.</h3><p>Each robot sits in a legal start position, touching only the Floor, the Field Perimeter and its one yellow Preload, and is fully still. Team 1 / red starts beside the blue Pyramid Goal; Team 2 / blue beside the red one. Don't hurry the team, but don't let setup drag on. <span class="rule-ref"><a href="index.html#rule-SG1">SG1</a><a href="index.html#rule-SG5">SG5</a><a href="index.html#rule-GG3">GG3</a></span></p></li>
+      <li data-reveal><span class="bn mono">04</span><h3>Start.</h3><p>Check both Drive Teams are ready, then start the timer. Nobody may drive or move a robot before the timer starts. <span class="rule-ref"><a href="index.html#rule-GG12">GG12</a></span></p></li>
+      <li data-reveal><span class="bn mono">05</span><h3>Watch.</h3><p>Keep your eyes on your robots and on the Loaders, not the score. Use the <a href="#watch">watch list</a> below. Note anything you plan to tell the Head Referee. <span class="rule-ref"><a href="index.html#rule-GG4">GG4</a><a href="index.html#rule-SG6">SG6</a><a href="index.html#rule-SG7">SG7</a></span></p></li>
+      <li data-reveal><span class="bn mono">06</span><h3>Buzzer at 0:00.</h3><p>Everything stops. A bag released before 0:00 finishes its path and counts once it comes to rest. Motion after 0:00 never scores. If it is too close to call, the team gets the benefit of the doubt. <span class="rule-ref"><a href="index.html#rule-GG12">GG12</a></span></p></li>
+      <li data-reveal><span class="bn mono">07</span><h3>Wait for everything to rest.</h3><p>Do not touch any bag or robot until everything has stopped. If you must move an object to judge another, agree with all teams and the Head Referee what the first one's status was. <span class="rule-ref"><a href="index.html#rule-SC1">SC1</a></span></p></li>
+      <li data-reveal><span class="bn mono">08</span><h3>Score it.</h3><p>The Head Referee judges the score <b>by eye</b>. No photos or video. Read it aloud, then record it. <span class="rule-ref"><a href="index.html#rule-SC2">SC2</a></span></p></li>
+      <li data-reveal><span class="bn mono">09</span><h3>Questions.</h3><p>Student Drive Team Members who stay in the Driver Station may talk to the Head Referee about a ruling. Only the Head Referee explains it, and once it is final, it is final. <span class="rule-ref"><a href="index.html#rule-GG14">GG14</a><a href="index.html#rule-T3">T3</a></span></p></li>
+      <li data-reveal><span class="bn mono">10</span><h3>Reset and thank.</h3><p>Reset the Field to the starting layout, make sure teams collect their robots, and say thank you. A smile helps more than you think.</p></li>
+    </ol>
+    <p class="row-btns" style="margin-top:20px"><a class="btn" href="timer.html">Open the Match timer →</a></p>
+  </div>
+</section>
+
+<!-- ========== WATCH LIST ========== -->
+<section id="watch" class="band">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker mono" data-reveal><em>04</em> Watch list</p>
+      <h2 data-split>What to look for.</h2>
+      <p class="sub" data-reveal>These are the situations that come up most. When you see one, <b>tell the Head Referee</b>. The Head Referee decides what it is and what happens next. The wording below is a plain-language summary, so check the linked rule if you are unsure.</p>
+    </header>
+    <div class="table-scroll" data-reveal>
+      <table class="plain wide">
+        <caption class="visually-hidden">Common situations, what the rule says and what to do</caption>
+        <thead><tr><th scope="col">You see…</th><th scope="col">The rule says</th><th scope="col">You</th><th scope="col">Rule</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">A robot holding or pushing two bags</th><td>Only one bag may be Possessed or Plowed. The robot must <b>immediately stop everything except trying to shed the extra bag</b>. A light touch that barely moves a bag isn't Plowing.</td><td>Note it and tell the Head Referee.</td><td><a href="index.html#rule-SG6">SG6</a></td></tr>
+          <tr><th scope="row">The Loader adds a bag</th><td>One at a time. Red and blue bags only in the matching-color Load Zone. The bag touches the Floor, sits fully inside the Zone, and no other bag touches that Zone. Never placed directly onto a robot, and a robot may not touch a bag a human is touching.</td><td>Watch the Loader and the Zone together.</td><td><a href="index.html#rule-SG7">SG7</a></td></tr>
+          <tr><th scope="row">A hand or foot goes into the Field</th><td>No one may touch Field Elements, robots or objects in play, or reach into the Field, except for permitted resets and loading.</td><td>Tell the Head Referee. Don't step in.</td><td><a href="index.html#rule-GG4">GG4</a></td></tr>
+          <tr><th scope="row">An adult in the Driver Station, or a coach shouting</th><td>Only the Drive Team stands in the Driver Station, and adults (other than event staff) may not. People outside may cheer but not direct. No communication devices in use.</td><td>Tell the Head Referee.</td><td><a href="index.html#rule-GG1">GG1</a></td></tr>
+          <tr><th scope="row">The controller changes hands too early, too late or never</th><td>The hand-off happens between 0:35 and 0:25 remaining. No Driver drives more than 35 seconds, and the first Driver can't touch the controls afterward.</td><td>Watch the clock at 0:35 and 0:25.</td><td><a href="index.html#rule-GG11">GG11</a></td></tr>
+          <tr><th scope="row">A robot moves before the start or after 0:00</th><td>Nothing may move before the timer starts or after it reaches 0:00. Points after the buzzer don't count; in Teamwork Matches that is a Minor Violation. Too close to call goes to the team.</td><td>Watch the timer and the buzzer together.</td><td><a href="index.html#rule-GG12">GG12</a></td></tr>
+          <tr><th scope="row">A robot is stuck, tipped over or out of the Field</th><td>With the Head Referee's permission the Drive Team puts the controller on the ground and places the robot back in a legal start position. Any bag it held is removed for good, with no new Preload.</td><td>Ask the Head Referee. Don't reset it yourself.</td><td><a href="index.html#rule-GG10">GG10</a></td></tr>
+          <tr><th scope="row">A robot grows past 11″ × 24″ mid-Match</th><td>After the start it may grow to 24″ long, but may never exceed an 11″ × 24″ footprint, including swinging arms.</td><td>Note it and tell the Head Referee.</td><td><a href="index.html#rule-SG2">SG2</a></td></tr>
+          <tr><th scope="row">A bag leaves the Field or falls inside the Pyramid frame</th><td>It is out for the rest of the Match and can't be reloaded. A bag resting on top of the Perimeter is still in play unless it touches something outside.</td><td>Note it. Don't put it back.</td><td><a href="index.html#rule-SG4">SG4</a></td></tr>
+          <tr><th scope="row">Something is damaged or a part falls off</th><td>Damage that needs repair before the next Match is usually a Minor Violation. Dropped parts are no longer part of the robot.</td><td>Tell the Head Referee. Pause the next Match if the Field needs repair.</td><td><a href="index.html#rule-GG9">GG9</a><a href="index.html#rule-GG8">GG8</a></td></tr>
+          <tr><th scope="row">Anything unsafe</th><td>Unsafe operation can get a team Disabled or Disqualified. Students must never step onto the Field.</td><td>Stay safe, tell the Head Referee at once.</td><td><a href="index.html#rule-S1">S1</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note" style="margin-top:20px">Disqualification and violation levels (Minor, Major, Score Affecting) are the Head Referee's call. In a Qualification Match a DQ zeroes that team only, and in Finals it zeroes the whole Alliance. <a href="index.html#rule-GG6">GG6</a>. Read the Game Manual glossary for the full definitions.</p>
+  </div>
+</section>
+
+<!-- ========== SCORING ========== -->
+<section id="score">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker mono" data-reveal><em>05</em> Reading the score</p>
+      <h2 data-split>Score only what has stopped.</h2>
+      <p class="sub" data-reveal>When the buzzer sounds and everything is at rest, go Goal by Goal. For each bag, ask the same short questions.</p>
+    </header>
+    <div class="grid3" data-stagger>
+      <article class="card">
+        <h3>Floor Goal · 1 point</h3>
+        <ul class="tips">
+          <li>Not touching a robot.</li>
+          <li><b>Entirely</b> inside the Goal, nothing overhanging.</li>
+          <li>Yellow, or the Goal's own color.</li>
+        </ul>
+        <p class="rule-ref"><a href="index.html#rule-SC3">SC3</a></p>
+      </article>
+      <article class="card">
+        <h3>L1 · L2 · L3 · 3 / 6 / 12</h3>
+        <ul class="tips">
+          <li>Not touching a robot.</li>
+          <li>Touches that level's flat surface, <b>or</b> is held up by a bag that does.</li>
+          <li>Not touching anything outside the Field.</li>
+          <li>Yellow, or the Pyramid's color.</li>
+          <li>A bag that qualifies on two levels scores only the <b>higher</b> one.</li>
+        </ul>
+        <p class="rule-ref"><a href="index.html#rule-SC4">SC4</a></p>
+      </article>
+      <article class="card">
+        <h3>L4 · 16 points</h3>
+        <ul class="tips">
+          <li>Not touching a robot.</li>
+          <li>On the L4 surface, or held up by a bag that is.</li>
+          <li><b>Yellow only.</b> Red and blue never score on L4.</li>
+        </ul>
+        <p class="rule-ref"><a href="index.html#rule-SC5">SC5</a></p>
+      </article>
+    </div>
+    <div class="grid3" data-stagger style="margin-top:20px">
+      <article class="card">
+        <h3>Touching a robot?</h3>
+        <p>A bag a robot is still touching does not score anywhere. If the robot can't release it without power, that is a robot rule. Note it for the Head Referee. <a href="index.html#rule-R5">R5</a></p>
+      </article>
+      <article class="card">
+        <h3>Count out loud</h3>
+        <p><span class="tag suggested">Suggested</span> Say each Goal's count as you go, such as “Red Floor: 4”, so the scorekeeper and the Drive Teams can follow and catch a miscount before it is recorded.</p>
+      </article>
+      <article class="card">
+        <h3>Practice first</h3>
+        <p><span class="tag suggested">Suggested</span> The 3D lab has a quiz mode where you call the score before the explanation appears. Ten minutes there before the event is time well spent.</p>
+        <p class="row-btns"><a class="btn" href="index.html#lab">Open the 3D lab →</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TOUGH MOMENTS ========== -->
+<section id="tough" class="band">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker mono" data-reveal><em>06</em> Tough moments</p>
+      <h2 data-split>When a team disagrees.</h2>
+      <p class="sub" data-reveal>Most disagreements are about a score or a violation. The students are often tired, nervous and excited. Slow down, stay kind and follow the process.</p>
+    </header>
+    <div class="grid3" data-stagger>
+      <article class="card">
+        <h3>Who may ask?</h3>
+        <p><span class="tag official">Official</span> Only the <b>student</b> Drive Team Members from that Match, by staying in the Driver Station. Not coaches, parents or other students. Send an adult who comes to you to the Head Referee.</p>
+        <p class="rule-ref"><a href="index.html#rule-GG14">GG14</a><a href="index.html#rule-SC2">SC2</a></p>
+      </article>
+      <article class="card">
+        <h3>Who answers?</h3>
+        <p><span class="tag official">Official</span> Only the Head Referee explains a ruling. The Head Referee's decision is final, and no photos or video are reviewed. If you are not the Head Referee, say so kindly and bring them over.</p>
+        <p class="rule-ref"><a href="index.html#rule-T1">T1</a><a href="index.html#rule-T3">T3</a></p>
+      </article>
+      <article class="card">
+        <h3>What about replays?</h3>
+        <p><span class="tag official">Official</span> Replays are rare. The Event Partner and Head Referee must agree, and usually only for a Field fault that affected the score. There are no time-outs.</p>
+        <p class="rule-ref"><a href="index.html#rule-GG5">GG5</a><a href="index.html#rule-GG7">GG7</a></p>
+      </article>
+    </div>
+    <div class="grid3" data-stagger style="margin-top:20px">
+      <article class="card">
+        <h3>Say it like this</h3>
+        <ul class="tips">
+          <li>“Thanks for waiting. The Head Referee will talk with you now.”</li>
+          <li>“Tell us what you saw.” (Listen, then stop talking.)</li>
+          <li>“I can't change the ruling, but I'll make sure the Head Referee hears you.”</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Avoid</h3>
+        <ul class="tips">
+          <li>Guessing what the rule is. Check the manual.</li>
+          <li>Hinting at how to win or how to fix a robot.</li>
+          <li>Discussing a ruling with coaches or other teams.</li>
+          <li>Raising your voice back.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>If it gets heated</h3>
+        <p>Step back, and call the Head Referee or the Event Partner. Respectful behavior is part of the Code of Conduct, and serious problems are handled case by case. Never argue it out at the Field.</p>
+        <p class="rule-ref"><a href="index.html#rule-G1">G1</a><a href="index.html#rule-T4">T4</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SKILLS ========== -->
+<section id="skills">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker mono" data-reveal><em>07</em> Robot Skills</p>
+      <h2 data-split>If you referee Skills.</h2>
+      <p class="sub" data-reveal>A Skills Match is one robot alone on a Skills Field. All the rules above still apply unless this section changes them. A violation in a Skills Match affects only that Match.</p>
+    </header>
+    <div class="table-scroll" data-reveal>
+      <table class="plain wide">
+        <caption class="visually-hidden">What is different in Robot Skills Matches</caption>
+        <thead><tr><th scope="col">Topic</th><th scope="col">What is different</th><th scope="col">Rule</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Setup</th><td>Eight Bean Bags (4 red, 4 blue) start in the red Driver Station for loading. The blue Driver Station and Load Zone aren't used. The robot starts beside the red Pyramid Goal, at the start and after any reset. The layout differs from Teamwork; check Figure RSC3-1 in the manual.</td><td><a href="index.html#rule-RSC3">RSC3</a></td></tr>
+          <tr><th scope="row">Loading</th><td>Everything loads through the red Load Zone, with the same one-at-a-time rules. Any Driver who isn't driving can load. In Driving Skills the team stays in the red Driver Station.</td><td><a href="index.html#rule-RSC4">RSC4</a></td></tr>
+          <tr><th scope="row">Autonomous start</th><td>The run starts with a button on the Brain or by manually triggering a sensor. Starting with the controller is not allowed.</td><td><a href="index.html#rule-RSC6">RSC6</a></td></tr>
+          <tr><th scope="row">Autonomous run</th><td>Once it starts, no one may use a controller or trigger a sensor, even without touching it, including the Vision Sensor. A controller at the Field stays on the Floor, untouched.</td><td><a href="index.html#rule-RSC7">RSC7</a></td></tr>
+          <tr><th scope="row">Handling the robot</th><td>In Autonomous Coding Skills the team may pick up the robot as often as it likes. Each time it goes straight back to a legal start position, with no new Preload, and any bag it held is removed.</td><td><a href="index.html#rule-RSC5">RSC5</a></td></tr>
+          <tr><th scope="row">Stop Time</th><td>A team may opt in <b>before</b> the run to end it early. Agree the signal with the scorekeeper first (for example, “Stop!” with crossed arms) and reconfirm before every run. It is only a ranking tiebreaker.</td><td><a href="index.html#rule-RSC8">RSC8</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CHECKLIST ========== -->
+<section id="checklist" class="band">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker mono" data-reveal><em>08</em> Checklist</p>
+      <h2 data-split>Your referee checklist.</h2>
+      <p class="sub" data-reveal>Tick the boxes as you go. Your ticks are saved on this device, and you can print a clean copy to keep at the Field.</p>
+    </header>
+
+    <div class="card checklist" id="refList" data-store="levelup-referee-checklist">
+      <div class="cl-head">
+        <h3>Referee checklist</h3>
+        <div class="progress" aria-hidden="true"><i class="cl-bar"></i></div>
+        <p class="note cl-count" role="status">0 of 0 checked</p>
+      </div>
+      <div class="cl-cols">
+        <fieldset>
+          <legend>Before the event</legend>
+          <label><input type="checkbox" data-id="r-role"> I know my job today and who my Head Referee is <span class="ref"><a href="index.html#rule-T1">T1</a></span></label>
+          <label><input type="checkbox" data-id="r-cert"> I have the age and certification my role needs <span class="ref"><a href="index.html#rule-T2">T2</a></span></label>
+          <label><input type="checkbox" data-id="r-man"> I read the Game Manual's Scoring and General Game rules</label>
+          <label><input type="checkbox" data-id="r-quiz"> I tried the 3D lab quiz</label>
+          <label><input type="checkbox" data-id="r-own"> I won't referee or score my own team's Matches</label>
+        </fieldset>
+        <fieldset>
+          <legend>Before each Match</legend>
+          <label><input type="checkbox" data-id="r-field"> The Field is undamaged and set to the starting layout <span class="ref"><a href="index.html#rule-GG4">GG4</a></span></label>
+          <label><input type="checkbox" data-id="r-bags"> Bean Bags and Preloads are in the right places <span class="ref"><a href="index.html#rule-SG5">SG5</a></span></label>
+          <label><input type="checkbox" data-id="r-ds"> Only students on the Drive Team are in the Driver Station <span class="ref"><a href="index.html#rule-GG1">GG1</a></span></label>
+          <label><input type="checkbox" data-id="r-start"> Robots are in legal start positions and fully still <span class="ref"><a href="index.html#rule-SG1">SG1</a></span></label>
+          <label><input type="checkbox" data-id="r-timer"> The timer is ready and both teams are ready</label>
+        </fieldset>
+        <fieldset>
+          <legend>During the Match</legend>
+          <label><input type="checkbox" data-id="r-one"> I watch for more than one bag at a time <span class="ref"><a href="index.html#rule-SG6">SG6</a></span></label>
+          <label><input type="checkbox" data-id="r-load"> I watch the Loaders and Load Zones <span class="ref"><a href="index.html#rule-SG7">SG7</a></span></label>
+          <label><input type="checkbox" data-id="r-swap"> I check the controller hand-off between 0:35 and 0:25 <span class="ref"><a href="index.html#rule-GG11">GG11</a></span></label>
+          <label><input type="checkbox" data-id="r-hands"> I watch for hands in the Field <span class="ref"><a href="index.html#rule-GG4">GG4</a></span></label>
+          <label><input type="checkbox" data-id="r-buz"> Everything stops at 0:00 <span class="ref"><a href="index.html#rule-GG12">GG12</a></span></label>
+        </fieldset>
+        <fieldset>
+          <legend>After the Match</legend>
+          <label><input type="checkbox" data-id="r-rest"> I wait until everything is at rest, and I touch nothing <span class="ref"><a href="index.html#rule-SC1">SC1</a></span></label>
+          <label><input type="checkbox" data-id="r-count"> I count Goal by Goal, out loud <span class="ref"><a href="index.html#rule-SC2">SC2</a></span></label>
+          <label><input type="checkbox" data-id="r-hr"> The Head Referee has the score, and has heard anything I noted</label>
+          <label><input type="checkbox" data-id="r-talk"> Only the Head Referee talks to students about a ruling <span class="ref"><a href="index.html#rule-GG14">GG14</a></span></label>
+          <label><input type="checkbox" data-id="r-reset"> The Field is reset, and I said thank you</label>
+        </fieldset>
+      </div>
+      <div class="row-btns">
+        <button type="button" class="btn ghost cl-reset">Clear checklist</button>
+        <button type="button" class="btn" data-print>Print this checklist</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer on-ink">
+  <div class="wrap">
+    <p class="foot-mark" aria-hidden="true">Level Up<i>.</i></p>
+    <div class="foot-top">
+      <p>Fair eyes. Kind words. Good Matches.</p>
+      <a class="btn btn-primary magnetic" href="index.html">Back to the field manual <span class="arr" aria-hidden="true">→</span></a>
+    </div>
+    <div class="foot-cols">
+      <p class="small"><b>Unofficial guide for volunteers.</b> It summarizes the rules in plain language, doesn't replace the Game Manual, your Head Referee or the official Q&amp;A, and isn't affiliated with VEX Robotics, Innovation First, Inc. or the REC Foundation. When it differs from the official text, the official text wins.</p>
+      <ul><li><b>Guide</b></li><li><a href="index.html#match">The Match</a></li><li><a href="timer.html">Match timer</a></li><li><a href="index.html#rules">Rules explorer</a></li></ul>
+      <ul><li><b>Official</b></li><li><a href="https://link.vex.com/docs/26-27/viqrc/game-manual" rel="noopener">Game Manual (PDF)</a></li><li><a href="https://events.vex.com/robot-competitions/vex-iq-competition" rel="noopener">events.vex.com</a></li></ul>
+    </div>
+  </div>
+</footer>
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="lists.js"></script>
+<script defer src="motion.js"></script>
+</body>
+</html>
