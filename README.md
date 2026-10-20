@@ -17,6 +17,7 @@ The page is a climb. Chapters are the game's own Goal levels (L1 Start · L2 Pla
 | `index.html` | The guide (single page, 12 sections, 4 chapters) |
 | `schedule.html` | Event schedule planner (generate a practice schedule or import the real one) |
 | `students.html` | Student zone: team jobs table, student and inspection checklists, robot upgrade ideas |
+| `timer.html`, `timer.js` | Match timer: full-screen 60 s clock with hand-off cues, sound/voice/vibration, 3-2-1 lead-in, Stop-early recorder, Skills mode |
 | `404.html` | "That bag doesn't score." |
 | `styles.css` | Design system: ink + paper tokens, type, components, motion, print |
 | `field3d.js` | Shared Three.js scene (Goals, pillow-shaped Bean Bags, lights, shadows) |

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Match Timer · Level Up Coach's Field Manual</title>
+<meta name="description" content="A 60-second VEX IQ Match timer with hand-off calls at 0:35 and 0:25, a final-10-seconds warning, a buzzer, and Skills Stop Time recording. Works on a phone at the field.">
+<meta name="theme-color" content="#0a0e1d">
+<meta property="og:title" content="Match Timer · Level Up">
+<meta property="og:description" content="60-second Match timer with driver hand-off calls and Skills Stop Time for VEX IQ 2026–27.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shigetasensei.github.io/viq-level-up-coach-guide/timer.html">
+<meta property="og:image" content="https://shigetasensei.github.io/viq-level-up-coach-guide/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400..700&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0e1d'/%3E%3Crect x='10' y='20' width='14' height='24' rx='5' fill='%23ff3b52' transform='rotate(-10 17 32)'/%3E%3Crect x='25' y='16' width='14' height='28' rx='5' fill='%233a74ff'/%3E%3Crect x='40' y='20' width='14' height='24' rx='5' fill='%23ffc20e' transform='rotate(10 47 32)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');try{if(sessionStorage.getItem('curtain')){document.documentElement.classList.add('entering');sessionStorage.removeItem('curtain');}}catch(e){}</script>
+</head>
+<body class="timer-page">
+<a class="skip" href="#main">Skip to content</a>
+<div class="curtain" aria-hidden="true"></div>
+<div class="progress-top" aria-hidden="true"><i></i></div>
+
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="index.html" aria-label="Level Up, back to the guide">
+    <span class="beans" aria-hidden="true"><i class="b-red"></i><i class="b-blue"></i><i class="b-yellow"></i></span>
+    <span>Level Up <small>Coach's field manual</small></span>
+  </a>
+  <p class="hdr-mid mono" aria-hidden="true"><b>L2</b> Match timer</p>
+  <div class="hdr-right">
+    <a class="hdr-link" href="timer.html" aria-current="page">Timer</a>
+    <a class="hdr-link" href="students.html">Students</a>
+    <a class="hdr-link" href="index.html#rules">Rules</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span class="ml-t">Menu</span><span class="ml" aria-hidden="true"></span></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu" aria-hidden="true">
+  <nav class="menu-grid" aria-label="Sections">
+    <div class="menu-group"><p class="mg">L0 <span>Brief</span></p><ul><li><a href="index.html#briefing">5-minute briefing</a></li></ul></div>
+    <div class="menu-group"><p class="mg">L1 <span>Start</span></p><ul><li><a href="index.html#new">New teams</a></li><li><a href="students.html">Student zone</a></li></ul></div>
+    <div class="menu-group"><p class="mg">L2 <span>Play</span></p><ul><li><a href="index.html#game">The game</a></li><li><a href="index.html#scoring">Scoring</a></li><li><a href="index.html#lab">3D lab</a></li><li><a href="index.html#match">The Match</a></li><li><a href="timer.html">Match timer</a></li></ul></div>
+    <div class="menu-group"><p class="mg">L3 <span>Master</span></p><ul><li><a href="index.html#rules">Rules explorer</a></li><li><a href="index.html#robot">Robot &amp; inspection</a></li><li><a href="index.html#notebook">Engineering notebook</a></li><li><a href="index.html#coaching">Coaching</a></li></ul></div>
+    <div class="menu-group"><p class="mg">L4 <span>Compete</span></p><ul><li><a href="index.html#events">Events &amp; rankings</a></li><li><a href="schedule.html">Schedule planner</a></li><li><a href="index.html#resources">Resources</a></li><li><a href="index.html#updates">Manual updates</a></li></ul></div>
+  </nav>
+  <div class="menu-foot mono"><span>Unofficial guide · checked against Game Manual v2.1</span><a href="https://link.vex.com/docs/26-27/viqrc/game-manual" rel="noopener">Official manual ↗</a></div>
+</div>
+
+<main id="main">
+
+<!-- ========== TIMER ========== -->
+<section class="timer-stage on-ink" id="tmStage" aria-label="Match timer">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="wrap tm-wrap">
+
+    <div class="tm-top">
+      <div class="tm-modes" role="group" aria-label="Timer mode">
+        <button type="button" data-mode="team" aria-pressed="true">Teamwork Match</button>
+        <button type="button" data-mode="drive" aria-pressed="false">Driving Skills</button>
+        <button type="button" data-mode="auto" aria-pressed="false">Autonomous Skills</button>
+      </div>
+      <button type="button" class="tm-fs" id="tmFs" aria-label="Full screen">Full screen</button>
+    </div>
+
+    <div class="tm-face" id="tmFace" data-state="idle" data-phase="ready">
+      <p class="tm-phase mono" id="tmPhase">Ready</p>
+      <button type="button" class="tm-time" id="tmTime" aria-label="1:00. Press to start">1:00</button>
+      <div class="tm-bar" id="tmBar" aria-hidden="true"><i></i><i></i><i></i><b id="tmHead"></b></div>
+      <div class="tm-ticks mono" id="tmTicks" aria-hidden="true"><span>1:00</span><span>0:35</span><span>0:25</span><span>0:00</span></div>
+      <p class="tm-call" id="tmCall" role="status" aria-live="polite">Press Start. Robots stay still until the timer starts.</p>
+    </div>
+
+    <div class="tm-ctrl">
+      <button type="button" class="btn btn-primary tm-go" id="tmGo">Start</button>
+      <button type="button" class="btn tm-reset" id="tmReset">Reset</button>
+      <button type="button" class="btn tm-stop" id="tmStopEarly" disabled>Stop early</button>
+    </div>
+
+    <div class="tm-record" id="tmRecord" role="status" aria-live="polite" hidden></div>
+
+    <fieldset class="tm-opts">
+      <legend class="visually-hidden">Timer options</legend>
+      <label class="tm-sw"><input type="checkbox" id="optSound" checked><span>Sound</span></label>
+      <label class="tm-sw"><input type="checkbox" id="optVoice"><span>Voice calls</span></label>
+      <label class="tm-sw"><input type="checkbox" id="optHaptic" checked><span>Vibrate</span></label>
+      <label class="tm-sw"><input type="checkbox" id="optLead" checked><span>3-2-1 lead-in</span></label>
+    </fieldset>
+
+    <p class="tm-keys mono" aria-label="Keyboard shortcuts">Space start / pause · R reset · S stop early · M mute · F full screen · 1 2 3 mode</p>
+  </div>
+</section>
+
+<!-- ========== CUE SHEET ========== -->
+<section id="cues">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker mono" data-reveal><em>Cheat sheet</em> What the timer calls</p>
+      <h2 data-split>Know the calls.</h2>
+      <p class="sub" data-reveal>The timer follows the Match rules, so your Drive Team can practice with the same calls they'll hear at the field. At an event, the field timer and the referee are always in charge.</p>
+    </header>
+
+    <div class="table-scroll" data-reveal>
+      <table class="plain wide cue-table">
+        <caption class="visually-hidden">Timer calls by time remaining</caption>
+        <thead><tr><th scope="col">Time left</th><th scope="col">Call</th><th scope="col">What it means</th><th scope="col">Rule</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">1:00</th><td><b>Go!</b></td><td>The Match starts. Robots stay still until now. Driver 1 has the controller.</td><td><a href="index.html#rule-SG1">SG1</a></td></tr>
+          <tr><th scope="row">0:35</th><td><b>Hand-off window opens</b></td><td>Drivers may pass the controller from now on. Driver 1 can't drive past 35 seconds.</td><td><a href="index.html#rule-GG11">GG11</a></td></tr>
+          <tr><th scope="row">0:25</th><td><b>Driver 2 now</b></td><td>The window is closed. Driver 2 must have the controller, and Driver 1 can no longer touch the controls.</td><td><a href="index.html#rule-GG11">GG11</a></td></tr>
+          <tr><th scope="row">0:10</th><td><b>Ten seconds</b></td><td>Time for last cycles. Release bags before the buzzer.</td><td><a href="index.html#rule-GG12">GG12</a></td></tr>
+          <tr><th scope="row">0:00</th><td><b>Buzzer</b></td><td>Everything stops. A bag released before 0:00 still counts once it comes to rest.</td><td><a href="index.html#rule-GG12">GG12</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid3" data-stagger style="margin-top:clamp(28px,4vw,48px)">
+      <article class="card">
+        <h3>Autonomous Skills</h3>
+        <p>There's no controller and no hand-off, so the timer only calls the last ten seconds and the buzzer. Start the run from the Brain, not the controller.</p>
+        <p class="rule-ref"><a href="index.html#rule-RSC6">RSC6</a><a href="index.html#rule-RSC7">RSC7</a></p>
+      </article>
+      <article class="card">
+        <h3>Stop early</h3>
+        <p>Pressing <b>Stop early</b> records a time. In Skills it's the <b>Skills Stop Time</b>, rounded up to the next second, used only as a tiebreaker. In a Teamwork Match it's the <b>Match Stop Time</b> for a first-place Finals tiebreaker, rounded down to an even number.</p>
+        <p class="rule-ref"><a href="index.html#rule-RSC8">RSC8</a><a href="index.html#rule-GG13">GG13</a><a href="index.html#rule-T14">T14</a></p>
+      </article>
+      <article class="card">
+        <h3>Practice tips</h3>
+        <ul class="tips">
+          <li>Pick a fixed moment, like 0:30, to pass the controller.</li>
+          <li>Prop your phone where the whole Drive Team can see it, and use <b>Full screen</b>.</li>
+          <li>Turn on <b>Voice calls</b> if nobody is looking at the screen.</li>
+        </ul>
+      </article>
+    </div>
+    <p class="note" style="margin-top:20px">Browsers only play sound after you press a button, so tap Start once to enable it. Some phones are silent when the ringer is off; the screen colors and vibration still work. The screen stays on while the timer runs, on browsers that allow it.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer on-ink">
+  <div class="wrap">
+    <p class="foot-mark" aria-hidden="true">Level Up<i>.</i></p>
+    <div class="foot-top">
+      <p>Count it down. Hand it off. Hit the buzzer.</p>
+      <a class="btn btn-primary magnetic" href="index.html">Back to the field manual <span class="arr" aria-hidden="true">→</span></a>
+    </div>
+    <div class="foot-cols">
+      <p class="small"><b>Unofficial practice timer.</b> It doesn't replace the field timer, the referees or the official rules, and it isn't affiliated with VEX Robotics, Innovation First, Inc. or the REC Foundation.</p>
+      <ul><li><b>Guide</b></li><li><a href="index.html#match">The Match</a></li><li><a href="students.html">Student zone</a></li><li><a href="schedule.html">Schedule planner</a></li></ul>
+      <ul><li><b>Official</b></li><li><a href="https://link.vex.com/docs/26-27/viqrc/game-manual" rel="noopener">Game Manual (PDF)</a></li><li><a href="https://events.vex.com/robot-competitions/vex-iq-competition" rel="noopener">events.vex.com</a></li></ul>
+    </div>
+  </div>
+</footer>
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="timer.js"></script>
+<script defer src="motion.js"></script>
+</body>
+</html>
