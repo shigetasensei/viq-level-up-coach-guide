@@ -185,6 +185,40 @@
   initChecklist($("#rookieList"), "levelup-rookie-checklist");
   initChecklist($("#nbList"), "levelup-notebook-checklist");
 
+  /* ---------- print just one checklist (light palette, blank Team/Date lines, ticks kept) ---------- */
+  function printChecklist(root) {
+    var title = ($(".cl-head h3", root) || {}).textContent || "Checklist";
+    var area = document.createElement("div");
+    area.className = "print-area"; area.setAttribute("aria-hidden", "true");
+    var h = document.createElement("h1"); h.textContent = title; area.appendChild(h);
+    var sub = document.createElement("p"); sub.className = "ps"; sub.textContent = "Level Up · The Coach's Field Manual · VEX IQ 2026–27 · unofficial guide"; area.appendChild(sub);
+    var meta = document.createElement("div"); meta.className = "meta";
+    ["Team", "Date", "Checked by"].forEach(function (t) { var s = document.createElement("span"); s.textContent = t; meta.appendChild(s); });
+    area.appendChild(meta);
+    var src = $$("input[type=checkbox]", root);
+    $$("fieldset", root).forEach(function (fs) {
+      var c = fs.cloneNode(true);
+      $$("input[type=checkbox]", c).forEach(function (cb) {
+        var o = src.filter(function (b) { return b.dataset.id === cb.dataset.id; })[0];
+        cb.removeAttribute("id");
+        if (o && o.checked) { cb.setAttribute("checked", ""); cb.checked = true; }
+      });
+      $$("a", c).forEach(function (a) { a.replaceWith(document.createTextNode(a.textContent)); });
+      area.appendChild(c);
+    });
+    var f = document.createElement("p"); f.className = "pf";
+    f.textContent = ($(".cl-count", root) || {}).textContent + " · " + location.href.split("#")[0];
+    area.appendChild(f);
+    document.body.appendChild(area); document.body.classList.add("print-one");
+    var done = function () { document.body.classList.remove("print-one"); area.remove(); window.removeEventListener("afterprint", done); };
+    window.addEventListener("afterprint", done);
+    setTimeout(function () { window.print(); }, 60);
+  }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest && e.target.closest("[data-print]");
+    if (b && b.closest(".checklist")) printChecklist(b.closest(".checklist"));
+  });
+
   /* ---------- tabs (WAI-ARIA tabs pattern) ---------- */
   $$("[data-nbtabs]").forEach(function (root) {
     var tabs = $$('[role="tab"]', root);

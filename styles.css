@@ -343,7 +343,6 @@ body.menu-open .site-header { transform: none; background: transparent; backdrop
 .scale span { color: var(--text-soft); font-size: .92rem; line-height: 1.5; display: block; }
 @media (max-width: 900px) { .scale { grid-template-columns: repeat(2, minmax(0, 1fr)); } .scale > div:nth-child(2) { border-right: 0; } .scale > div:nth-child(-n+2) { border-bottom: 1px solid var(--line); } }
 @media (max-width: 520px) { .scale { grid-template-columns: minmax(0, 1fr); } .scale > div { border-right: 0; border-bottom: 1px solid var(--line); } .scale > div:last-child { border-bottom: 0; } }
-@media print { .tabpanel[hidden] { display: block !important; } .tablist { display: none; } }
 
 /* ---------- goal cards + bag stats ---------- */
 .goal-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(14px, 1.6vw, 22px); margin-bottom: clamp(56px, 8vw, 120px); }
@@ -816,18 +815,53 @@ html.entering .curtain { transform: none; animation: curtainOut .75s var(--ease-
 @media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) { .cursor { display: none; } }
 
 /* ---------- print ---------- */
+.print-area { display: none; }
 @media print {
-  .site-header, .hud, .progress-top, .menu, .cursor, .marquee, .hero, .chapter, .hero-cta, .row-btns, .rules-tools, .skip, .grain, .page-hero, #lab { display: none !important; }
-  section { padding: 16px 0; break-inside: avoid; }
+  /* Always print on a light palette. Without this, a system in dark mode prints pale text on white paper. */
+  :root, .on-ink { color-scheme: light; --paper: #fff; --paper-2: #fff; --paper-3: #e6e6e6; --card: #fff; --text: #000; --text-soft: #333; --line: #bdbdbd; --line-strong: #666; --red-d: #a3162a; --blue-d: #1d4fd0; --good: #0b6b3d; --bad: #a3162a; --link: #000; }
+  .on-ink { background: #fff; color: #000; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  html, body { background: #fff !important; color: #000; }
+  body { font-size: 11pt; line-height: 1.45; overflow: visible; }
+  .site-header, .hud, .progress-top, .menu, .cursor, .curtain, .marquee, .hero, .chapter, .hero-cta, .row-btns, .rules-tools, .skip, .grain, .page-hero, #lab, .site-footer .btn, .tablist { display: none !important; }
+  section { padding: 14pt 0; }
   .band { background: none; }
-  body { background: #fff; color: #000; font-size: 11pt; }
-  .card, details { box-shadow: none; }
+  .card, details { box-shadow: none; background: #fff; }
   details:not([open]) > *:not(summary) { display: block; }
   a { color: inherit; text-decoration: none; }
-  .js [data-reveal] { opacity: 1 !important; transform: none !important; }
+  /* GSAP leaves un-scrolled content at opacity 0 / translated; force it visible on paper */
+  [data-reveal], [data-stagger] > *, .wi, .rung { opacity: 1 !important; transform: none !important; visibility: visible !important; }
   .setup-grid, .tl-tools { display: none !important; }
   .tl-wrap, .table-scroll { overflow: visible; }
   .tl-inner { zoom: .7; }
+  .tabpanel[hidden] { display: block !important; }
+  .foot-mark, .foot-top { display: none !important; }
+  /* Dark panels use light text. Backgrounds usually aren't printed, so turn them into outlined boxes with black text. */
+  .goal-card, .callout, .calc, .clock-face { background: #fff !important; color: #000 !important; border: 1pt solid #000; }
+  .goal-card *, .callout *, .calc *, .clock-face * { color: #000 !important; text-shadow: none !important; }
+  .goal-card::before, .callout::before, .clock-face::before { display: none !important; }
+  .rule .rid, .tag.official { background: #fff !important; color: #000 !important; border: 1pt solid #000; }
+  .g-fill { fill: #000 !important; } .g-floor { stroke: #000 !important; stroke-opacity: 1 !important; }
+  /* Drawings and bars: keep their colors even if the print dialog has "background graphics" off */
+  .env-fig, .rung, .bag-grid i, .blk, .chip, .hero-strip i, .badge, .legend i, .progress i { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  /* "Print" on a checklist prints just that checklist */
+  body.print-one > *:not(.print-area) { display: none !important; }
+  body.print-one .print-area { display: block; }
+  .print-area { font-family: var(--f-body); color: #000; }
+  .print-area h1 { font: 800 22pt/1.1 var(--f-display); letter-spacing: -.02em; text-transform: none; margin: 0 0 3pt; color: #000; }
+  .print-area .ps { font: 500 8.5pt/1.3 var(--f-mono); letter-spacing: .06em; text-transform: uppercase; color: #444; margin: 0 0 12pt; }
+  .print-area .meta { display: flex; gap: 16pt; margin: 0 0 14pt; }
+  .print-area .meta span { flex: 1; border-bottom: 1pt solid #000; padding-bottom: 2pt; font: 500 8pt/1.2 var(--f-mono); letter-spacing: .06em; text-transform: uppercase; color: #444; min-height: 20pt; }
+  .print-area fieldset { border: 0; margin: 0 0 10pt; padding: 0; break-inside: avoid; }
+  .print-area legend { font: 700 8.5pt/1.2 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; border-bottom: 1.5pt solid #000; width: 100%; padding: 0 0 3pt; margin-bottom: 2pt; color: #000; }
+  .print-area label { display: grid; grid-template-columns: 16pt 1fr; gap: 8pt; padding: 5pt 0; border-bottom: .5pt solid #bbb; font-size: 10.5pt; line-height: 1.35; break-inside: avoid; cursor: default; }
+  .print-area label span { text-decoration: none !important; }
+  .print-area input[type=checkbox] { appearance: none; -webkit-appearance: none; width: 12pt; height: 12pt; margin: 1pt 0 0; padding: 0; border: 1.5pt solid #000 !important; border-radius: 2pt; background: #fff !important; transform: none !important; position: relative; display: block; }
+  .print-area input[type=checkbox]::after { display: none; }
+  .print-area input[type=checkbox]:checked::before { content: "\2713"; position: absolute; left: 1pt; top: -3pt; font: 700 13pt/1 sans-serif; color: #000; }
+  .print-area .ref { border: .5pt solid #888; border-radius: 3pt; padding: 0 3pt; margin-left: 4pt; font: 500 7.5pt/1.4 var(--f-mono); background: #fff; color: #333; }
+  .print-area .pf { margin: 12pt 0 0; font: 500 8pt/1.4 var(--f-mono); color: #444; }
 }
 
 .hero-strip i:nth-child(1) { --n: 0; }
