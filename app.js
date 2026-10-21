@@ -206,14 +206,17 @@
   var cur = -1;
   VERSIONS.forEach(function (v, i) { if (toDate(v[2]) <= today) cur = i; });
   var tbody = $("#versionTable tbody");
+  var vHeads = $$("#versionTable thead th").map(function (h) { return h.textContent.trim(); });
+  $("#versionTable").classList.add("stackable"); $("#versionTable").parentNode.classList.add("stack-wrap");
   VERSIONS.forEach(function (v, i) {
     var tr = document.createElement("tr");
     if (i === cur) tr.className = "current";
     var status = i < cur ? ["Superseded", ""] : i === cur ? ["In effect", "now"] : ["Upcoming", "soon"];
-    [["th", "v" + v[0]], ["td", fmt(v[1])], ["td", fmt(v[2])], ["td", v[3]]].forEach(function (c) {
-      var cell = document.createElement(c[0]); if (c[0] === "th") cell.scope = "row"; cell.textContent = c[1]; tr.appendChild(cell);
+    [["th", "v" + v[0]], ["td", fmt(v[1])], ["td", fmt(v[2])], ["td", v[3]]].forEach(function (c, k) {
+      var cell = document.createElement(c[0]); if (c[0] === "th") cell.scope = "row"; else cell.setAttribute("data-label", vHeads[k]); cell.textContent = c[1]; tr.appendChild(cell);
     });
     var td = document.createElement("td"), b = document.createElement("span");
+    td.setAttribute("data-label", vHeads[4]);
     b.className = "badge " + status[1]; b.textContent = status[0]; td.appendChild(b); tr.appendChild(td);
     tbody.appendChild(tr);
   });

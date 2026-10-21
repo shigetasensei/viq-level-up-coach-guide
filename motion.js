@@ -21,7 +21,7 @@
   window.addEventListener("scroll", onHeaderScroll, { passive: true }); onHeaderScroll();
 
   /* ================= menu ================= */
-  var menu = $("#menu"), mbtn = $(".menu-btn"), inertEls = $$("main, .site-footer, .hud, .marquee");
+  var menu = $("#menu"), mbtn = $(".menu-btn"), inertEls = $$("main, .site-footer, .hud, .marquee, .tabbar");
   var lastFocus = null;
   function setMenu(open) {
     menu.classList.toggle("open", open);
@@ -298,6 +298,16 @@
     });
     window.addEventListener("pageshow", function (e) { if (e.persisted) html.classList.remove("leaving"); });
   }
+
+  /* ================= tables become cards on phones (labels come from the header row) ================= */
+  $$(".table-scroll > table.plain:not([id])").forEach(function (t) {
+    var heads = $$("thead th", t).map(function (h) { return h.textContent.trim(); });
+    if (!heads.length) return;
+    $$("tbody tr", t).forEach(function (tr) {
+      Array.prototype.forEach.call(tr.children, function (c, i) { if (c.tagName === "TD" && heads[i]) c.setAttribute("data-label", heads[i]); });
+    });
+    t.classList.add("stackable"); t.parentNode.classList.add("stack-wrap");
+  });
 
   /* ================= reveal safety net ================= */
   setTimeout(function () { if (!html.classList.contains("motion") && !reduced) html.classList.add("js-fail"); }, 3500);
