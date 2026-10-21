@@ -481,7 +481,7 @@ body.kid .checklist legend { font-size: .8rem; padding-top: 14px; }
   body { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
   .hero-foot { bottom: calc(74px + env(safe-area-inset-bottom)); }
   .hero-foot .status span:last-child { max-width: none; }
-  .hero-cta .btn:nth-child(3) { display: none; }
+  .hero-cta .btn:nth-child(n+3) { display: none; }
   .hero-content { padding-bottom: calc(150px + env(safe-area-inset-bottom)); }
   .timer-stage { padding-top: 76px; padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
   .tm-wrap { gap: 12px; }
@@ -517,6 +517,28 @@ body.kid .checklist legend { font-size: .8rem; padding-top: 14px; }
   table.versions.stackable tr.current { border-color: var(--yellow); }
 }
 @media print { .tabbar, .crumb { display: none !important; } }
+
+/* ---------- upcoming competitions (home) ---------- */
+.event-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+@media (min-width: 1000px) { .event-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.event-card { --ec: var(--blue); position: relative; display: flex; flex-direction: column; gap: 6px; padding: clamp(22px, 2.4vw, 32px); border-radius: 26px; background: var(--card); border: 1.5px solid var(--line-strong); overflow: hidden; }
+.event-card::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 8px; background: var(--ec); }
+.ev-iq { --ec: var(--yellow); } .ev-v5 { --ec: var(--blue); }
+.ev-tag { margin: 6px 0 0; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-soft); }
+.ev-date { margin: 0; line-height: .9; }
+.ev-date .ev-mon { font: 700 1.1rem/1 var(--f-mono); letter-spacing: .12em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+.ev-date .ev-day { font: 800 clamp(4rem, 7vw, 6rem)/.85 var(--f-display); letter-spacing: -.06em; }
+.event-card h3 { margin: 10px 0 0; font: 750 clamp(1.3rem, 1.8vw, 1.6rem)/1.12 var(--f-display); letter-spacing: -.03em; }
+.ev-prog { margin: 4px 0 0; font-size: 1.1rem; }
+.ev-prog b { background: var(--ec); color: #0a0e1d; padding: 2px 10px; border-radius: 8px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.ev-div { margin: 2px 0 0; color: var(--text-soft); }
+.ev-note { margin: 6px 0 0; font-size: .92rem; color: var(--text-soft); }
+.ev-links { display: grid; gap: 10px; margin-top: auto; padding-top: 18px; }
+.ev-links .btn { justify-content: center; }
+.ev-foot { margin-top: clamp(24px, 3vw, 40px); max-width: 70ch; }
+.ev-foot p { margin: 0 0 10px; }
+@media (max-width: 820px) { .ev-links .btn { min-height: 52px; } }
+@media print { .event-card { break-inside: avoid; } }
 
 /* ---------- role hub (home page) ---------- */
 .hub { padding-top: clamp(56px, 8vw, 110px); }
