@@ -20,7 +20,7 @@ The page is a climb. Chapters are the game's own Goal levels (L1 Start · L2 Pla
 | `students.html` | Student zone: team jobs table, student and inspection checklists, robot upgrade ideas |
 | `timer.html`, `timer.js` | Match timer: full-screen 60 s clock with hand-off cues, sound/voice/vibration, 3-2-1 lead-in, Stop-early recorder, Skills mode |
 | `referee.html` | Referee zone: volunteer referee guide with Match flow, watch list, scoring reading, tough moments, Skills differences and a printable checklist |
-| `host.html`, `host.js` | Host zone: guide for the school and Event Partner hosting an event, with roles, volunteer recruiting message, Tournament rules, equipment, a sample day and a dated, printable to-do list |
+| `host.html`, `host.js` | Host zone: who does what, Tournament rules, a dated to-do list with owners, "next up" and a preparation timeline, eight printable lead sheets, an event-day run sheet that shifts with the doors-open time (presets for the three Kobe events), equipment and school matters |
 | `volunteers.html`, `volunteers.js` | Volunteer zone: twelve jobs for school staff and student volunteers, official game video (click to load), Field start-layout diagram, printable role sheets, and a VEX V5 Override volunteer section (game facts, event agendas, checklist) |
 | `404.html` | "That bag doesn't score." |
 | `styles.css` | Design system: ink + paper tokens, type, components, motion, print |

@@ -68,9 +68,10 @@
       <li><a href="#volunteers"><b>2</b> Volunteers</a></li>
       <li><a href="#rules"><b>3</b> What the rules say</a></li>
       <li><a href="#todo"><b>4</b> To-do list</a></li>
-      <li><a href="#kit"><b>5</b> Equipment</a></li>
-      <li><a href="#day"><b>6</b> Sample day</a></li>
-      <li><a href="#school"><b>7</b> School matters</a></li>
+      <li><a href="#leads"><b>5</b> Lead sheets</a></li>
+      <li><a href="#kit"><b>6</b> Equipment</a></li>
+      <li><a href="#day"><b>7</b> Run sheet</a></li>
+      <li><a href="#school"><b>8</b> School matters</a></li>
     </ul>
   </div>
 </section>
@@ -123,23 +124,6 @@
       <p class="sub" data-reveal>School staff, parents and high school students can all help, and most jobs need no robotics knowledge. The <a href="volunteers.html">volunteer page</a> shows twelve jobs, a printable role sheet for each, the official game video and a Field layout diagram. Send volunteers there, and give each one the role sheet for their job.</p>
     </header>
     <p class="row-btns"><a class="btn btn-primary" href="volunteers.html">Open the volunteer page →</a> <a class="btn ghost" href="volunteers.html#rolesheets">Print role sheets →</a> <a class="btn ghost" href="referee.html">Referee zone →</a></p>
-    <div class="card vol-msg" data-reveal style="margin-top:clamp(28px,4vw,48px)">
-      <h3>Message to invite volunteers</h3>
-      <p class="note">Copy this into an email, a newsletter or a morning announcement. Change the words in [brackets].</p>
-      <textarea id="volMsg" readonly rows="9" aria-label="Volunteer invitation message">Subject: Help us host a VEX IQ robotics event at [School name]!
-
-Hello [Name],
-
-[School name] is hosting a student robotics competition on [Date] from [start time] to [end time] at [Place]. We need friendly volunteers to help the day run well. You don't need any robotics knowledge.
-
-Jobs include welcoming teams, guiding visitors, resetting the field, running the timer and more. Most shifts are about two hours, and we will give you a short briefing and a one-page role sheet.
-
-Interested? Reply to this message with the job or time you prefer by [Sign-up deadline].
-
-Thank you!
-[Your name], [Your role]</textarea>
-      <p class="row-btns"><button type="button" class="btn" id="volCopy">Copy the message</button> <span class="note" id="volCopyNote" role="status" aria-live="polite"></span></p>
-    </div>
   </div>
 </section>
 
@@ -202,6 +186,27 @@ Thank you!
       <p class="host-count" id="hostCount" role="status" aria-live="polite">Pick a date to see due dates.</p>
     </div>
 
+    <div class="host-dash" data-reveal>
+      <div class="card">
+        <h3>Your preparation timeline</h3>
+        <ol class="phase-bar" id="phaseBar" aria-label="Preparation timeline"></ol>
+      </div>
+      <div class="card host-next" id="hostNext">
+        <h3>Next up</h3>
+        <p class="note" id="nextMeta" role="status" aria-live="polite">Pick your event date to see what is due.</p>
+        <ol id="nextList"></ol>
+      </div>
+    </div>
+
+    <p class="note" style="margin:22px 0 0">Who is doing it? Choose a person to see, tick and <b>print only their items</b>.</p>
+    <div class="filters" role="group" aria-label="Show to-do items for" id="ownPick">
+      <button type="button" data-own="all" aria-pressed="true">Everyone</button>
+      <button type="button" data-own="ep" aria-pressed="false"><span class="own own-ep" aria-hidden="true">EP</span> Event Partner</button>
+      <button type="button" data-own="sc" aria-pressed="false"><span class="own own-sc" aria-hidden="true">School</span> School contact</button>
+      <button type="button" data-own="hr" aria-pressed="false"><span class="own own-hr" aria-hidden="true">HR/JA</span> Head Referee / Judge Advisor</button>
+      <button type="button" data-own="vc" aria-pressed="false"><span class="own own-vc" aria-hidden="true">Vols</span> Volunteer coordinator</button>
+    </div>
+
     <div class="card checklist" id="hostList" data-store="levelup-host-checklist">
       <div class="cl-head">
         <h3>Event host to-do list</h3>
@@ -211,70 +216,70 @@ Thank you!
       <div class="cl-cols">
         <fieldset>
           <legend>12 weeks out <span class="due" data-days="84"></span></legend>
-          <label><input type="checkbox" data-id="h-auth"> Confirm your authorization to host and get the event registered on the official VEX events site (events.vex.com)</label>
-          <label><input type="checkbox" data-id="h-school"> Get school approval: leadership, facilities booking, insurance and budget</label>
-          <label><input type="checkbox" data-id="h-date"> Pick the date and a backup date. Avoid exams, holidays and other local events</label>
-          <label><input type="checkbox" data-id="h-team"> Name the Event Partner lead and a school contact, and build a planning team of 3 to 5 people</label>
-          <label><input type="checkbox" data-id="h-size"> Decide the size: number of Teamwork Fields, number of Skills Fields and maximum number of teams</label>
-          <label><input type="checkbox" data-id="h-hr"> Line up the Head Referee (16+, certified, approved by you, and not the Event Partner or Judge Advisor) and the Judge Advisor <span class="ref"><a href="index.html#rule-T2">T2</a></span></label>
+          <label data-owner="ep"><input type="checkbox" data-id="h-auth"> <span class="own own-ep" title="Event Partner">EP</span> Confirm your authorization to host and get the event registered on the official VEX events site (events.vex.com)</label>
+          <label data-owner="sc"><input type="checkbox" data-id="h-school"> <span class="own own-sc" title="School contact">School</span> Get school approval: leadership, facilities booking, insurance and budget</label>
+          <label data-owner="ep"><input type="checkbox" data-id="h-date"> <span class="own own-ep" title="Event Partner">EP</span> Pick the date and a backup date. Avoid exams, holidays and other local events</label>
+          <label data-owner="ep"><input type="checkbox" data-id="h-team"> <span class="own own-ep" title="Event Partner">EP</span> Name the Event Partner lead and a school contact, and build a planning team of 3 to 5 people</label>
+          <label data-owner="ep"><input type="checkbox" data-id="h-size"> <span class="own own-ep" title="Event Partner">EP</span> Decide the size: number of Teamwork Fields, number of Skills Fields and maximum number of teams</label>
+          <label data-owner="ep"><input type="checkbox" data-id="h-hr"> <span class="own own-ep" title="Event Partner">EP</span> Line up the Head Referee (16+, certified, approved by you, and not the Event Partner or Judge Advisor) and the Judge Advisor <span class="ref"><a href="index.html#rule-T2">T2</a></span></label>
         </fieldset>
         <fieldset>
           <legend>8 weeks out <span class="due" data-days="56"></span></legend>
-          <label><input type="checkbox" data-id="h-venue"> Walk the venue: space for Fields, pits, queuing and a judging room; power outlets, Wi-Fi, tables, chairs, restrooms, parking</label>
-          <label><input type="checkbox" data-id="h-equip"> Order or borrow Fields, Bean Bags and timers, and check what you already have (see the equipment list below)</label>
-          <label><input type="checkbox" data-id="h-budget"> Write the budget: fees, equipment, food, awards, printing, volunteer thanks</label>
-          <label><input type="checkbox" data-id="h-reg"> Open team registration. Set a cap, a waitlist and a closing date, and invite nearby schools</label>
-          <label><input type="checkbox" data-id="h-vol"> Start recruiting volunteers with the <a href="volunteers.html">volunteer jobs</a> and the invitation message below</label>
-          <label><input type="checkbox" data-id="h-judge"> Plan judging with the Judge Advisor: where interviews happen and how notebooks are collected</label>
+          <label data-owner="sc"><input type="checkbox" data-id="h-venue"> <span class="own own-sc" title="School contact">School</span> Walk the venue: space for Fields, pits, queuing and a judging room; power outlets, Wi-Fi, tables, chairs, restrooms, parking</label>
+          <label data-owner="ep"><input type="checkbox" data-id="h-equip"> <span class="own own-ep" title="Event Partner">EP</span> Order or borrow Fields, Bean Bags and timers, and check what you already have (see the equipment list below)</label>
+          <label data-owner="ep"><input type="checkbox" data-id="h-budget"> <span class="own own-ep" title="Event Partner">EP</span> Write the budget: fees, equipment, food, awards, printing, volunteer thanks</label>
+          <label data-owner="ep"><input type="checkbox" data-id="h-reg"> <span class="own own-ep" title="Event Partner">EP</span> Open team registration. Set a cap, a waitlist and a closing date, and invite nearby schools</label>
+          <label data-owner="vc"><input type="checkbox" data-id="h-vol"> <span class="own own-vc" title="Volunteer coordinator">Vols</span> Start recruiting volunteers with the <a href="volunteers.html">volunteer jobs</a> and the sign-up forms</label>
+          <label data-owner="hr"><input type="checkbox" data-id="h-judge"> <span class="own own-hr" title="Head Referee / Judge Advisor">HR/JA</span> Plan judging with the Judge Advisor: where interviews happen and how notebooks are collected</label>
         </fieldset>
         <fieldset>
           <legend>4 weeks out <span class="due" data-days="28"></span></legend>
-          <label><input type="checkbox" data-id="h-info"> Publish the event page: agenda, map, parking, entry steps, pit rules, spectator and photo policy</label>
-          <label><input type="checkbox" data-id="h-volc"> Confirm every volunteer and role. Send the <a href="referee.html">Referee zone</a> to referees and scorekeepers</label>
-          <label><input type="checkbox" data-id="h-train"> Confirm referee and scorekeeper training is done and the Head Referee’s certification is current <span class="ref"><a href="index.html#rule-T2">T2</a></span></label>
-          <label><input type="checkbox" data-id="h-tm"> Practice in Tournament Manager with dummy teams: schedule, scoring screens, displays, Skills entry</label>
-          <label><input type="checkbox" data-id="h-safe"> Write the safety plan: first aid, exits, adult supervision for students, a lost-child procedure <span class="ref"><a href="index.html#rule-T4">T4</a></span></label>
-          <label><input type="checkbox" data-id="h-awards"> Order trophies, banners and thank-you gifts</label>
+          <label data-owner="ep"><input type="checkbox" data-id="h-info"> <span class="own own-ep" title="Event Partner">EP</span> Publish the event page: agenda, map, parking, entry steps, pit rules, spectator and photo policy</label>
+          <label data-owner="vc"><input type="checkbox" data-id="h-volc"> <span class="own own-vc" title="Volunteer coordinator">Vols</span> Confirm every volunteer and role. Send the <a href="referee.html">Referee zone</a> to referees and scorekeepers</label>
+          <label data-owner="hr"><input type="checkbox" data-id="h-train"> <span class="own own-hr" title="Head Referee / Judge Advisor">HR/JA</span> Confirm referee and scorekeeper training is done and the Head Referee’s certification is current <span class="ref"><a href="index.html#rule-T2">T2</a></span></label>
+          <label data-owner="ep"><input type="checkbox" data-id="h-tm"> <span class="own own-ep" title="Event Partner">EP</span> Practice in Tournament Manager with dummy teams: schedule, scoring screens, displays, Skills entry</label>
+          <label data-owner="sc"><input type="checkbox" data-id="h-safe"> <span class="own own-sc" title="School contact">School</span> Write the safety plan: first aid, exits, adult supervision for students, a lost-child procedure <span class="ref"><a href="index.html#rule-T4">T4</a></span></label>
+          <label data-owner="ep"><input type="checkbox" data-id="h-awards"> <span class="own own-ep" title="Event Partner">EP</span> Order trophies, banners and thank-you gifts</label>
         </fieldset>
         <fieldset>
           <legend>1 week out <span class="due" data-days="7"></span></legend>
-          <label><input type="checkbox" data-id="h-close"> Close registration and finalize the team list</label>
-          <label><input type="checkbox" data-id="h-sched"> Build the schedule in Tournament Manager. Check every team gets at least 6 Qualification Matches <span class="ref"><a href="index.html#rule-T9">T9</a></span></label>
-          <label><input type="checkbox" data-id="h-mail"> Email teams: schedule, check-in time, inspection, what to bring, and the Drive Team and adult supervision reminders <span class="ref"><a href="index.html#rule-GG1">GG1</a> · <a href="index.html#rule-S2">S2</a></span></label>
-          <label><input type="checkbox" data-id="h-brief"> Fix the volunteer arrival and briefing time, assign people to Fields and stations, and print the <a href="volunteers.html#rolesheets">role sheets</a></label>
-          <label><input type="checkbox" data-id="h-print"> Print signs, Field labels, volunteer sheets, referee checklists and paper backup score sheets</label>
-          <label><input type="checkbox" data-id="h-elec"> Test every timer, display, speaker, laptop and extension cord</label>
+          <label data-owner="ep"><input type="checkbox" data-id="h-close"> <span class="own own-ep" title="Event Partner">EP</span> Close registration and finalize the team list</label>
+          <label data-owner="ep"><input type="checkbox" data-id="h-sched"> <span class="own own-ep" title="Event Partner">EP</span> Build the schedule in Tournament Manager. Check every team gets at least 6 Qualification Matches <span class="ref"><a href="index.html#rule-T9">T9</a></span></label>
+          <label data-owner="ep"><input type="checkbox" data-id="h-mail"> <span class="own own-ep" title="Event Partner">EP</span> Email teams: schedule, check-in time, inspection, what to bring, and the Drive Team and adult supervision reminders <span class="ref"><a href="index.html#rule-GG1">GG1</a> · <a href="index.html#rule-S2">S2</a></span></label>
+          <label data-owner="vc"><input type="checkbox" data-id="h-brief"> <span class="own own-vc" title="Volunteer coordinator">Vols</span> Fix the volunteer arrival and briefing time, assign people to Fields and stations, and print the <a href="volunteers.html#rolesheets">role sheets</a></label>
+          <label data-owner="vc"><input type="checkbox" data-id="h-print"> <span class="own own-vc" title="Volunteer coordinator">Vols</span> Print signs, Field labels, volunteer sheets, referee checklists and paper backup score sheets</label>
+          <label data-owner="ep"><input type="checkbox" data-id="h-elec"> <span class="own own-ep" title="Event Partner">EP</span> Test every timer, display, speaker, laptop and extension cord</label>
         </fieldset>
         <fieldset>
           <legend>The day before <span class="due" data-days="1"></span></legend>
-          <label><input type="checkbox" data-id="h-fields"> Set up the Fields. Check they are level, assembled the same way and in good repair <span class="ref"><a href="index.html#rule-T5">T5</a> · <a href="index.html#rule-T7">T7</a></span></label>
-          <label><input type="checkbox" data-id="h-mark"> Mark Bean Bag start spots if you use pins or tape, and sew or tape any damaged bags <span class="ref"><a href="index.html#rule-T6">T6</a></span></label>
-          <label><input type="checkbox" data-id="h-pits"> Set up pit tables with team numbers, the inspection station, queuing area and judging rooms</label>
-          <label><input type="checkbox" data-id="h-kit"> Pack the event kit: tape, cable ties, spare batteries, scissors, pens, first-aid kit, extension cords</label>
-          <label><input type="checkbox" data-id="h-last"> Check the final team list, the schedule and the weather and traffic plan</label>
+          <label data-owner="ep"><input type="checkbox" data-id="h-fields"> <span class="own own-ep" title="Event Partner">EP</span> Set up the Fields. Check they are level, assembled the same way and in good repair <span class="ref"><a href="index.html#rule-T5">T5</a> · <a href="index.html#rule-T7">T7</a></span></label>
+          <label data-owner="ep"><input type="checkbox" data-id="h-mark"> <span class="own own-ep" title="Event Partner">EP</span> Mark Bean Bag start spots if you use pins or tape, and sew or tape any damaged bags <span class="ref"><a href="index.html#rule-T6">T6</a></span></label>
+          <label data-owner="sc"><input type="checkbox" data-id="h-pits"> <span class="own own-sc" title="School contact">School</span> Set up pit tables with team numbers, the inspection station, queuing area and judging rooms</label>
+          <label data-owner="vc"><input type="checkbox" data-id="h-kit"> <span class="own own-vc" title="Volunteer coordinator">Vols</span> Pack the event kit: tape, cable ties, spare batteries, scissors, pens, first-aid kit, extension cords</label>
+          <label data-owner="ep"><input type="checkbox" data-id="h-last"> <span class="own own-ep" title="Event Partner">EP</span> Check the final team list, the schedule and the weather and traffic plan</label>
         </fieldset>
         <fieldset>
           <legend>Event morning <span class="due" data-days="0"></span></legend>
-          <label><input type="checkbox" data-id="h-arrive"> Volunteers arrive early (an hour is a good guide) and get their role sheets</label>
-          <label><input type="checkbox" data-id="h-open"> Open check-in, inspection and the practice Field</label>
-          <label><input type="checkbox" data-id="h-hrm"> Meet with the Head Referee and scorekeepers to confirm how scores are called and recorded <span class="ref"><a href="index.html#rule-SC2">SC2</a></span></label>
-          <label><input type="checkbox" data-id="h-open2"> Give opening remarks: safety, conduct, the schedule and how appeals work <span class="ref"><a href="index.html#rule-GG14">GG14</a></span></label>
+          <label data-owner="vc"><input type="checkbox" data-id="h-arrive"> <span class="own own-vc" title="Volunteer coordinator">Vols</span> Volunteers arrive early (an hour is a good guide) and get their role sheets</label>
+          <label data-owner="vc"><input type="checkbox" data-id="h-open"> <span class="own own-vc" title="Volunteer coordinator">Vols</span> Open check-in, inspection and the practice Field</label>
+          <label data-owner="hr"><input type="checkbox" data-id="h-hrm"> <span class="own own-hr" title="Head Referee / Judge Advisor">HR/JA</span> Meet with the Head Referee and scorekeepers to confirm how scores are called and recorded <span class="ref"><a href="index.html#rule-SC2">SC2</a></span></label>
+          <label data-owner="ep"><input type="checkbox" data-id="h-open2"> <span class="own own-ep" title="Event Partner">EP</span> Give opening remarks: safety, conduct, the schedule and how appeals work <span class="ref"><a href="index.html#rule-GG14">GG14</a></span></label>
         </fieldset>
         <fieldset>
           <legend>During the event <span class="due" data-days="0"></span></legend>
-          <label><input type="checkbox" data-id="h-run"> Keep to the schedule. Call teams to queue a few Matches ahead</label>
-          <label><input type="checkbox" data-id="h-skills"> Run Skills on a first come, first served basis: three Driving and three Autonomous runs per team <span class="ref"><a href="index.html#rule-T15">T15</a></span></label>
-          <label><input type="checkbox" data-id="h-fin"> Run the Finals as the Event Partner set them. Alliances pair ranked teams in order <span class="ref"><a href="index.html#rule-T12">T12</a> · <a href="index.html#rule-T14">T14</a></span></label>
-          <label><input type="checkbox" data-id="h-rest"> Give volunteers breaks and lunch. Tired referees make worse calls</label>
-          <label><input type="checkbox" data-id="h-awards2"> Hold the awards ceremony and thank everyone by name</label>
+          <label data-owner="ep"><input type="checkbox" data-id="h-run"> <span class="own own-ep" title="Event Partner">EP</span> Keep to the schedule. Call teams to queue a few Matches ahead</label>
+          <label data-owner="hr"><input type="checkbox" data-id="h-skills"> <span class="own own-hr" title="Head Referee / Judge Advisor">HR/JA</span> Run Skills on a first come, first served basis: three Driving and three Autonomous runs per team <span class="ref"><a href="index.html#rule-T15">T15</a></span></label>
+          <label data-owner="hr"><input type="checkbox" data-id="h-fin"> <span class="own own-hr" title="Head Referee / Judge Advisor">HR/JA</span> Run the Finals as the Event Partner set them. Alliances pair ranked teams in order <span class="ref"><a href="index.html#rule-T12">T12</a> · <a href="index.html#rule-T14">T14</a></span></label>
+          <label data-owner="vc"><input type="checkbox" data-id="h-rest"> <span class="own own-vc" title="Volunteer coordinator">Vols</span> Give volunteers breaks and lunch. Tired referees make worse calls</label>
+          <label data-owner="ep"><input type="checkbox" data-id="h-awards2"> <span class="own own-ep" title="Event Partner">EP</span> Hold the awards ceremony and thank everyone by name</label>
         </fieldset>
         <fieldset>
           <legend>After the event <span class="due" data-days="-1"></span></legend>
-          <label><input type="checkbox" data-id="h-results"> Finish and publish the results the way VEX requires, and keep your records</label>
-          <label><input type="checkbox" data-id="h-thanks"> Send thank-you messages to volunteers, teams, families and the school</label>
-          <label><input type="checkbox" data-id="h-return"> Return borrowed equipment and pack your own away</label>
-          <label><input type="checkbox" data-id="h-debrief"> Hold a 30-minute debrief: what worked, what to change next time</label>
-          <label><input type="checkbox" data-id="h-money"> Close the budget and report any incidents or injuries</label>
+          <label data-owner="ep"><input type="checkbox" data-id="h-results"> <span class="own own-ep" title="Event Partner">EP</span> Finish and publish the results the way VEX requires, and keep your records</label>
+          <label data-owner="vc"><input type="checkbox" data-id="h-thanks"> <span class="own own-vc" title="Volunteer coordinator">Vols</span> Send thank-you messages to volunteers, teams, families and the school</label>
+          <label data-owner="sc"><input type="checkbox" data-id="h-return"> <span class="own own-sc" title="School contact">School</span> Return borrowed equipment and pack your own away</label>
+          <label data-owner="ep"><input type="checkbox" data-id="h-debrief"> <span class="own own-ep" title="Event Partner">EP</span> Hold a 30-minute debrief: what worked, what to change next time</label>
+          <label data-owner="ep"><input type="checkbox" data-id="h-money"> <span class="own own-ep" title="Event Partner">EP</span> Close the budget and report any incidents or injuries</label>
         </fieldset>
       </div>
       <div class="row-btns">
@@ -286,11 +291,272 @@ Thank you!
   </div>
 </section>
 
+<!-- ========== LEAD SHEETS ========== -->
+<section id="leads" class="band">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker mono" data-reveal><em>05</em> Lead sheets</p>
+      <h2 data-split>One page for each lead.</h2>
+      <p class="sub" data-reveal>Name one person for each of these eight jobs, and give them their sheet. Each has what to do before, during and after the event. Ticks are saved on this device only. <span class="tag suggested">Suggested</span> Small events can combine jobs, and bigger events may need more people.</p>
+    </header>
+    <div class="filters" role="group" aria-label="Choose a lead sheet" id="leadPick"><button type="button" data-lead="ep" aria-pressed="true">Event Partner (overall lead)</button><button type="button" data-lead="hr" aria-pressed="false">Head Referee and Judge Advisor</button><button type="button" data-lead="checkin" aria-pressed="false">Check-in lead</button><button type="button" data-lead="inspect" aria-pressed="false">Inspection lead</button><button type="button" data-lead="field" aria-pressed="false">Field and queue lead</button><button type="button" data-lead="tm" aria-pressed="false">Tournament Manager and scoring lead</button><button type="button" data-lead="vc" aria-pressed="false">Volunteer coordinator</button><button type="button" data-lead="safety" aria-pressed="false">Safety and first-aid lead</button></div>
+    <div class="card checklist lead-sheet" id="lead-ep" data-store="levelup-lead-ep" data-meta="Lead,Event,Phone">
+      <div class="cl-head">
+        <h3>Lead sheet: Event Partner (overall lead)</h3>
+        <div class="progress" aria-hidden="true"><i class="cl-bar"></i></div>
+        <p class="note cl-count" role="status">0 of 0 checked</p>
+      </div>
+      <p class="vol-sum"><b>Your job:</b> Keeps the whole event on track and decides everything away from the Field.</p>
+      <div class="cl-cols">
+        <fieldset>
+          <legend>Before the event</legend>
+          <label><input type="checkbox" data-id="lead-ep-b0"> Confirm authorization, registration and event page are in order (check with VEX)</label>
+          <label><input type="checkbox" data-id="lead-ep-b1"> Every lead below has a name and a phone number</label>
+          <label><input type="checkbox" data-id="lead-ep-b2"> Agenda, map and rules reminders are published to teams</label>
+        </fieldset>
+        <fieldset>
+          <legend>On the day</legend>
+          <label><input type="checkbox" data-id="lead-ep-d0"> Keep the day on schedule</label>
+          <label><input type="checkbox" data-id="lead-ep-d1"> Decide questions about venue, pits, safety and conduct away from the Field <a href="index.html#rule-T4">T4</a></label>
+          <label><input type="checkbox" data-id="lead-ep-d2"> Check in with each lead once an hour</label>
+        </fieldset>
+        <fieldset>
+          <legend>After the event</legend>
+          <label><input type="checkbox" data-id="lead-ep-a0"> Publish results the way VEX requires</label>
+          <label><input type="checkbox" data-id="lead-ep-a1"> Thank volunteers, teams and the school</label>
+          <label><input type="checkbox" data-id="lead-ep-a2"> Run a 30-minute debrief and write down what to change</label>
+        </fieldset>
+      </div>
+      <div class="row-btns">
+        <button type="button" class="btn ghost cl-reset">Clear</button>
+        <button type="button" class="btn" data-print>Print this lead sheet</button>
+      </div>
+    </div>
+    <div class="card checklist lead-sheet" id="lead-hr" data-store="levelup-lead-hr" data-meta="Lead,Event,Phone" hidden>
+      <div class="cl-head">
+        <h3>Lead sheet: Head Referee and Judge Advisor</h3>
+        <div class="progress" aria-hidden="true"><i class="cl-bar"></i></div>
+        <p class="note cl-count" role="status">0 of 0 checked</p>
+      </div>
+      <p class="vol-sum"><b>Your job:</b> Make fair calls and run the judged awards.</p>
+      <div class="cl-cols">
+        <fieldset>
+          <legend>Before the event</legend>
+          <label><input type="checkbox" data-id="lead-hr-b0"> Head Referee is 16 or older, certified and approved by the Event Partner <a href="index.html#rule-T2">T2</a></label>
+          <label><input type="checkbox" data-id="lead-hr-b1"> Referees and scorekeepers have read the Referee zone</label>
+          <label><input type="checkbox" data-id="lead-hr-b2"> Judges have the interview plan and the award list</label>
+        </fieldset>
+        <fieldset>
+          <legend>On the day</legend>
+          <label><input type="checkbox" data-id="lead-hr-d0"> Head Referee has the last word on gameplay and explains rulings to teams <a href="index.html#rule-T1">T1</a></label>
+          <label><input type="checkbox" data-id="lead-hr-d1"> Only student Drive Team members appeal, after the Match <a href="index.html#rule-GG14">GG14</a></label>
+          <label><input type="checkbox" data-id="lead-hr-d2"> Judges interview every team and record notes</label>
+        </fieldset>
+        <fieldset>
+          <legend>After the event</legend>
+          <label><input type="checkbox" data-id="lead-hr-a0"> Hand scores and notes to the Event Partner</label>
+          <label><input type="checkbox" data-id="lead-hr-a1"> Share anything to improve next time</label>
+        </fieldset>
+      </div>
+      <div class="row-btns">
+        <button type="button" class="btn ghost cl-reset">Clear</button>
+        <button type="button" class="btn" data-print>Print this lead sheet</button>
+      </div>
+    </div>
+    <div class="card checklist lead-sheet" id="lead-checkin" data-store="levelup-lead-checkin" data-meta="Lead,Event,Phone" hidden>
+      <div class="cl-head">
+        <h3>Lead sheet: Check-in lead</h3>
+        <div class="progress" aria-hidden="true"><i class="cl-bar"></i></div>
+        <p class="note cl-count" role="status">0 of 0 checked</p>
+      </div>
+      <p class="vol-sum"><b>Your job:</b> Welcome every team and volunteer.</p>
+      <div class="cl-cols">
+        <fieldset>
+          <legend>Before the event</legend>
+          <label><input type="checkbox" data-id="lead-checkin-b0"> Team list and volunteer list are printed</label>
+          <label><input type="checkbox" data-id="lead-checkin-b1"> Name tags, pit numbers and pens are ready</label>
+          <label><input type="checkbox" data-id="lead-checkin-b2"> Desk is set up where teams enter</label>
+        </fieldset>
+        <fieldset>
+          <legend>On the day</legend>
+          <label><input type="checkbox" data-id="lead-checkin-d0"> Tick each team off and give out tags and pit numbers</label>
+          <label><input type="checkbox" data-id="lead-checkin-d1"> Confirm each team has an adult supervisor <a href="index.html#rule-S2">S2</a></label>
+          <label><input type="checkbox" data-id="lead-checkin-d2"> Send teams to inspection and tell them the Drivers meeting time</label>
+        </fieldset>
+        <fieldset>
+          <legend>After the event</legend>
+          <label><input type="checkbox" data-id="lead-checkin-a0"> Hand the lists to the Event Partner</label>
+          <label><input type="checkbox" data-id="lead-checkin-a1"> Return unused tags and supplies</label>
+        </fieldset>
+      </div>
+      <div class="row-btns">
+        <button type="button" class="btn ghost cl-reset">Clear</button>
+        <button type="button" class="btn" data-print>Print this lead sheet</button>
+      </div>
+    </div>
+    <div class="card checklist lead-sheet" id="lead-inspect" data-store="levelup-lead-inspect" data-meta="Lead,Event,Phone" hidden>
+      <div class="cl-head">
+        <h3>Lead sheet: Inspection lead</h3>
+        <div class="progress" aria-hidden="true"><i class="cl-bar"></i></div>
+        <p class="note cl-count" role="status">0 of 0 checked</p>
+      </div>
+      <p class="vol-sum"><b>Your job:</b> Check every robot before it plays, kindly.</p>
+      <div class="cl-cols">
+        <fieldset>
+          <legend>Before the event</legend>
+          <label><input type="checkbox" data-id="lead-inspect-b0"> Sizing box, scale and checklists are ready <a href="index.html#rule-R3">R3</a></label>
+          <label><input type="checkbox" data-id="lead-inspect-b1"> Inspectors have practiced with the checklist</label>
+          <label><input type="checkbox" data-id="lead-inspect-b2"> A small repair area is ready for quick fixes</label>
+        </fieldset>
+        <fieldset>
+          <legend>On the day</legend>
+          <label><input type="checkbox" data-id="lead-inspect-d0"> Inspect each robot, and again after major changes <a href="index.html#rule-R2">R2</a></label>
+          <label><input type="checkbox" data-id="lead-inspect-d1"> Let the inspector, not the helper, make the decision</label>
+          <label><input type="checkbox" data-id="lead-inspect-d2"> Tell the Head Referee about any disagreement</label>
+        </fieldset>
+        <fieldset>
+          <legend>After the event</legend>
+          <label><input type="checkbox" data-id="lead-inspect-a0"> Tidy the inspection area</label>
+          <label><input type="checkbox" data-id="lead-inspect-a1"> Report common problems for the debrief</label>
+        </fieldset>
+      </div>
+      <div class="row-btns">
+        <button type="button" class="btn ghost cl-reset">Clear</button>
+        <button type="button" class="btn" data-print>Print this lead sheet</button>
+      </div>
+    </div>
+    <div class="card checklist lead-sheet" id="lead-field" data-store="levelup-lead-field" data-meta="Lead,Event,Phone" hidden>
+      <div class="cl-head">
+        <h3>Lead sheet: Field and queue lead</h3>
+        <div class="progress" aria-hidden="true"><i class="cl-bar"></i></div>
+        <p class="note cl-count" role="status">0 of 0 checked</p>
+      </div>
+      <p class="vol-sum"><b>Your job:</b> Keep Matches moving and Fields reset.</p>
+      <div class="cl-cols">
+        <fieldset>
+          <legend>Before the event</legend>
+          <label><input type="checkbox" data-id="lead-field-b0"> Fields are level, assembled the same way and in good repair <a href="index.html#rule-T5">T5</a> · <a href="index.html#rule-T7">T7</a></label>
+          <label><input type="checkbox" data-id="lead-field-b1"> Start layout picture is at each Field</label>
+          <label><input type="checkbox" data-id="lead-field-b2"> Queuers and reset crew know the routine</label>
+        </fieldset>
+        <fieldset>
+          <legend>On the day</legend>
+          <label><input type="checkbox" data-id="lead-field-d0"> Call teams to queue a few Matches ahead</label>
+          <label><input type="checkbox" data-id="lead-field-d1"> Reset each Field to the start layout between Matches</label>
+          <label><input type="checkbox" data-id="lead-field-d2"> Report damage to the Head Referee right away <a href="index.html#rule-GG9">GG9</a></label>
+        </fieldset>
+        <fieldset>
+          <legend>After the event</legend>
+          <label><input type="checkbox" data-id="lead-field-a0"> Count and box all game pieces</label>
+          <label><input type="checkbox" data-id="lead-field-a1"> Pack the Fields and note anything broken</label>
+        </fieldset>
+      </div>
+      <div class="row-btns">
+        <button type="button" class="btn ghost cl-reset">Clear</button>
+        <button type="button" class="btn" data-print>Print this lead sheet</button>
+      </div>
+    </div>
+    <div class="card checklist lead-sheet" id="lead-tm" data-store="levelup-lead-tm" data-meta="Lead,Event,Phone" hidden>
+      <div class="cl-head">
+        <h3>Lead sheet: Tournament Manager and scoring lead</h3>
+        <div class="progress" aria-hidden="true"><i class="cl-bar"></i></div>
+        <p class="note cl-count" role="status">0 of 0 checked</p>
+      </div>
+      <p class="vol-sum"><b>Your job:</b> Run the event software and the screens.</p>
+      <div class="cl-cols">
+        <fieldset>
+          <legend>Before the event</legend>
+          <label><input type="checkbox" data-id="lead-tm-b0"> Practice with dummy teams: schedule, scoring and displays</label>
+          <label><input type="checkbox" data-id="lead-tm-b1"> Teams and schedule are loaded and checked <a href="index.html#rule-T9">T9</a></label>
+          <label><input type="checkbox" data-id="lead-tm-b2"> Backup laptop and paper score sheets are ready</label>
+        </fieldset>
+        <fieldset>
+          <legend>On the day</legend>
+          <label><input type="checkbox" data-id="lead-tm-d0"> Enter each score once the Head Referee has called it <a href="index.html#rule-SC2">SC2</a></label>
+          <label><input type="checkbox" data-id="lead-tm-d1"> Keep rankings and the schedule on screen for teams</label>
+          <label><input type="checkbox" data-id="lead-tm-d2"> Call Alliance selection and Finals as the Event Partner set them <a href="index.html#rule-T12">T12</a> · <a href="index.html#rule-T14">T14</a></label>
+        </fieldset>
+        <fieldset>
+          <legend>After the event</legend>
+          <label><input type="checkbox" data-id="lead-tm-a0"> Save and back up the results</label>
+          <label><input type="checkbox" data-id="lead-tm-a1"> Publish results the way VEX requires</label>
+        </fieldset>
+      </div>
+      <div class="row-btns">
+        <button type="button" class="btn ghost cl-reset">Clear</button>
+        <button type="button" class="btn" data-print>Print this lead sheet</button>
+      </div>
+    </div>
+    <div class="card checklist lead-sheet" id="lead-vc" data-store="levelup-lead-vc" data-meta="Lead,Event,Phone" hidden>
+      <div class="cl-head">
+        <h3>Lead sheet: Volunteer coordinator</h3>
+        <div class="progress" aria-hidden="true"><i class="cl-bar"></i></div>
+        <p class="note cl-count" role="status">0 of 0 checked</p>
+      </div>
+      <p class="vol-sum"><b>Your job:</b> Make sure every helper knows their job.</p>
+      <div class="cl-cols">
+        <fieldset>
+          <legend>Before the event</legend>
+          <label><input type="checkbox" data-id="lead-vc-b0"> Volunteers confirmed for every role at the sign-up links</label>
+          <label><input type="checkbox" data-id="lead-vc-b1"> Role sheets are printed for each job</label>
+          <label><input type="checkbox" data-id="lead-vc-b2"> Briefing time and place are set</label>
+        </fieldset>
+        <fieldset>
+          <legend>On the day</legend>
+          <label><input type="checkbox" data-id="lead-vc-d0"> Brief everyone and hand out role sheets</label>
+          <label><input type="checkbox" data-id="lead-vc-d1"> Give volunteers breaks and lunch</label>
+          <label><input type="checkbox" data-id="lead-vc-d2"> Check in on student volunteers and keep them near an adult</label>
+        </fieldset>
+        <fieldset>
+          <legend>After the event</legend>
+          <label><input type="checkbox" data-id="lead-vc-a0"> Thank each volunteer by name</label>
+          <label><input type="checkbox" data-id="lead-vc-a1"> Collect feedback</label>
+        </fieldset>
+      </div>
+      <div class="row-btns">
+        <button type="button" class="btn ghost cl-reset">Clear</button>
+        <button type="button" class="btn" data-print>Print this lead sheet</button>
+      </div>
+    </div>
+    <div class="card checklist lead-sheet" id="lead-safety" data-store="levelup-lead-safety" data-meta="Lead,Event,Phone" hidden>
+      <div class="cl-head">
+        <h3>Lead sheet: Safety and first-aid lead</h3>
+        <div class="progress" aria-hidden="true"><i class="cl-bar"></i></div>
+        <p class="note cl-count" role="status">0 of 0 checked</p>
+      </div>
+      <p class="vol-sum"><b>Your job:</b> Keep everyone safe and know the plan.</p>
+      <div class="cl-cols">
+        <fieldset>
+          <legend>Before the event</legend>
+          <label><input type="checkbox" data-id="lead-safety-b0"> Emergency exits, first-aid kit and a first-aid contact are set <a href="index.html#rule-S1">S1</a></label>
+          <label><input type="checkbox" data-id="lead-safety-b1"> Visitor sign-in and the photo policy are agreed with the school</label>
+          <label><input type="checkbox" data-id="lead-safety-b2"> A lost-child plan is written</label>
+        </fieldset>
+        <fieldset>
+          <legend>On the day</legend>
+          <label><input type="checkbox" data-id="lead-safety-d0"> Walk the venue once an hour</label>
+          <label><input type="checkbox" data-id="lead-safety-d1"> Keep walkways and exits clear</label>
+          <label><input type="checkbox" data-id="lead-safety-d2"> Note any incident with time and names</label>
+        </fieldset>
+        <fieldset>
+          <legend>After the event</legend>
+          <label><input type="checkbox" data-id="lead-safety-a0"> Hand incident notes to the Event Partner</label>
+          <label><input type="checkbox" data-id="lead-safety-a1"> Restock the first-aid kit</label>
+        </fieldset>
+      </div>
+      <div class="row-btns">
+        <button type="button" class="btn ghost cl-reset">Clear</button>
+        <button type="button" class="btn" data-print>Print this lead sheet</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ========== KIT ========== -->
 <section id="kit" class="band">
   <div class="wrap">
     <header class="sec-head">
-      <p class="kicker mono" data-reveal><em>05</em> Equipment</p>
+      <p class="kicker mono" data-reveal><em>06</em> Equipment</p>
       <h2 data-split>What to have on the day.</h2>
       <p class="sub" data-reveal>The Level Up Field is 6′ × 8′ and uses 38 Bean Bags: 16 red, 16 blue and 6 yellow. Plan floor space for every Field plus room to walk around it.</p>
     </header>
@@ -332,26 +598,31 @@ Thank you!
 <section id="day">
   <div class="wrap">
     <header class="sec-head">
-      <p class="kicker mono" data-reveal><em>06</em> Sample day</p>
-      <h2 data-split>One way to run it.</h2>
-      <p class="sub" data-reveal>A guide for a one-day event with Qualification Matches, Skills, Finals and awards. <span class="tag suggested">Suggested</span> Adjust the times to your venue and the number of Fields, and build the real schedule in Tournament Manager.</p>
+      <p class="kicker mono" data-reveal><em>07</em> Event-day run sheet</p>
+      <h2 data-split>Set the doors-open time. Get the whole day.</h2>
+      <p class="sub" data-reveal>Pick an event and a doors-open time, and the run sheet shows every step with its time, so you can print it for your leads. The three event presets use the times on their event pages (<span class="tag official">Official</span>). The first lines before the doors open are <span class="tag suggested">Suggested</span>. The pages say the schedules may change, so check them again near the date.</p>
     </header>
-    <div class="table-scroll" data-reveal>
-      <table class="plain wide">
-        <caption class="visually-hidden">A sample schedule for event day</caption>
-        <thead><tr><th scope="col">Time</th><th scope="col">What happens</th><th scope="col">Who</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">7:30</th><td>Volunteers arrive, briefing, Fields checked</td><td>All volunteers</td></tr>
-          <tr><th scope="row">8:15</th><td>Doors open. Check-in, pits and inspection</td><td>Check-in, inspectors</td></tr>
-          <tr><th scope="row">9:15</th><td>Opening remarks: safety, conduct, schedule, appeals</td><td>Event Partner</td></tr>
-          <tr><th scope="row">9:30</th><td>Qualification Matches begin. Judging interviews run alongside</td><td>Referees, judges</td></tr>
-          <tr><th scope="row">12:00</th><td>Lunch. Skills Fields open while Teamwork Fields rest</td><td>Skills volunteers</td></tr>
-          <tr><th scope="row">13:00</th><td>Qualification Matches finish, then Skills continues</td><td>Referees</td></tr>
-          <tr><th scope="row">14:30</th><td>Alliances announced, then the Finals</td><td>Head Referee, emcee</td></tr>
-          <tr><th scope="row">15:30</th><td>Awards ceremony</td><td>Event Partner, Judge Advisor</td></tr>
-          <tr><th scope="row">16:15</th><td>Pack down, thank volunteers, debrief</td><td>Everyone</td></tr>
-        </tbody>
-      </table>
+
+    <div class="card runsheet" data-reveal>
+      <div class="rs-controls">
+        <div><label for="rsPreset">Event</label>
+          <select id="rsPreset">
+            <option value="iq">VEX IQ · Level Up · Canadian Academy, Nov 29</option>
+            <option value="mbis">VEX V5 · Override · MBIS, Nov 28</option>
+            <option value="ca5">VEX V5 · Override · Canadian Academy, Dec 12 (tentative)</option>
+            <option value="mine">My event (starts from the VEX IQ pattern)</option>
+          </select></div>
+        <div><label for="rsDoors">Doors open</label><input type="time" id="rsDoors" value="09:30"></div>
+        <div class="rs-btns"><button type="button" class="btn" id="rsPrint">Print the run sheet</button></div>
+      </div>
+      <p class="note" id="rsNote" role="status" aria-live="polite"></p>
+      <div class="table-scroll">
+        <table class="plain wide" id="rsTable">
+          <caption class="visually-hidden">Event-day run sheet</caption>
+          <thead><tr><th scope="col">Time</th><th scope="col">What happens</th><th scope="col">Lead (suggested)</th><th scope="col">Source</th></tr></thead>
+          <tbody id="rsBody"><tr><td colspan="4">Turn on JavaScript to build the run sheet, or use the schedule on your event page.</td></tr></tbody>
+        </table>
+      </div>
     </div>
     <p class="row-btns" style="margin-top:20px"><a class="btn" href="schedule.html">Try the schedule planner →</a> <a class="btn ghost" href="referee.html">Referee zone →</a> <a class="btn ghost" href="timer.html">Match timer →</a></p>
   </div>
@@ -361,7 +632,7 @@ Thank you!
 <section id="school" class="band">
   <div class="wrap">
     <header class="sec-head">
-      <p class="kicker mono" data-reveal><em>07</em> School matters</p>
+      <p class="kicker mono" data-reveal><em>08</em> School matters</p>
       <h2 data-split>Things only a school can plan.</h2>
       <p class="sub" data-reveal>These are <span class="tag suggested">Suggested</span> ideas. Your school's own policies come first.</p>
     </header>
