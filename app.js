@@ -15,6 +15,7 @@
     });
     totalEl.textContent = total;
   }
+  if (totalEl) {
   inputs.forEach(function (i) { i.addEventListener("input", calc); });
   $("#calcReset").addEventListener("click", function () {
     inputs.forEach(function (i) { i.value = 0; });
@@ -26,8 +27,10 @@
     $("#calcNote").textContent = "Example: 3 Floor + 4 L1 + 3 L2 + 2 L3 + 1 L4 = 13 bags. Notice L4 alone is worth as much as 16 Floor Goal bags.";
   });
   calc();
+  }
 
   /* ---------- rules explorer ---------- */
+  if ($("#ruleList")) {
   var RULES = window.RULES, CATS = window.RULE_CATS, BASE = window.RULE_BASE;
   var list = $("#ruleList"), filtersEl = $("#ruleFilters"), search = $("#ruleSearch");
   var countEl = $("#ruleCount"), emptyEl = $("#ruleEmpty");
@@ -129,18 +132,21 @@
   window.addEventListener("hashchange", openFromHash);
   openFromHash();
 
-  // make rule references like "SG6" inside cards clickable
+  }
+
+  // make rule references like "SG6" inside cards clickable (other pages link back to the rules explorer on the home page)
+  var prefix = $("#ruleList") ? "" : "index.html";
   $$(".rule-ref").forEach(function (el) {
     if (el.querySelector("a")) return;
     el.innerHTML = el.textContent.split(/\s*·\s*/).map(function (id) {
       id = id.trim();
-      return /^[A-Z]+\d+$/.test(id) ? '<a href="#rule-' + id + '">' + id + "</a>" : id;
+      return /^[A-Z]+\d+$/.test(id) ? '<a href="' + prefix + '#rule-' + id + '">' + id + "</a>" : id;
     }).join(" · ");
   });
   $$(".ref").forEach(function (el) {
     el.innerHTML = el.textContent.split(/\s*·\s*/).map(function (id) {
       id = id.trim();
-      return /^[A-Z]+\d+$/.test(id) ? '<a href="#rule-' + id + '">' + id + "</a>" : id;
+      return /^[A-Z]+\d+$/.test(id) ? '<a href="' + prefix + '#rule-' + id + '">' + id + "</a>" : id;
     }).join(" · ");
   });
   $$("summary .ref").forEach(function (el) {
@@ -180,6 +186,7 @@
   });
 
   /* ---------- version table (status computed from today's date) ---------- */
+  if ($("#versionTable")) {
   var VERSIONS = [
     ["0.1", [2026, 4, 30], [2026, 4, 30], "Initial game release"],
     ["0.2", [2026, 6, 4],  [2026, 6, 11], "Minor typographical and formatting fixes"],
@@ -216,5 +223,6 @@
     var next = VERSIONS[cur + 1];
     st.textContent = "Game Manual v" + VERSIONS[cur][0] + " in effect" +
       (next ? " · v" + next[0] + " due " + fmt(next[1]).replace(/, \d{4}$/, "") + " (effective " + fmt(next[2]).replace(/, \d{4}$/, "") + ")" : "");
+  }
   }
 })();

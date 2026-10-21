@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Coaches · Level Up Coach's Field Manual</title>
+<meta name="description" content="For VEX IQ coaches: starting a first season, robot and inspection checklists, the engineering notebook, coaching your team, and event day.">
+<meta name="theme-color" content="#0a0e1d">
+<meta property="og:title" content="Coach zone · Level Up">
+<meta property="og:description" content="Starting a season, inspection, the engineering notebook, coaching and event day for VEX IQ Level Up coaches.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shigetasensei.github.io/viq-level-up-coach-guide/coaches.html">
+<meta property="og:image" content="https://shigetasensei.github.io/viq-level-up-coach-guide/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400..700&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0e1d'/%3E%3Crect x='10' y='20' width='14' height='24' rx='5' fill='%23ff3b52' transform='rotate(-10 17 32)'/%3E%3Crect x='25' y='16' width='14' height='28' rx='5' fill='%233a74ff'/%3E%3Crect x='40' y='20' width='14' height='24' rx='5' fill='%23ffc20e' transform='rotate(10 47 32)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');try{if(sessionStorage.getItem('curtain')){document.documentElement.classList.add('entering');sessionStorage.removeItem('curtain');}}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="curtain" aria-hidden="true"></div>
+<div class="progress-top" aria-hidden="true"><i></i></div>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="curtain" aria-hidden="true"></div>
+<div class="progress-top" aria-hidden="true"><i></i></div>
+
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="index.html" aria-label="Level Up, back to the guide">
+    <span class="beans" aria-hidden="true"><i class="b-red"></i><i class="b-blue"></i><i class="b-yellow"></i></span>
+    <span>Level Up <small>Coach's field manual</small></span>
+  </a>
+  <p class="hdr-mid mono" aria-hidden="true"><b>Coaches</b> Coach zone</p>
+  <div class="hdr-right">
+    <a class="hdr-link" href="coaches.html" aria-current="page">Coaches</a>
+    <a class="hdr-link" href="students.html">Students</a>
+    <a class="hdr-link" href="volunteers.html">Volunteers</a>
+    <a class="hdr-link" href="host.html">Hosts</a>
+    <a class="hdr-link" href="index.html#rules">Rules</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span class="ml-t">Menu</span><span class="ml" aria-hidden="true"></span></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu" aria-hidden="true">
+  <nav class="menu-grid" aria-label="Sections">
+    <div class="menu-group"><p class="mg">Everyone</p><ul><li><a href="index.html#briefing">5-minute briefing</a></li><li><a href="index.html#game">The game</a></li><li><a href="index.html#scoring">Scoring</a></li><li><a href="index.html#lab">3D lab</a></li><li><a href="index.html#match">The Match</a></li><li><a href="index.html#rules">Rules explorer</a></li><li><a href="timer.html">Match timer</a></li></ul></div>
+    <div class="menu-group"><p class="mg">Coaches</p><ul><li><a href="#new">New coaches</a></li><li><a href="#robot">Robot &amp; inspection</a></li><li><a href="#notebook">Engineering notebook</a></li><li><a href="#coaching">Coaching</a></li><li><a href="#events">Events &amp; rankings</a></li><li><a href="schedule.html">Schedule planner</a></li></ul></div>
+    <div class="menu-group"><p class="mg">Team</p><ul><li><a href="students.html">Student zone</a></li><li><a href="students.html#match">In the Match</a></li></ul></div>
+    <div class="menu-group"><p class="mg">Volunteers</p><ul><li><a href="volunteers.html">Volunteer jobs</a></li><li><a href="volunteers.html#rolesheets">Role sheets</a></li><li><a href="referee.html">Referee zone</a></li></ul></div>
+    <div class="menu-group"><p class="mg">Hosts</p><ul><li><a href="host.html">Host zone</a></li><li><a href="host.html#todo">To-do list</a></li><li><a href="schedule.html">Schedule planner</a></li></ul></div>
+  </nav>
+  <div class="menu-foot mono"><span>Unofficial guide · checked against Game Manual v2.1</span><a href="https://link.vex.com/docs/26-27/viqrc/game-manual" rel="noopener">Official manual ↗</a></div>
+</div>
+
+<main id="main">
+
+<section class="page-hero on-ink" id="top">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="hero-eyebrow mono"><i></i>Coach zone <b>for coaches</b></p>
+    <h1><span class="visually-hidden">Coach zone: starting a first season, robot inspection, the engineering notebook, coaching tips and event day for VEX IQ Level Up coaches</span><span aria-hidden="true" class="pg-title"><span class="ln"><span>Coach and mentor.</span></span> <span class="ln"><span>Guide the team<i>.</i></span></span></span></h1>
+    <p class="lede">You lead a team at an official VEX IQ Competition. Here is everything a coach needs: starting a first season, getting the robot through inspection, the engineering notebook, coaching your students well, and what to expect on event day. Share the other pages with your team and your volunteers.</p>
+    <ul class="jump" aria-label="Jump to a part of this page">
+      <li><a href="#new"><b>1</b> New coaches</a></li>
+      <li><a href="#robot"><b>2</b> Robot &amp; inspection</a></li>
+      <li><a href="#notebook"><b>3</b> Engineering notebook</a></li>
+      <li><a href="#coaching"><b>4</b> Coaching</a></li>
+      <li><a href="#events"><b>5</b> Events &amp; rankings</a></li>
+    </ul>
+  </div>
+</section>
+
+<section id="new">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker mono" data-reveal><em>01</em> First season</p>
+      <h2 data-split>First season? Start here.</h2>
+      <p class="sub" data-reveal>You don't need to be an engineer or programmer. VEX's own coach guidance says the coach's main job is to create an environment where students ask questions and own their work. This section turns the season into steps you can tick off.</p>
+    </header>
+
+
+    <div class="two">
+      <div>
+        <h3 style="margin-top:0">Your season roadmap</h3>
+        <div class="road-wrap"><div class="road-fill" aria-hidden="true"></div>
+        <ol class="road">
+          <li><b>Set up the team.</b> A Team is three or more students, with at least one responsible adult (that's you). Register the team for the season on events.vex.com (new team or renewal), and complete the coach background check the VEX Library describes. Every coach needs one before the team can register for an event.</li>
+          <li><b>Get the gear.</b> A VEX IQ Competition Kit (2nd generation) for the robot, plus the Field and Game Elements for Level Up. A practice field is a big help, and <a href="index.html#resources">Resources</a> links build instructions.</li>
+          <li><b>Set expectations with families.</b> Send the Letter Home to Parents, and read the Youth Protection Policy, Student-Centered Policy and Code of Conduct before you start. Collect the participant release forms each student needs (<a href="index.html#rule-S3">S3</a>).</li>
+          <li><b>Book your first event early.</b> VEX suggests choosing by cost, travel, event type and your team's goals, and competing early and often. A first event is a learning event, not a verdict on the season.</li>
+          <li><b>Run your first sessions.</b> Team rules and goals, the game reveal, practice with Virtual Driving Skills, then building a first robot (see the plan below).</li>
+          <li><b>Start the engineering notebook on day one.</b> Students write it. Coaches may teach notebook skills but cannot write in it.</li>
+          <li><b>Pre-inspect and rehearse.</b> Run a mock Match with a timer, a driver hand-off and a loader, and walk the <a href="#robot">inspection checklist</a>.</li>
+          <li><b>Compete, then debrief.</b> Capture lessons in the notebook and decide what to improve for event two.</li>
+        </ol></div>
+      </div>
+
+      <div>
+        <div class="card checklist" id="rookieList" data-store="levelup-rookie-checklist">
+          <div class="cl-head">
+            <h3>First-season checklist</h3>
+            <div class="progress" aria-hidden="true"><i class="cl-bar"></i></div>
+            <p class="note cl-count" role="status">0 of 0 checked</p>
+          </div>
+          <fieldset>
+            <legend>Before the season</legend>
+            <label><input type="checkbox" data-id="r-team"> Three or more students recruited; a supervising adult confirmed <span class="ref">S2</span></label>
+            <label><input type="checkbox" data-id="r-reg"> Team registered for the season on events.vex.com</label>
+            <label><input type="checkbox" data-id="r-bg"> Coach background check completed</label>
+            <label><input type="checkbox" data-id="r-key"> Virtual Skills Key found and shared with the team</label>
+            <label><input type="checkbox" data-id="r-kit"> VEX IQ Competition Kit (2nd gen) and Level Up Field/Game Elements ordered</label>
+            <label><input type="checkbox" data-id="r-letter"> Letter Home sent; policies read (Youth Protection, Student-Centered, Code of Conduct)</label>
+            <label><input type="checkbox" data-id="r-forms"> Participant release form on file for every student <span class="ref">S3</span></label>
+          </fieldset>
+          <fieldset>
+            <legend>Before your first event</legend>
+            <label><input type="checkbox" data-id="r-event"> First event chosen and registered</label>
+            <label><input type="checkbox" data-id="r-rules"> Team rules and goals written by students (Session 1)</label>
+            <label><input type="checkbox" data-id="r-drive"> Every student has had a turn on Virtual Driving Skills</label>
+            <label><input type="checkbox" data-id="r-nb"> Engineering notebook started by students</label>
+            <label><input type="checkbox" data-id="r-qrg"> Quick Reference Guide read; students have read the Simplified Edition appendix</label>
+            <label><input type="checkbox" data-id="r-fw"> Brain firmware updated <span class="ref">R8</span></label>
+            <label><input type="checkbox" data-id="r-plates"> Two license plates made with the registered team number <span class="ref">R4</span></label>
+            <label><input type="checkbox" data-id="r-mock"> Mock Match run: 60 s, hand-off between 0:35 and 0:25, loader <span class="ref">GG11</span></label>
+            <label><input type="checkbox" data-id="r-insp"> Robot walked through the inspection checklist <span class="ref">R2</span></label>
+          </fieldset>
+          <fieldset>
+            <legend>Event day</legend>
+            <label><input type="checkbox" data-id="r-bring"> Robot, charged battery, controller, plates, notebook and tools packed</label>
+            <label><input type="checkbox" data-id="r-adult"> An adult stays for the whole event <span class="ref">S2</span></label>
+            <label><input type="checkbox" data-id="r-q"> Students know their match times and queue early</label>
+            <label><input type="checkbox" data-id="r-ref"> Students (not adults) will speak with the Head Referee <span class="ref">GG14</span></label>
+            <label><input type="checkbox" data-id="r-debrief"> Debrief planned for after the event</label>
+          </fieldset>
+          <div class="row-btns">
+            <button type="button" class="btn ghost cl-reset">Clear checklist</button>
+            <button type="button" class="btn" data-print>Print this checklist</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Your first sessions</h3>
+    <p class="sub tight">Sessions 1 and 2 follow VEX Education's free <b>Competition 101: Level Up</b> unit. The later weeks are suggestions from this guide's author, so adapt them to your meeting schedule.</p>
+    <div class="grid3">
+      <article class="card">
+        <h4>Session 1 · Getting started</h4>
+        <ul class="tips">
+          <li>Icebreakers and introductions; watch the game reveal together.</li>
+          <li>Practice Virtual Driving Skills so everyone gets at least one turn.</li>
+          <li>Discuss the Code of Conduct and Student-Centered Policy.</li>
+          <li>Students write 3–4 team rules in their own words and set goals: one for teamwork, one for the game, one personal goal each.</li>
+        </ul>
+        <p class="rule-ref">VEX Education · Competition 101</p>
+      </article>
+      <article class="card">
+        <h4>Session 2 · Build a first robot</h4>
+        <ul class="tips">
+          <li>Build the basic robot from the Competition Kit, then drive it on a field.</li>
+          <li>Let students find out what a Bean Bag handling mechanism needs by trying it.</li>
+          <li>Start sketches and notes in the notebook as you go.</li>
+        </ul>
+        <p class="rule-ref">VEX Education · Competition 101</p>
+      </article>
+      <article class="card">
+        <h4>Later weeks (suggested)</h4>
+        <ul class="tips">
+          <li><b>Scoring practice:</b> drive cycles and count points; try the <a href="index.html#lab">3D lab</a>.</li>
+          <li><b>Improve and iterate:</b> test, change one thing, record the result.</li>
+          <li><b>Code:</b> a simple autonomous routine for Skills.</li>
+          <li><b>Rehearse:</b> mock Matches, hand-offs and inspection.</li>
+        </ul>
+        <p class="rule-ref">Suggestion</p>
+      </article>
+    </div>
+
+    <h3>Who does what on a team</h3>
+    <p class="sub tight">The manual describes these student roles. One student can fill several, and adults may not fill any of them.</p>
+    <div class="roles">
+      <div><b>Designer</b><span>Plans the robot to be built</span></div>
+      <div><b>Builder</b><span>Builds and repairs the robot</span></div>
+      <div><b>Coder</b><span>Writes the robot's code</span></div>
+      <div><b>Notebooker</b><span>Keeps the engineering notebook</span></div>
+      <div><b>Strategist</b><span>Plans Match strategy and scouts</span></div>
+      <div><b>Driver ×2</b><span>Drive in turns during a Match <a href="index.html#rule-GG11">GG11</a></span></div>
+      <div><b>Loader</b><span>Adds Bean Bags through the Load Zone <a href="index.html#rule-SG7">SG7</a></span></div>
+    </div>
+
+    <div class="two">
+      <div>
+        <h3>The engineering notebook, simply</h3>
+        <p class="note"><a href="#notebook">Open the full notebook guide →</a></p>
+        <ul class="tips">
+          <li><b>Students write it.</b> Coaches and mentors can help students build notebook skills but cannot write in it. Paper or digital both work.</li>
+          <li><b>Three one-page summaries</b> go with it for judging: a Season Summary, a Code Summary and a Credit Summary.</li>
+          <li><b>Start with the student-friendly rubric.</b> VEX suggests beginning with the “Is our notebook easy to use?” section.</li>
+          <li><b>Tip:</b> five minutes at the end of each meeting to record what was tried, what happened and what's next beats a big catch-up before the event.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>What a first event looks like</h3>
+        <ol class="tips">
+          <li><b>Check-in and inspection.</b> The robot must pass before any Match (<a href="index.html#rule-R2">R2</a>).</li>
+          <li><b>Qualification Matches.</b> You'll play at least six, with a randomly assigned partner each time (<a href="index.html#rule-T9">T9</a>).</li>
+          <li><b>Robot Skills.</b> Three Driving and three Autonomous Coding runs, first come first served (<a href="index.html#rule-T15">T15</a>).</li>
+          <li><b>Finals and awards.</b> The top-ranked teams pair up for Finals Matches (<a href="index.html#rule-T14">T14</a>), then awards.</li>
+          <li><b>Plan the day</b> with the <a href="schedule.html">schedule planner</a>.</li>
+        </ol>
+      </div>
+    </div>
+
+    <h3>Questions rookie coaches ask</h3>
+    <div class="faq">
+      <details><summary>Do the same students have to drive every Match?</summary>
+        <p>No. You can put different students in the Driver 1, Driver 2 and Loader roles from Match to Match, and the manual's glossary says there is no requirement that the same students serve as Drivers in multiple Matches. The rules are: all Drive Team Members must be students on your own team, a Driver who isn't driving at that moment may also act as the Loader, and within a Match the two Drivers must hand over the controller between 0:35 and 0:25 remaining (<a href="index.html#rule-GG1">GG1</a>, <a href="index.html#rule-GG11">GG11</a>). Many teams rotate roles so every student gets field time and drivers don't get tired, but a consistent pair can also build chemistry. Both are legal, so decide as a team and let students choose.</p></details>
+      <details><summary>Do I have to read the whole manual?</summary>
+        <p>The manual is long, and VEX's guidance is to treat it as a reference. Start with the Quick Reference Guide at the front, give students the Simplified Edition appendix, then use this site's <a href="index.html#rules">rules explorer</a> to look things up as questions come up. Everyone who drives should know the one-bag limit, the hand-off, and the Load Zone rules.</p></details>
+      <details><summary>What if our robot isn't finished by the event?</summary>
+        <p>Bring it anyway. A robot must be in the Driver Station or on the Field for its Match even if it doesn't work, otherwise it's a no-show. A team with a non-working robot still gets its partner's Alliance score as long as it's present (<a href="index.html#rule-GG2">GG2</a>). Inspection still applies, so keep it legal.</p></details>
+      <details><summary>Can I help fix the robot or fix the code?</summary>
+        <p>No. Adults can teach and ask questions but may not do the building, programming, notebook or strategy. Doing so can become a violation as soon as that robot scores (<a href="index.html#rule-G2">G2</a>). The <a href="#coaching">coaching section</a> has a quick do/don't list.</p></details>
+      <details><summary>Our team has only three students. Is that enough?</summary>
+        <p>Yes. A Team is three or more students. In a Match each team uses two Drivers and one Loader, so with three students everyone is on the Drive Team. The Driver who isn't driving at that moment may also act as the Loader (<a href="index.html#rule-GG11">GG11</a>).</p></details>
+      <details><summary>What if we disagree with a call?</summary>
+        <p>Only the Drive Team Members from that Match may raise it with the Head Referee, right after the Match, from the Driver Station. The Head Referee's decision is final (<a href="index.html#rule-GG14">GG14</a>). Practice the polite version at home.</p></details>
+      <details><summary>Does a rookie team need to win to be successful?</summary>
+        <p>No. Rankings are only one part of VEX IQ. Student ownership, teamwork, a well-kept notebook and improvement across events all matter. Ask students at the end of event one: what worked, what broke, and what will we change?</p></details>
+    </div>
+
+    <h3>Free starter resources</h3>
+    <div class="links">
+      <a class="link-card" href="https://education.vex.com/stemlabs/iq/competition-101-vex-iq-level-up" rel="noopener"><b>Competition 101: Level Up</b><span>VEX Education's step-by-step unit from first meeting to first competition</span></a>
+      <a class="link-card" href="https://education.vex.com/stemlabs/iq/competition-101-vex-iq-level-up/getting-started-with-your-team/session-1-getting-started-with-your-team" rel="noopener"><b>Session 1: Getting started</b><span>Coach checklist, materials and team-building plan</span></a>
+      <a class="link-card" href="https://library.globalrobotics.org/hc/en-us/articles/50387261497236-Registering-a-New-Team" rel="noopener"><b>Registering a new team</b><span>VEX Library walkthrough on events.vex.com</span></a>
+      <a class="link-card" href="https://library.globalrobotics.org/hc/en-us/articles/50468452533780-Registering-for-an-Event" rel="noopener"><b>Registering for an event</b><span>Plus <a href="https://library.globalrobotics.org/hc/en-us/articles/50403623370260-Preparing-to-Register-for-an-Event" rel="noopener">preparing to register</a></span></a>
+      <a class="link-card" href="https://hoc.vexrobotics.com/drivingskills/iq/" rel="noopener"><b>Virtual Driving Skills</b><span>Practice Level Up driving in the browser</span></a>
+      <a class="link-card" href="https://link.vex.com/docs/global/engineering-notebook-rubric-student-friendly" rel="noopener"><b>Student-friendly notebook rubric</b><span>A simple place to start for engineering notebooks</span></a>
+      <a class="link-card" href="https://library.globalrobotics.org/hc/en-us/articles/51372675292820-Student-Centered-Policy" rel="noopener"><b>Student-Centered Policy</b><span>What adults may and may not do</span></a>
+      <a class="link-card" href="https://kb.vex.com/hc/en-us/articles/39658377358484-Cultivating-a-Positive-Team-Culture" rel="noopener"><b>Cultivating a positive team culture</b><span>VEX Library coaching article</span></a>
+    </div>
+    <p class="note">VEX pages sometimes change address between seasons, so if a link has moved, search the title on education.vex.com or library.globalrobotics.org.</p>
+  
+  </div>
+</section>
+
+<section id="robot" class="band">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker mono" data-reveal><em>02</em> Robot &amp; inspection</p>
+      <h2 data-split>Build it legal. Inspect it early.</h2>
+      <p class="sub" data-reveal>A robot must pass inspection before any Match, and again after significant changes. Use this as a pre-inspection checklist. Your progress is saved in this browser only.</p>
+    </header>
+    <div class="envelope" style="margin-bottom:clamp(48px,7vw,104px)">
+      <figure class="env-fig" data-reveal="scale">
+        <div class="env-toggle"><button type="button" id="envToggle" aria-pressed="false">Match start · 20″</button></div>
+        <svg viewBox="0 0 420 360" role="img" aria-labelledby="envT envD">
+          <title id="envT">Robot size envelope, top view</title>
+          <desc id="envD">A top-down diagram: the robot starts inside an 11 inch by 20 inch footprint and may grow lengthwise to 24 inches during the Match, but never wider than 11 inches.</desc>
+          <rect x="155" y="50" width="110" height="240" rx="6" fill="none" stroke="#ffc20e" stroke-width="2" stroke-dasharray="7 6"/>
+          <rect id="envRect" x="155" y="90" width="110" height="200" rx="6" fill="#3a74ff" fill-opacity=".32" stroke="#9bbcff" stroke-width="2.5"/>
+          <g stroke="#f1eee3" stroke-opacity=".6" stroke-width="1.5" fill="none"><path d="M155 312h110M155 306v12M265 306v12"/><path d="M96 50v240M90 50h12M90 290h12"/></g>
+          <g fill="#f1eee3" font-family="DM Mono, ui-monospace, monospace" font-size="15" text-anchor="middle"><text x="210" y="338">11″ wide, always</text><text x="62" y="176" transform="rotate(-90 62 176)" id="envLenTxt">length <tspan id="envLen" fill="#ffc20e" font-weight="500">20″</tspan> → max 24″</text></g>
+          <text x="210" y="34" text-anchor="middle" fill="#ffc20e" font-family="DM Mono, ui-monospace, monospace" font-size="13" letter-spacing=".08em">11″ × 24″ MAX FOOTPRINT</text>
+        </svg>
+        <figcaption>Top view. Height starts at 15″ and is unlimited once the Match begins (SG3).</figcaption>
+      </figure>
+      <div data-reveal>
+        <h3 style="margin-top:0">Two limits, one robot.</h3>
+        <p class="sub tight">The start size is checked at inspection and again at every Match start. After the buzzer begins, the robot may stretch lengthwise, but the 11″ × 24″ footprint is a hard line. Swing-out from a lift counts.</p>
+        <dl class="env-spec">
+          <div><dt>Start size</dt><dd>11″ × 20″ × 15″<small>279.4 × 508 × 381 mm</small></dd></div>
+          <div><dt>In-Match footprint</dt><dd>11″ × 24″<small>height unlimited</small></dd></div>
+          <div><dt>Motors</dt><dd data-count="6">6<small>including any not plugged in</small></dd></div>
+          <div><dt>License plates</dt><dd>2<small>3.5″ × 1.5″, opposing sides</small></dd></div>
+        </dl>
+        <p class="rule-ref"><a href="index.html#rule-R3">R3</a><a href="index.html#rule-SG2">SG2</a><a href="index.html#rule-SG3">SG3</a><a href="index.html#rule-R4">R4</a><a href="index.html#rule-R9">R9</a></p>
+      </div>
+    </div>
+
+
+    <div class="two">
+      <div class="card checklist" id="checklist" data-store="levelup-checklist">
+        <div class="cl-head">
+          <h3>Pre-inspection checklist</h3>
+          <div class="progress" aria-hidden="true"><i class="cl-bar"></i></div>
+          <p class="note cl-count" role="status">0 of 0 checked</p>
+        </div>
+        <fieldset>
+          <legend>Size &amp; identity</legend>
+          <label><input type="checkbox" data-id="size"> Fits 11″ × 20″ × 15″ at the start, in every configuration to be used <span class="ref">R3</span></label>
+          <label><input type="checkbox" data-id="expand"> Never exceeds an 11″ × 24″ footprint during the Match, including lift swing <span class="ref">SG2</span></label>
+          <label><input type="checkbox" data-id="plates"> Exactly two license plates (3.5″ × 1.5″), opposing sides, always visible <span class="ref">R4</span></label>
+          <label><input type="checkbox" data-id="onerobot"> This is the team's only robot; no spare assembled robot at the event <span class="ref">R1</span></label>
+        </fieldset>
+        <fieldset>
+          <legend>Electronics</legend>
+          <label><input type="checkbox" data-id="brain"> One VEX IQ Brain only; no other processors, even as decoration <span class="ref">R6</span></label>
+          <label><input type="checkbox" data-id="fw"> Firmware current: VEXos 2.2.1+ (Gen 1) or 1.0.8+ (Gen 2) <span class="ref">R8</span></label>
+          <label><input type="checkbox" data-id="motors"> Six or fewer Smart Motors, counting any not plugged in <span class="ref">R9</span></label>
+          <label><input type="checkbox" data-id="battery"> One VEX IQ battery (or AA holder); no spares attached <span class="ref">R10</span></label>
+          <label><input type="checkbox" data-id="controller"> One unmodified controller (button/stick attachments OK) <span class="ref">R11</span></label>
+        </fieldset>
+        <fieldset>
+          <legend>Parts &amp; construction</legend>
+          <label><input type="checkbox" data-id="parts"> Only official VEX IQ parts, plus the extras R14 allows <span class="ref">R12 · R14</span></label>
+          <label><input type="checkbox" data-id="no3d"> No 3-D-printed parts anywhere, including decorations and plate holders <span class="ref">R13</span></label>
+          <label><input type="checkbox" data-id="mods"> No modified parts, except cut shafts/tubing and bent flexible items <span class="ref">R17</span></label>
+          <label><input type="checkbox" data-id="bands"> Any non-VEX rubber bands are ≤ 7.5″ long and ≤ 0.25″ wide <span class="ref">R14</span></label>
+          <label><input type="checkbox" data-id="pneu"> If using pneumatics: ≤ 2 Air Tanks, ≤ 1 Pump, kit parts only <span class="ref">R16</span></label>
+          <label><input type="checkbox" data-id="decor"> Decorations are non-functional and backed by legal materials <span class="ref">R15</span></label>
+          <label><input type="checkbox" data-id="safe"> Nothing that can damage the Field, bags or other robots <span class="ref">R13 · S1</span></label>
+        </fieldset>
+        <fieldset>
+          <legend>Gameplay readiness</legend>
+          <label><input type="checkbox" data-id="release"> Bean Bags release easily with the robot powered off <span class="ref">R5</span></label>
+          <label><input type="checkbox" data-id="onebag"> Mechanisms can't hold or push more than one bag at a time <span class="ref">SG6</span></label>
+          <label><input type="checkbox" data-id="preload"> Robot starts with one yellow Preload touching only the robot <span class="ref">SG5</span></label>
+          <label><input type="checkbox" data-id="student"> Students designed, built and programmed the robot <span class="ref">G2</span></label>
+        </fieldset>
+        <div class="row-btns">
+          <button type="button" class="btn ghost cl-reset">Clear checklist</button>
+          <button type="button" class="btn" data-print>Print this checklist</button>
+        </div>
+      </div>
+
+      <div>
+        <h3>Quick limits</h3>
+        <table class="plain">
+          <tbody>
+            <tr><th scope="row">Start size</th><td>11″ W × 20″ L × 15″ H (279.4 × 508 × 381 mm)</td></tr>
+            <tr><th scope="row">In-Match footprint</th><td>Never more than 11″ × 24″; height unlimited</td></tr>
+            <tr><th scope="row">Motors</th><td>6 max</td></tr>
+            <tr><th scope="row">Brain / battery / controller</th><td>1 / 1 / 1</td></tr>
+            <tr><th scope="row">Air tanks / pumps</th><td>2 / 1</td></tr>
+            <tr><th scope="row">License plate</th><td>3.5″ × 1.5″, two per robot</td></tr>
+            <tr><th scope="row">Rubber bands (non-VEX)</th><td>≤ 7.5″ × 0.25″</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Common inspection stumbling blocks</h3>
+        <ul class="tips">
+          <li><b>Uninspected configurations.</b> If the robot can fold, swap attachments or start in several poses, show the inspector <em>each one</em>. You can't be inspected in one and start in another.</li>
+          <li><b>“Hidden” extras.</b> Extra motors, batteries or Brains count even if unplugged or unused.</li>
+          <li><b>3-D printing.</b> Banned for everything, including license plates, holders and decorations.</li>
+          <li><b>Decorations that do a job.</b> If removing the decoration would change how the robot performs, inspectors may treat it as functional.</li>
+          <li><b>Firmware.</b> The minimum can change mid-season; you get a 14-day grace period.</li>
+          <li><b>Parts lists.</b> Use the official Legal and Illegal Parts documents (see <a href="index.html#resources">Resources</a>); they update independently of the manual.</li>
+        </ul>
+      </div>
+    </div>
+  
+  </div>
+</section>
+
+<section id="notebook">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker mono" data-reveal><em>03</em> Engineering notebook</p>
+      <h2 data-split>Write it down. Show your work.</h2>
+      <p class="sub" data-reveal>Judges read the notebook for one thing: evidence that students defined a problem, tried things, learned from what happened and improved. This guide covers how to write it, what to check before an event, and what the rules say. Facts marked <span class="tag official">Official</span> come from VEX's judging guidance; ideas marked <span class="tag suggested">Suggested</span> are this guide's author's.</p>
+    </header>
+
+    <div class="nb-tabs" data-nbtabs>
+      <div class="tablist" role="tablist" aria-label="Engineering notebook guide">
+        <button type="button" role="tab" id="nbt-write" aria-controls="nbp-write" aria-selected="true">Write it</button>
+        <button type="button" role="tab" id="nbt-check" aria-controls="nbp-check" aria-selected="false" tabindex="-1">Check it</button>
+        <button type="button" role="tab" id="nbt-sum" aria-controls="nbp-sum" aria-selected="false" tabindex="-1">Three summaries</button>
+        <button type="button" role="tab" id="nbt-honest" aria-controls="nbp-honest" aria-selected="false" tabindex="-1">Honesty rules</button>
+        <button type="button" role="tab" id="nbt-score" aria-controls="nbp-score" aria-selected="false" tabindex="-1">How it's judged</button>
+      </div>
+
+      <!-- WRITE -->
+      <div class="tabpanel" role="tabpanel" id="nbp-write" aria-labelledby="nbt-write" tabindex="0">
+        <div class="two">
+          <figure class="nb-page" aria-label="Example layout for one notebook entry">
+            <div class="nb-head"><span>Entry 14</span><span>Oct 21 · written by two students</span></div>
+            <div class="nb-row"><b>Problem</b><span>The robot drops the bag when it turns fast.</span></div>
+            <div class="nb-row"><b>Ideas</b><span>1) wider claw  2) rubber bands on the claw  3) turn slower</span></div>
+            <div class="nb-row"><b>Chose</b><span>Idea 2, because it keeps us inside the 11″ width limit.</span></div>
+            <div class="nb-row"><b>Chose against</b><span>Idea 1: a wider claw can't pass inspection. Idea 3: costs too much time per cycle.</span></div>
+            <div class="nb-row"><b>Test</b><span>10 fast turns each. Before: 4 drops. After: 1 drop.</span></div>
+            <div class="nb-row"><b>Next</b><span>Try thicker bands, then re-test and compare.</span></div>
+            <div class="nb-row"><b>Sources</b><span>Rubber-band idea from another team's video (credited here).</span></div>
+            <figcaption>An invented example to show the shape of a good entry. Use whatever layout works for your team.</figcaption>
+          </figure>
+
+          <div>
+            <h3 style="margin-top:0">Habits that make a notebook strong</h3>
+            <ul class="tips nb-habits">
+              <li><span class="tag official">Official</span> <b>Show the process, not magic words.</b> Judges look for define, develop solutions and optimize, not for those exact words.</li>
+              <li><span class="tag official">Official</span> <b>Cite a measurement.</b> “We tested it” earns less than “4 drops before, 1 after.”</li>
+              <li><span class="tag official">Official</span> <b>Say what you chose against,</b> not only what you chose.</li>
+              <li><span class="tag official">Official</span> <b>Write tests down.</b> A team can work all season and still score at the bottom on testing if the tests aren't recorded.</li>
+              <li><span class="tag official">Official</span> <b>Let it look like real work.</b> Messy is fine. A spotless notebook with no sign of work in progress scores lower on “Record spans the season.”</li>
+              <li><span class="tag official">Official</span> <b>Credit outside ideas where they appear,</b> in the notebook and in the code.</li>
+              <li><span class="tag suggested">Suggested</span> <b>Five minutes at the end of every meeting:</b> what we tried, what happened, what's next.</li>
+              <li><span class="tag suggested">Suggested</span> <b>Number and date every page.</b> It makes the Season Summary easy to write.</li>
+              <li><span class="tag suggested">Suggested</span> <b>Label sketches and photos,</b> and keep failed ideas in plain view. They're evidence.</li>
+              <li><span class="tag suggested">Suggested</span> <b>Rotate who writes</b> so every student has entries and can explain them.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHECK -->
+      <div class="tabpanel" role="tabpanel" id="nbp-check" aria-labelledby="nbt-check" tabindex="0" hidden>
+        <div class="two">
+          <div class="card checklist" id="nbList" data-store="levelup-notebook-checklist">
+            <div class="cl-head">
+              <h3>Notebook self-check</h3>
+              <div class="progress" aria-hidden="true"><i class="cl-bar"></i></div>
+              <p class="note cl-count" role="status">0 of 0 checked</p>
+            </div>
+            <fieldset>
+              <legend>Process</legend>
+              <label><input type="checkbox" data-id="n-prob"> We can point to a problem we defined (what the Match or the robot needs)</label>
+              <label><input type="checkbox" data-id="n-ideas"> Entries show several ideas, not just the one we built</label>
+              <label><input type="checkbox" data-id="n-against"> Entries say what we chose against, and why</label>
+              <label><input type="checkbox" data-id="n-opt"> We show what we changed after a test or a failure</label>
+            </fieldset>
+            <fieldset>
+              <legend>Evidence</legend>
+              <label><input type="checkbox" data-id="n-tests"> Tests are written down, with numbers, not only “it worked”</label>
+              <label><input type="checkbox" data-id="n-span"> Entries are dated and spread across the whole season</label>
+              <label><input type="checkbox" data-id="n-fail"> Messy attempts and failed ideas are included</label>
+            </fieldset>
+            <fieldset>
+              <legend>Credit &amp; honesty</legend>
+              <label><input type="checkbox" data-id="n-wrote"> Students wrote every entry <span class="ref">G2</span></label>
+              <label><input type="checkbox" data-id="n-credit"> Outside ideas, designs, code and AI-tool ideas are credited where they appear</label>
+              <label><input type="checkbox" data-id="n-start"> Official starting points (Hero Bot, VEXcode template) are credited as starting points</label>
+              <label><input type="checkbox" data-id="n-own"> Nothing in it was bought, traded for or handed over as finished work</label>
+            </fieldset>
+            <fieldset>
+              <legend>Easy to use</legend>
+              <label><input type="checkbox" data-id="n-find"> A reader can find things quickly (page numbers, contents, tabs)</label>
+              <label><input type="checkbox" data-id="n-label"> Sketches and photos are labeled</label>
+              <label><input type="checkbox" data-id="n-format"> The format (paper or digital) matches what the event listing says</label>
+            </fieldset>
+            <fieldset>
+              <legend>Submission pack</legend>
+              <label><input type="checkbox" data-id="n-season"> Season Summary: one page, pointing to the entries behind each highlight</label>
+              <label><input type="checkbox" data-id="n-code"> Code Summary written for someone who doesn't read code (or no code used)</label>
+              <label><input type="checkbox" data-id="n-creditsum"> Credit Summary: one list of outside sources currently used</label>
+              <label><input type="checkbox" data-id="n-how"> We know how and when this event collects notebooks</label>
+            </fieldset>
+            <div class="row-btns">
+              <button type="button" class="btn ghost cl-reset">Clear checklist</button>
+              <button type="button" class="btn" data-print>Print this checklist</button>
+            </div>
+          </div>
+          <div>
+            <h3 style="margin-top:0">This is a guide, not the rubric.</h3>
+            <p class="sub tight">The official rubric has 16 criteria, each scored from 1 to 4. These checks follow the judging guidance so you can find gaps early, but the rubric itself is the real test. Hand your students the student-friendly version and have them score their own notebook.</p>
+            <ul class="tips">
+              <li><span class="tag official">Official</span> VEX suggests starting with the “Is our notebook easy to use?” section of the student-friendly rubric.</li>
+              <li><span class="tag suggested">Suggested</span> Do a mock judging: two students swap notebooks, spend the same five minutes on each, and score every row.</li>
+              <li><span class="tag suggested">Suggested</span> Re-run this check after every event and before the next one.</li>
+            </ul>
+            <div class="links" style="margin-top:22px">
+              <a class="link-card" href="https://link.vex.com/docs/global/engineering-notebook-rubric-student-friendly" rel="noopener"><b>Student-friendly rubric</b><span>The same criteria, in student language</span></a>
+              <a class="link-card" href="https://kb.vex.com/hc/en-us/articles/49020662150676-Digital-Engineering-Notebook-Templates" rel="noopener"><b>Digital notebook templates</b><span>VEX Library starting points for digital notebooks</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUMMARIES -->
+      <div class="tabpanel" role="tabpanel" id="nbp-sum" aria-labelledby="nbt-sum" tabindex="0" hidden>
+        <p class="sub tight">Teams hand in the notebook plus three short summaries. The summaries are navigation tools for judges, not extra things to be scored. A thin or missing summary is not a deduction, but a good one points a judge straight at your best work.</p>
+        <div class="grid3">
+          <article class="card">
+            <p class="mono">Summary 01</p>
+            <h3>Season Summary</h3>
+            <p><span class="tag official">Official</span> A one-page account of your season that points to the notebook entries behind each highlight. Judges read it first.</p>
+            <p><span class="tag suggested">Suggested</span> List five highlights, each with the page number where the story is told: the big problem, a surprising test, a failed idea, a redesign, the result.</p>
+          </article>
+          <article class="card">
+            <p class="mono">Summary 02</p>
+            <h3>Code Summary</h3>
+            <p><span class="tag official">Official</span> How your code works, written so someone who doesn't read code can follow it. Teams that use no code don't submit one.</p>
+            <p><span class="tag suggested">Suggested</span> Describe the robot's behavior in plain steps, name your key sensors, and point to the entries where you tested and changed the code.</p>
+          </article>
+          <article class="card">
+            <p class="mono">Summary 03</p>
+            <h3>Credit Summary</h3>
+            <p><span class="tag official">Official</span> A single list of the outside sources currently used on the robot and in the code, gathered from where they appear in the notebook and the code.</p>
+            <p><span class="tag suggested">Suggested</span> Keep a running table all season: source, what you used, where it appears in the notebook. Copy it onto one page at the end.</p>
+          </article>
+        </div>
+        <p class="note" style="margin-top:20px">Official description: <a href="https://library.globalrobotics.org/hc/en-us/articles/52162916563604-Season-Code-and-Credit-Summaries-for-Judging" rel="noopener">Season, Code and Credit Summaries for Judging ↗</a></p>
+      </div>
+
+      <!-- HONESTY -->
+      <div class="tabpanel" role="tabpanel" id="nbp-honest" aria-labelledby="nbt-honest" tabindex="0" hidden>
+        <div class="two do-dont">
+          <div class="card do">
+            <h3><span aria-hidden="true">✓</span> Fine</h3>
+            <ul>
+              <li><b>Using an AI tool to learn something,</b> as long as you credit any idea or code that came from it.</li>
+              <li>Starting from an <b>official VEX starting point</b> (the Hero Bot as built, or an unchanged VEXcode template), credited as a starting point.</li>
+              <li><b>Learning from other teams</b> and naming them as a source.</li>
+              <li>Buying and trading <b>parts</b>.</li>
+              <li><b>Accommodations:</b> assistive technology, scribing or extra time. The notebook is scored on the same criteria.</li>
+              <li>Two teams reaching a <b>similar design</b> independently. Resemblance isn't evidence of copying.</li>
+              <li>Coaches <b>teaching</b> notebook skills.</li>
+            </ul>
+          </div>
+          <div class="card dont">
+            <h3><span aria-hidden="true">✕</span> Not fine</h3>
+            <ul>
+              <li>An <b>adult writing</b> any part of the notebook.</li>
+              <li>A <b>generative AI tool writing</b> the notebook or the code for the students.</li>
+              <li>Presenting <b>bought, traded or handed-over finished work</b> as your own. Crediting it doesn't make it yours.</li>
+              <li>Leaving out the source of an idea you used.</li>
+            </ul>
+            <p class="note" style="margin-top:16px">Judges who have a concern are told to raise it with the Judge Advisor, not to lower a score. Students write the notebook: that's the rule, and it matches the <a href="index.html#rule-G2">Student-Centered Policy (G2)</a>.</p>
+          </div>
+        </div>
+        <p class="note" style="margin-top:20px"><span class="tag official">Official</span> Source: <a href="https://library.globalrobotics.org/hc/en-us/articles/50473866288148-Judging-Engineering-Notebooks" rel="noopener">Judging Engineering Notebooks ↗</a>, updated September 28, 2026.</p>
+      </div>
+
+      <!-- SCORE -->
+      <div class="tabpanel" role="tabpanel" id="nbp-score" aria-labelledby="nbt-score" tabindex="0" hidden>
+        <ul class="kpis nb-kpis">
+          <li><span>Criteria</span><b>16</b><small>one row each on the rubric</small></li>
+          <li><span>Per criterion</span><b>1–4</b><small>every submitted notebook scores at least 1</small></li>
+          <li><span>Total range</span><b>16–64</b><small>lowest to highest possible</small></li>
+          <li><span>All Proficient</span><b>48</b><small>a solid record of a real season</small></li>
+        </ul>
+        <div class="scale" role="list">
+          <div role="listitem"><b>Beginning</b><span>Describes what's missing, not how hard the team worked. Unrecorded tests score here even after a season of testing.</span></div>
+          <div role="listitem"><b>Developing</b><span>Like Beginning, it names what is missing rather than how hard the team worked.</span></div>
+          <div role="listitem" class="hl"><b>Proficient</b><span>The team did the thing. This is a good score.</span></div>
+          <div role="listitem"><b>Exemplary</b><span>Each criterion draws its own line, usually one step past the question: saying what you chose against, or citing a measurement.</span></div>
+        </div>
+        <div class="two" style="margin-top:36px">
+          <div>
+            <h3 style="margin-top:0">What doesn't change the score</h3>
+            <ul class="tips">
+              <li>Length, appearance and graphic design. A legible working notebook scores as well as a polished one.</li>
+              <li>Paper vs. digital.</li>
+              <li>Handwriting, spelling and grammar, unless an entry can't be read.</li>
+              <li>Accommodations such as assistive technology or scribing.</li>
+              <li>How big or experienced the team is. A first-year team is scored against the criteria, not against the best notebook of the day.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="margin-top:0">What happens after scoring</h3>
+            <ul class="tips">
+              <li>The score ranks the pile so the real conversation can start. Rankings inside the strongest group, roughly the top ten at a typical event, come from judges' discussion, not scores alone.</li>
+              <li>That group is the pool for judged awards such as Design, Innovate and Excellence. Many judged awards require a notebook submission.</li>
+              <li>Rubric scores stay with the judging team. They aren't shared with teams or coaches, so if you want feedback, ask the Judge Advisor.</li>
+              <li>Judges delete downloaded digital notebooks at the end of the event and don't share notebook contents.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="links" style="margin-top:28px">
+          <a class="link-card" href="https://library.globalrobotics.org/hc/en-us/articles/50473866288148-Judging-Engineering-Notebooks" rel="noopener"><b>How judges score notebooks</b><span>The judges' own guide, including the rubric</span></a>
+          <a class="link-card" href="https://pd.vex.com/videos/iq/engineering-notebooks-in-classroom-competitions" rel="noopener"><b>Engineering notebooks video</b><span>VEX PD video for classroom competitions</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="coaching" class="band">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker mono" data-reveal><em>04</em> Coaching</p>
+      <h2 data-split>Teach. Don't touch.</h2>
+      <p class="sub" data-reveal>VEX IQ is a student-centered program. Your job is to teach, mentor and keep the team organized, not to do the work.</p>
+    </header>
+
+
+    <div class="two do-dont">
+      <div class="card do">
+        <h3><span aria-hidden="true">✓</span> You can</h3>
+        <ul>
+          <li>Teach concepts: engineering, programming, strategy, notebooking.</li>
+          <li>Ask questions that help students find their own answers.</li>
+          <li>Give tips (not solutions) and help the team plan time.</li>
+          <li>Cheer positively during a Match.</li>
+          <li>Post rules questions to the official Q&amp;A from the team's events.vex.com account.</li>
+          <li>Be present for the whole event, as the supervising adult.</li>
+        </ul>
+      </div>
+      <div class="card dont">
+        <h3><span aria-hidden="true">✕</span> You can't</h3>
+        <ul>
+          <li>Build, repair, design or program the robot, or write the notebook or strategy.</li>
+          <li>Enter the Driver Station during a Match.</li>
+          <li>Direct, command or advise the Drive Team <em>during</em> a Match.</li>
+          <li>Speak to the Head Referee about a score or ruling. Only the Drive Team Members may.</li>
+          <li>Ask scorekeepers or other staff to explain a ruling.</li>
+          <li>Expect video or photo review. It isn't used.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Penalty traps worth drilling</h3>
+    <p class="sub tight">These are the situations where teams most easily collect violations. Each ties to a rule you can read in full in the explorer.</p>
+    <div class="grid3 traps" data-stagger>
+      <article class="card"><h4>Second bag in the robot</h4><p>Carrying or pushing more than one bag stops the robot cold until the extra is shed.</p><p class="rule-ref">SG6</p></article>
+      <article class="card"><h4>Late or early hand-off</h4><p>The controller must switch between 0:35 and 0:25. The first Driver may not touch controls afterwards.</p><p class="rule-ref">GG11</p></article>
+      <article class="card"><h4>Hands in the Field</h4><p>No reaching in during a Match, except for loading and approved resets.</p><p class="rule-ref">GG4</p></article>
+      <article class="card"><h4>Loading mistakes</h4><p>Wrong-color Zone, bag overlapping the Zone line, loading while another bag touches the Zone, or placing a bag onto a robot.</p><p class="rule-ref">SG7</p></article>
+      <article class="card"><h4>Scoring after the buzzer</h4><p>Motion past 0:00 earns a violation in Teamwork Matches, and any points from it are ignored.</p><p class="rule-ref">GG12</p></article>
+      <article class="card"><h4>Footprint creep</h4><p>A lift that swings out beyond 11″ × 24″ mid-Match breaks the size limit even if it ends within bounds.</p><p class="rule-ref">SG2</p></article>
+      <article class="card"><h4>No-shows</h4><p>A robot that isn't at the Field for its Match scores zero and is never dropped from rankings.</p><p class="rule-ref">GG2 · T10</p></article>
+      <article class="card"><h4>Arguing a call</h4><p>Appeals happen at the Field, right after the Match, by the Drive Team. After the final decision, it's final.</p><p class="rule-ref">GG14 · T3</p></article>
+    </div>
+
+    <h3>Practice ideas</h3>
+    <p class="sub tight">These are suggestions from this guide's author, not part of the manual.</p>
+    <ul class="ideas">
+      <li><b>One-bag discipline.</b> Run cycles with a referee-minded teammate watching for any second bag being Possessed or Plowed.</li>
+      <li><b>Hand-off at a fixed point.</b> Pick a repeatable moment (e.g. 0:30) to pass the controller, then rehearse it until it's automatic.</li>
+      <li><b>Load rhythm.</b> Practice the Loader and Driver together: bag placed, hand clear, robot approaches.</li>
+      <li><b>Size and swing check.</b> Measure the robot at start and at the worst-case extension of every mechanism.</li>
+      <li><b>Reset drill.</b> Rehearse a GG10 reset: controller down, wait for permission, legal start position.</li>
+      <li><b>Buzzer drill.</b> Finish every practice run with a hard stop at 0:00, and practice releasing a bag just before it.</li>
+      <li><b>Referee Q&amp;A role-play.</b> Have students practice calmly asking the Head Referee a question after a Match.</li>
+    </ul>
+  
+  </div>
+</section>
+
+<section id="events">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker mono" data-reveal><em>05</em> Events &amp; rankings</p>
+      <h2 data-split>Event day, decoded.</h2>
+      <p class="sub" data-reveal>How a competition day is structured and how teams are ranked.</p>
+    </header>
+    <ol class="flow" data-stagger aria-label="A tournament day in order">
+      <li><i></i><b>Check-in &amp; inspection</b><span>Robot must pass before any Match. <a href="index.html#rule-R2">R2</a></span></li>
+      <li><i></i><b>Qualification Matches</b><span>At least 6 per team, with random partners. <a href="index.html#rule-T9">T9</a></span></li>
+      <li><i></i><b>Robot Skills</b><span>Three Driving and three Autonomous runs. <a href="index.html#rule-T15">T15</a></span></li>
+      <li><i></i><b>Finals</b><span>Ranked teams pair up; highest score wins. <a href="index.html#rule-T14">T14</a></span></li>
+      <li><i></i><b>Awards</b><span>Skills, Teamwork and judged awards.</span></li>
+    </ol>
+
+
+    <div class="grid3" data-stagger>
+      <article class="card">
+        <h3>Qualification Matches</h3>
+        <p>Teams are paired with randomly assigned partners. Local qualifiers run at least <b>6</b> Matches per team; Championship events run at least <b>8</b>. Teams are ranked by <b>average score</b>.</p>
+        <p class="rule-ref">T8 · T9 · T10 · T12</p>
+      </article>
+      <article class="card">
+        <h3>Finals</h3>
+        <p>Finals Alliances pair ranked teams in order (1st &amp; 2nd, 3rd &amp; 4th, …). Each Alliance plays one Match; the highest score wins. Events that send teams to Worlds need at least 5 Finals Matches in a division with 10+ teams.</p>
+        <p class="rule-ref">T12 · T13 · T14</p>
+      </article>
+      <article class="card">
+        <h3>Robot Skills</h3>
+        <p>Each team gets exactly <b>three Driving</b> and <b>three Autonomous Coding</b> runs, first come first served. Your ranking score is your best Driving plus your best Autonomous run.</p>
+        <p class="rule-ref">T15 · T17</p>
+      </article>
+    </div>
+
+    <div class="callout" data-reveal>
+      <h3>Plan your competition day</h3>
+      <p>See when your team plays, who your partners are, how long you rest between matches and where Robot Skills runs fit, on a timeline you can adjust. <a href="schedule.html">Open the event schedule planner →</a></p>
+    </div>
+
+    <div class="callout" data-reveal>
+      <h3>Volunteering as a referee?</h3>
+      <p>Students and teachers often help referee. The Referee zone has the game in two minutes, a Match run-through, a watch list, how to read the score, and a printable checklist. <a href="referee.html">Open the Referee zone →</a></p>
+    </div>
+
+    <div class="callout" data-reveal>
+      <h3>Hosting an event at your school?</h3>
+      <p>The Host zone has who does what, what the rules ask of a host, an equipment list, a sample day and a to-do list that counts down to your event date. <a href="host.html">Open the Host zone →</a></p>
+    </div>
+
+    <h3>Dropped scores in Qualification ranking</h3>
+    <div class="table-scroll">
+    <table class="plain narrow">
+      <thead><tr><th scope="col">Qualification Matches played</th><th scope="col">Lowest scores excluded</th></tr></thead>
+      <tbody>
+        <tr><td>4–7</td><td>1</td></tr>
+        <tr><td>8–11</td><td>2</td></tr>
+        <tr><td>12–15</td><td>3</td></tr>
+        <tr><td>16 or more</td><td>4</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="note">No-show Matches are never excluded. Ties are broken by removing each team's lowest score and recomputing the average, repeating through all scores; any remaining tie is a random draw (T11). In leagues, teams that play under 60% of available Matches rank below teams that play more.</p>
+
+    <h3>Disqualifications at a glance</h3>
+    <ul class="tips">
+      <li><b>Qualification Match:</b> the offending team scores zero. Its partner still keeps the Alliance points.</li>
+      <li><b>Finals Match:</b> the whole Alliance scores zero.</li>
+      <li><b>Robot Skills:</b> a DQ means a zero for that run.</li>
+      <li><b>No-show:</b> zero for that team; the partner plays on and scores.</li>
+    </ul>
+  
+  </div>
+</section>
+
+<section id="pages">
+  <div class="wrap">
+    <div class="callout" data-reveal>
+      <h3>Share the right page with the right people</h3>
+      <p>Your <a href="students.html">students</a> have a page of their own with team jobs, checklists and how to act in a Match. Adults and students who help run the event can use the <a href="volunteers.html">volunteer page</a>, and the school or Event Partner organizing it has the <a href="host.html">host page</a>. For the rules and the game itself, use the <a href="index.html">guide home</a>.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer on-ink">
+  <div class="wrap">
+    <p class="foot-mark" aria-hidden="true">Level Up<i>.</i></p>
+    <div class="foot-top">
+      <p>Built for the people behind the robots: the coaches, mentors and parents who make a first season feel possible.</p>
+      <a class="btn btn-primary magnetic" href="index.html">Back to the field manual <span class="arr" aria-hidden="true">→</span></a>
+    </div>
+    <div class="foot-cols">
+      <p class="small"><b>Unofficial guide.</b> An independent coaching aid, not affiliated with or endorsed by VEX Robotics, Innovation First, Inc. or the REC Foundation. Rule summaries are paraphrased and may contain errors or go out of date. The official Game Manual and Q&amp;A have the final say.</p>
+      <ul><li><b>Guide</b></li><li><a href="index.html#scoring">Scoring</a></li><li><a href="index.html#rules">Rules explorer</a></li><li><a href="schedule.html">Schedule planner</a></li><li><a href="timer.html">Match timer</a></li></ul>
+      <ul><li><b>Official</b></li><li><a href="https://link.vex.com/docs/26-27/viqrc/game-manual" rel="noopener">Game Manual (PDF)</a></li><li><a href="https://events.vex.com/robot-competitions/vex-iq-competition" rel="noopener">events.vex.com</a></li></ul>
+    </div>
+  </div>
+</footer>
+
+
+<script defer src="lists.js"></script>
+<script defer src="app.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="motion.js"></script>
+</body>
+</html>

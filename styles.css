@@ -468,6 +468,27 @@ body.kid .checklist legend { font-size: .8rem; padding-top: 14px; }
 @media (max-height: 520px) and (orientation: landscape) { .timer-stage { padding-top: 64px; } .tm-time { font-size: clamp(5rem, 38vh, 20rem); } .tm-call { min-height: 0; } }
 @media print { .timer-stage { display: none !important; } }
 
+/* ---------- role hub (home page) ---------- */
+.hub { padding-top: clamp(56px, 8vw, 110px); }
+.role-hub { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+@media (min-width: 700px) { .role-hub { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1180px) { .role-hub { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.role-card { --rc: var(--text); position: relative; display: flex; flex-direction: column; gap: 14px; padding: clamp(22px, 2.4vw, 32px); border-radius: 26px; background: var(--card); border: 1.5px solid var(--line-strong); color: var(--text); text-decoration: none; overflow: hidden; transition: transform .35s var(--ease), border-color .35s, box-shadow .35s; }
+.role-card::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 8px; background: var(--rc); }
+.role-card:hover, .role-card:focus-visible { transform: translateY(-6px); border-color: var(--rc); box-shadow: 0 22px 50px -26px var(--rc); }
+.rc-red { --rc: var(--red); } .rc-blue { --rc: var(--blue); } .rc-yellow { --rc: var(--yellow); } .rc-ink { --rc: var(--text); }
+.rc-tag { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-soft); margin-top: 6px; }
+.role-card h3 { font: 750 clamp(1.5rem, 2.2vw, 2rem)/1.05 var(--f-display); letter-spacing: -.035em; margin: 0; }
+.role-card ul { margin: 0; padding: 0 0 0 1.1em; color: var(--text-soft); line-height: 1.45; flex: 1; }
+.role-card li + li { margin-top: 4px; }
+.rc-go { font-weight: 700; display: inline-flex; align-items: center; gap: 8px; }
+.rc-go i { font-style: normal; transition: transform .3s var(--ease); }
+.role-card:hover .rc-go i { transform: translateX(6px); }
+.hub-all { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: baseline; margin-top: clamp(24px, 3vw, 40px); font-size: .8rem; }
+.hub-all b { color: var(--text-soft); font-weight: 500; text-transform: uppercase; letter-spacing: .08em; }
+.hub-all a { color: var(--text); text-underline-offset: 4px; }
+.hero-sub b { color: var(--yellow); font-weight: 650; }
+
 /* ---------- host zone ---------- */
 .host-date { display: grid; grid-template-columns: auto auto 1fr; gap: 12px 18px; align-items: center; margin-bottom: 20px; }
 .host-date label { font: 650 1rem/1 var(--f-body); }
@@ -483,6 +504,24 @@ body.kid .checklist legend { font-size: .8rem; padding-top: 14px; }
 .vol-chips .tag { margin-right: 0; }
 .vol-sum { margin: 6px 0 14px; }
 #volPick { margin: 0 0 20px; }
+.vol-see { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+.video-box { position: relative; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #0a0e1d; margin: 16px 0 10px; }
+.video-box iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-facade { position: absolute; inset: 0; width: 100%; border: 0; cursor: pointer; display: grid; place-content: center; justify-items: center; gap: 10px; padding: 20px; text-align: center; color: #f1eee3; font-family: inherit;
+  background: radial-gradient(70% 90% at 20% 10%, rgb(58 116 255 / .45), transparent 60%), radial-gradient(70% 90% at 90% 100%, rgb(255 59 82 / .4), transparent 60%), #0a0e1d; }
+.video-facade:hover .vf-play { transform: scale(1.08); }
+.vf-play { width: 72px; height: 72px; border-radius: 50%; background: var(--yellow); position: relative; transition: transform .3s var(--ease); }
+.vf-play::after { content: ""; position: absolute; left: 29px; top: 22px; border-left: 22px solid #0a0e1d; border-top: 14px solid transparent; border-bottom: 14px solid transparent; }
+.vf-title { font: 700 clamp(1rem, 2.4vw, 1.35rem)/1.25 var(--f-display); letter-spacing: -.01em; }
+.vf-sub { font-size: .72rem; color: #cfd5ea; }
+.field-fig { margin: 16px 0 0; }
+.field-svg { width: 100%; height: auto; display: block; background: var(--card); border-radius: 14px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.field-fig figcaption { font-size: .88rem; color: var(--text-soft); margin-top: 10px; }
+.field-key { list-style: none; counter-reset: fk; margin: 18px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px 22px; }
+.field-key li { counter-increment: fk; position: relative; padding-left: 40px; line-height: 1.4; }
+.field-key li::before { content: counter(fk); position: absolute; left: 0; top: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--text); color: var(--paper); font: 700 .85rem/28px var(--f-mono); text-align: center; }
+.field-key li b { display: block; }
+@media (min-width: 1000px) { .vol-see { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start; } }
 .vol-msg textarea { width: 100%; font: 500 1rem/1.5 var(--f-body); padding: 14px 16px; border-radius: 14px; border: 1.5px solid var(--line-strong); background: var(--paper); color: var(--text); resize: vertical; }
 
 /* ---------- goal cards + bag stats ---------- */
