@@ -38,4 +38,37 @@
   list.addEventListener("change", render);
   list.addEventListener("click", function (e) { if (e.target.closest(".cl-reset")) setTimeout(render, 0); });
   render();
+
+  /* volunteer role sheets: pick one job at a time; cards and the URL hash can open a sheet */
+  var pick = document.getElementById("volPick");
+  if (pick) {
+    var btns = Array.prototype.slice.call(pick.querySelectorAll("button"));
+    var sheets = Array.prototype.slice.call(document.querySelectorAll(".vol-sheet"));
+    var show = function (id, scroll) {
+      var ok = false;
+      sheets.forEach(function (sh) { var on = sh.id === "sheet-" + id; sh.hidden = !on; ok = ok || on; });
+      if (!ok) return;
+      btns.forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.vol === id ? "true" : "false"); });
+      if (scroll) document.getElementById("rolesheets").scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+    btns.forEach(function (b) { b.addEventListener("click", function () { show(b.dataset.vol, false); }); });
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest("a[data-vol]");
+      if (a) { e.preventDefault(); show(a.dataset.vol, true); history.replaceState(null, "", "#sheet-" + a.dataset.vol); }
+    });
+    var fromHash = function () { var m = /^#sheet-(\w+)$/.exec(location.hash); if (m) show(m[1], true); };
+    window.addEventListener("hashchange", fromHash);
+    fromHash();
+  }
+
+  /* copy the volunteer invitation */
+  var copy = document.getElementById("volCopy"), msg = document.getElementById("volMsg"), note = document.getElementById("volCopyNote");
+  if (copy && msg) {
+    copy.addEventListener("click", function () {
+      var done = function (t) { note.textContent = t; };
+      msg.select();
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(msg.value).then(function () { done("Copied."); }, function () { done("Press Ctrl+C (or Cmd+C) to copy."); });
+      else { try { done(document.execCommand("copy") ? "Copied." : "Press Ctrl+C (or Cmd+C) to copy."); } catch (e) { done("Press Ctrl+C (or Cmd+C) to copy."); } }
+    });
+  }
 })();

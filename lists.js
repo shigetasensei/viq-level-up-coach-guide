@@ -44,7 +44,7 @@
     var h = document.createElement("h1"); h.textContent = title; area.appendChild(h);
     var sub = document.createElement("p"); sub.className = "ps"; sub.textContent = "Level Up · The Coach's Field Manual · VEX IQ 2026–27 · unofficial guide"; area.appendChild(sub);
     var meta = document.createElement("div"); meta.className = "meta";
-    ["Team", "Date", "Checked by"].forEach(function (t) { var s = document.createElement("span"); s.textContent = t; meta.appendChild(s); });
+    (root.dataset.meta ? root.dataset.meta.split(",") : ["Team", "Date", "Checked by"]).forEach(function (t) { var s = document.createElement("span"); s.textContent = t; meta.appendChild(s); });
     area.appendChild(meta);
     var src = $$("input[type=checkbox]", root);
     $$("fieldset", root).forEach(function (fs) {

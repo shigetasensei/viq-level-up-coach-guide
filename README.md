@@ -19,7 +19,7 @@ The page is a climb. Chapters are the game's own Goal levels (L1 Start · L2 Pla
 | `students.html` | Student zone: team jobs table, student and inspection checklists, robot upgrade ideas |
 | `timer.html`, `timer.js` | Match timer: full-screen 60 s clock with hand-off cues, sound/voice/vibration, 3-2-1 lead-in, Stop-early recorder, Skills mode |
 | `referee.html` | Referee zone: volunteer referee guide with Match flow, watch list, scoring reading, tough moments, Skills differences and a printable checklist |
-| `host.html`, `host.js` | Host zone: guide for the school and Event Partner hosting an event, with roles, Tournament rules, equipment, a sample day and a dated, printable to-do list |
+| `host.html`, `host.js` | Host zone: guide for the school and Event Partner hosting an event, with roles, volunteer jobs and printable role sheets, Tournament rules, equipment, a sample day and a dated, printable to-do list |
 | `404.html` | "That bag doesn't score." |
 | `styles.css` | Design system: ink + paper tokens, type, components, motion, print |
 | `field3d.js` | Shared Three.js scene (Goals, pillow-shaped Bean Bags, lights, shadows) |

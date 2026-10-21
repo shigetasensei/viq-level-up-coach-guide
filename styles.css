@@ -476,6 +476,14 @@ body.kid .checklist legend { font-size: .8rem; padding-top: 14px; }
 .checklist legend .due { display: inline-block; margin-left: 10px; font: 500 .72rem/1 var(--f-mono); letter-spacing: .06em; text-transform: none; color: var(--text-soft); }
 .checklist legend .due.late { color: var(--red-d); font-weight: 600; }
 @media (max-width: 640px) { .host-date { grid-template-columns: 1fr; } }
+.vol-grid .card { display: flex; flex-direction: column; }
+.vol-grid .card .row-btns { margin-top: auto; padding-top: 12px; }
+.vol-pitch { font-weight: 650; margin: 0 0 8px; }
+.vol-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; }
+.vol-chips .tag { margin-right: 0; }
+.vol-sum { margin: 6px 0 14px; }
+#volPick { margin: 0 0 20px; }
+.vol-msg textarea { width: 100%; font: 500 1rem/1.5 var(--f-body); padding: 14px 16px; border-radius: 14px; border: 1.5px solid var(--line-strong); background: var(--paper); color: var(--text); resize: vertical; }
 
 /* ---------- goal cards + bag stats ---------- */
 .goal-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(14px, 1.6vw, 22px); margin-bottom: clamp(56px, 8vw, 120px); }
