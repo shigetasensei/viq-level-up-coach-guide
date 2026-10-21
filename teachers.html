@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VEX Robotics for Teachers · Level Up Coach's Field Manual</title>
+<meta name="description" content="Curious what students do in robotics? A short introduction for teachers: what VEX Robotics is, why students compete, which subjects the skills connect to, and a 20-minute drive-a-robot session. No technical experience required.">
+<meta name="theme-color" content="#0a0e1d">
+<meta property="og:title" content="VEX Robotics for Teachers · Level Up">
+<meta property="og:description" content="What is VEX Robotics, why do students compete, and where do the skills show up in your class? A short guide for teachers.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shigetasensei.github.io/viq-level-up-coach-guide/teachers.html">
+<meta property="og:image" content="https://shigetasensei.github.io/viq-level-up-coach-guide/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400..700&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0e1d'/%3E%3Crect x='10' y='20' width='14' height='24' rx='5' fill='%23ff3b52' transform='rotate(-10 17 32)'/%3E%3Crect x='25' y='16' width='14' height='28' rx='5' fill='%233a74ff'/%3E%3Crect x='40' y='20' width='14' height='24' rx='5' fill='%23ffc20e' transform='rotate(10 47 32)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');try{if(sessionStorage.getItem('curtain')){document.documentElement.classList.add('entering');sessionStorage.removeItem('curtain');}}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="curtain" aria-hidden="true"></div>
+<div class="progress-top" aria-hidden="true"><i></i></div>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="curtain" aria-hidden="true"></div>
+<div class="progress-top" aria-hidden="true"><i></i></div>
+
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="index.html" aria-label="Level Up, back to the guide">
+    <span class="beans" aria-hidden="true"><i class="b-red"></i><i class="b-blue"></i><i class="b-yellow"></i></span>
+    <span>Level Up <small>Coach's field manual</small></span>
+  </a>
+  <p class="hdr-mid mono" aria-hidden="true"><b>Teachers</b> VEX intro</p>
+  <div class="hdr-right">
+    <a class="hdr-link" href="coaches.html">Coaches</a>
+    <a class="hdr-link" href="students.html">Students</a>
+    <a class="hdr-link" href="volunteers.html">Volunteers</a>
+    <a class="hdr-link" href="host.html">Hosts</a>
+    <a class="hdr-link" href="index.html#rules">Rules</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span class="ml-t">Menu</span><span class="ml" aria-hidden="true"></span></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu" aria-hidden="true">
+  <nav class="menu-grid" aria-label="Sections">
+    <div class="menu-group"><p class="mg">Everyone</p><ul><li><a href="index.html#competitions">Events &amp; volunteer sign-up</a></li><li><a href="teachers.html">VEX intro for teachers</a></li><li><a href="index.html#briefing">5-minute briefing</a></li><li><a href="index.html#game">The game</a></li><li><a href="index.html#scoring">Scoring</a></li><li><a href="index.html#lab">3D lab</a></li><li><a href="index.html#match">The Match</a></li><li><a href="index.html#rules">Rules explorer</a></li><li><a href="timer.html">Match timer</a></li></ul></div>
+    <div class="menu-group"><p class="mg">Coaches</p><ul><li><a href="coaches.html#new">New coaches</a></li><li><a href="coaches.html#robot">Robot &amp; inspection</a></li><li><a href="coaches.html#notebook">Engineering notebook</a></li><li><a href="coaches.html#coaching">Coaching</a></li><li><a href="coaches.html#events">Events &amp; rankings</a></li><li><a href="schedule.html">Schedule planner</a></li></ul></div>
+    <div class="menu-group"><p class="mg">Team</p><ul><li><a href="students.html">Student zone</a></li><li><a href="students.html#match">In the Match</a></li></ul></div>
+    <div class="menu-group"><p class="mg">Volunteers</p><ul><li><a href="volunteers.html">Volunteer jobs</a></li><li><a href="volunteers.html#rolesheets">Role sheets</a></li><li><a href="volunteers.html#v5">V5 Override volunteers</a></li><li><a href="referee.html">Referee zone</a></li></ul></div>
+    <div class="menu-group"><p class="mg">Hosts</p><ul><li><a href="host.html">Host zone</a></li><li><a href="host.html#todo">To-do list</a></li><li><a href="schedule.html">Schedule planner</a></li></ul></div>
+  </nav>
+  <div class="menu-foot mono"><span>Unofficial guide · checked against Game Manual v2.1</span><a href="https://link.vex.com/docs/26-27/viqrc/game-manual" rel="noopener">Official manual ↗</a></div>
+</div>
+
+<nav class="tabbar" aria-label="Main pages"><a href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8M5 10v10h14V10M10 20v-6h4v6"/></svg><span>Home</span></a><a href="coaches.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6v3H9zM9 5.5H6a1 1 0 0 0-1 1V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6.500a1 1 0 0 0-1-1h-3M9 12h6M9 16h4"/></svg><span>Coaches</span></a><a href="students.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1zM12 9V5M12 5h.01M9 14h.01M15 14h.01"/></svg><span>Team</span></a><a href="volunteers.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.400-7-10a4 4 0 0 1 7-2.600A4 4 0 0 1 19 10c0 5.600-7 10-7 10z"/></svg><span>Volunteers</span></a><a href="host.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg><span>Hosts</span></a></nav>
+
+<main id="main">
+
+<section class="page-hero on-ink" id="top">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <a class="crumb" href="index.html"><span aria-hidden="true">←</span> Home</a>
+    <p class="hero-eyebrow mono"><i></i>Teachers <b>T2T · VEX intro</b></p>
+    <h1><span class="visually-hidden">Come drive a VEX robot: an introduction to VEX Robotics for teachers</span><span aria-hidden="true" class="pg-title"><span class="ln"><span>Come drive</span></span> <span class="ln"><span>a robot<i>.</i></span></span></span></h1>
+    <p class="lede">Curious about what our students are doing in robotics in ELAC Robotics Center? Come drive a VEX robot yourself! In this low-stakes, 20-minute session, you'll get hands-on time with the controllers, try a quick mini-challenge, and see firsthand how robotics builds problem-solving, teamwork, and critical thinking across subjects. Zero technical experience required!</p>
+    <ul class="jump" aria-label="Jump to a part of this page">
+      <li><a href="#session"><b>1</b> Your 20 minutes</a></li>
+      <li><a href="#what"><b>2</b> What is VEX?</a></li>
+      <li><a href="#why"><b>3</b> Why compete?</a></li>
+      <li><a href="#subjects"><b>4</b> Your subject</a></li>
+      <li><a href="#try"><b>5</b> Run a session</a></li>
+      <li><a href="#faq"><b>6</b> Questions</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== SESSION ========== -->
+<section id="session">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker mono" data-reveal><em>01</em> Your 20 minutes</p>
+      <h2 data-split>Drive it. Try it. See it.</h2>
+      <p class="sub" data-reveal>No slides, no code, no pressure. You will pick up a controller and move a real robot, then think about where the skills you used show up in your own classroom.</p>
+    </header>
+    <div class="grid3" data-stagger>
+      <article class="card"><h3>Drive</h3><p>Get hands-on time with the controllers. Drive, turn and steer a VEX robot around the room.</p></article>
+      <article class="card"><h3>Try</h3><p>Take a quick mini-challenge with a partner. It is low-stakes, and it is fine to bump into things.</p></article>
+      <article class="card"><h3>See</h3><p>Notice how robotics builds problem-solving, teamwork and critical thinking, and talk about how that could connect to your subject.</p></article>
+    </div>
+    <div class="callout" data-reveal style="margin-top:20px">
+      <h3>Zero technical experience required.</h3>
+      <p>If you can use a game controller, or even if you have never touched one, you will be fine. Students are the experts, and they will be happy to help.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHAT IS VEX ========== -->
+<section id="what" class="band">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker mono" data-reveal><em>02</em> What is VEX?</p>
+      <h2 data-split>A robot kit, a game and a team.</h2>
+      <p class="sub" data-reveal>VEX Robotics makes robot kits and runs student robotics competitions. Students use the kits to design, build and program a robot. Each season there is a new game, and teams meet at tournaments to play it.</p>
+    </header>
+
+    <div class="grid3" data-stagger>
+      <article class="card"><h3>Design and build</h3><p>Teams plan a robot to solve a game challenge, then build it from kits of beams, motors, sensors and wheels.</p></article>
+      <article class="card"><h3>Program</h3><p>Students write code that makes the robot move and use its sensors. VEX's coding tool starts with blocks and grows into text languages such as Python. <span class="tag suggested">Suggested</span></p></article>
+      <article class="card"><h3>Play and compete</h3><p>Two robots work together or against each other in short Matches, and teams also take a turn alone against the clock in a Skills challenge. <span class="tag official">Official</span></p></article>
+    </div>
+
+    <div class="table-scroll" data-reveal style="margin-top:20px">
+      <table class="plain">
+        <caption class="visually-hidden">The two VEX competition programs held near us</caption>
+        <thead><tr><th scope="col">Program</th><th scope="col">Grades (VEX)</th><th scope="col">The Match</th><th scope="col">2026–27 game</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">VEX IQ</th><td>4 to 8</td><td>Teamwork: two teams work together as one Alliance. Skills: one robot alone against the clock.</td><td>Level Up</td></tr>
+          <tr><th scope="row">VEX V5</th><td>6 to 12</td><td>Two Alliances of two teams each play against each other, plus Skills.</td><td>Override</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note" style="margin-top:10px"><span class="tag official">Official</span> Grade bands and Match types are from VEX's competition page. <a href="https://www.vexrobotics.com/competition" rel="noopener" target="_blank">vexrobotics.com/competition ↗</a></p>
+
+    <div class="grid3" data-stagger style="margin-top:20px">
+      <article class="card vol-video" id="teach-video">
+        <h3>See a game in 4 minutes</h3>
+        <div class="video-box">
+          <button type="button" class="video-facade" data-yt="KP0FYPW604E" data-title="VEX IQ Robotics Competition: Level Up | 2026-2027 Game (official video)" aria-label="Play the video: VEX IQ Robotics Competition Level Up, 2026-2027 Game">
+            <span class="vf-play" aria-hidden="true"></span>
+            <span class="vf-title">VEX IQ Robotics Competition: Level Up | 2026-2027 Game</span>
+            <span class="vf-sub mono">Official video · VEX Robotics · YouTube</span>
+          </button>
+        </div>
+        <p class="note">Loads from YouTube only after you press play.</p>
+      </article>
+      <article class="card">
+        <h3>Level Up in one line</h3>
+        <p>Two robots move Bean Bags into Goals during a 60-second Match. Higher Goals score more, from 1 point on the floor to 16 on the top level.</p>
+        <p class="row-btns"><a class="btn" href="index.html#briefing">5-minute briefing →</a> <a class="btn ghost" href="index.html#lab">Try the 3D lab →</a></p>
+      </article>
+      <article class="card">
+        <h3>Our events</h3>
+        <p>Our community is hosting and joining VEX competitions this season. See the dates and how to help.</p>
+        <p class="row-btns"><a class="btn" href="index.html#competitions">Events &amp; sign-up →</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHY COMPETE ========== -->
+<section id="why">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker mono" data-reveal><em>03</em> Why compete?</p>
+      <h2 data-split>Because a real goal changes how students work.</h2>
+      <p class="sub" data-reveal>Building a robot is good. Building one for a Match next Saturday, with a partner team and a clock, is a different kind of learning.</p>
+    </header>
+    <div class="grid3" data-stagger>
+      <article class="card"><h3>A reason to get it right</h3><p>A date, an audience and a score make students care about details: measuring, testing, fixing and trying again. VEX says its competitions use the motivating power of competition and robotics to help students see themselves as STEM learners. <span class="tag official">Official</span></p></article>
+      <article class="card"><h3>Skills beyond STEM</h3><p>VEX describes communication, collaboration and time-management as valuable soft skills that students practice in a fun, authentic way. <span class="tag official">Official</span></p></article>
+      <article class="card"><h3>Students do the work</h3><p>The rules say students design, build, program and plan, and adults teach and ask questions but do not do it for them. <span class="tag official">Official</span> <a href="index.html#rule-G2">G2</a></p></article>
+      <article class="card"><h3>Safe to fail</h3><p>Robots break and plans fail. Students learn to test, find the problem, fix one thing and test again, and then to explain what they learned. <span class="tag suggested">Suggested</span></p></article>
+      <article class="card"><h3>Teams and community</h3><p>Students meet teams from other schools, work with an alliance partner and thank the volunteers who run the day. <span class="tag suggested">Suggested</span></p></article>
+      <article class="card"><h3>Everyone has a role</h3><p>Designer, builder, coder, notebook writer, strategist, driver and loader. Not every student needs to love coding. <span class="tag suggested">Suggested</span> <a href="students.html#roles">See the team jobs</a></p></article>
+    </div>
+
+    <div class="stat-row" data-reveal>
+      <div><b>17,000+</b><span>teams in grades 4 to 8, from 54 countries, in over 1,200 tournaments</span></div>
+      <div><b>14,000+</b><span>teams in grades 6 to 12, from 53 countries, in over 1,300 tournaments</span></div>
+      <div><b>95%</b><span>of participants report more interest in STEM subjects and careers, says VEX</span></div>
+    </div>
+    <p class="note" style="margin-top:10px"><span class="tag official">Official</span> Figures are VEX's own, as shown on its competition page in October 2026, and they change over time. Tournaments run all year and lead to the VEX Robotics World Championship each April. <a href="https://www.vexrobotics.com/competition" rel="noopener" target="_blank">vexrobotics.com/competition ↗</a></p>
+  </div>
+</section>
+
+<!-- ========== SUBJECTS ========== -->
+<section id="subjects" class="band">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker mono" data-reveal><em>04</em> Your subject</p>
+      <h2 data-split>Where do these skills show up in class?</h2>
+      <p class="sub" data-reveal>Robotics is not a separate subject. It is a place where many subjects meet. Here is what each one looks like in a robotics team, with a small idea you could try. <span class="tag suggested">Suggested</span></p>
+    </header>
+
+    <div class="skill-chips" data-reveal aria-label="Skills students build">
+      <span>Problem-solving</span><span>Teamwork</span><span>Critical thinking</span><span>Communication</span><span>Perseverance</span><span>Creativity</span><span>Time-management</span>
+    </div>
+
+    <div class="table-scroll" data-reveal style="margin-top:20px">
+      <table class="plain wide">
+        <caption class="visually-hidden">How robotics skills connect to school subjects</caption>
+        <thead><tr><th scope="col">Subject</th><th scope="col">What it looks like on a robotics team</th><th scope="col">A small idea for your class</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Math</th><td>Measuring, scaling, ratios and gear ratios, angles, graphing test results, and choosing a strategy by comparing points.</td><td>Use the Level Up scores (1, 3, 6, 12, 16): how many floor bags equal one top-level bag? Try the <a href="index.html#scoring">scoring calculator</a>.</td></tr>
+          <tr><th scope="row">Science and physics</th><td>Force, friction, torque, balance and tipping, energy and batteries, and what sensors detect.</td><td>Test two wheel types for grip, and graph the result. Ask why a tall robot tips.</td></tr>
+          <tr><th scope="row">Computer science</th><td>Sequences, loops, conditions, variables and debugging, from blocks to Python.</td><td>Write steps that drive a robot, or a person, around a square. Then debug them.</td></tr>
+          <tr><th scope="row">Design and engineering</th><td>Defining a problem, prototyping, testing, and improving within limits such as size.</td><td>Give a design challenge with real constraints. The Level Up robot must start inside an 11″ × 20″ × 15″ box. <a href="index.html#rule-R3">R3</a></td></tr>
+          <tr><th scope="row">English and writing</th><td>The engineering notebook, explaining a design, answering a judge's questions and presenting.</td><td>Have students write a short “what we tried, what happened, what we learned” entry. See the <a href="coaches.html#notebook">notebook guide</a>.</td></tr>
+          <tr><th scope="row">Languages and global learning</th><td>Working with teams from other schools and countries, and welcoming guests.</td><td>Make bilingual signs or a short welcome script for a visiting team.</td></tr>
+          <tr><th scope="row">Social studies and community</th><td>Planning an event, roles and responsibilities, and thanking volunteers.</td><td>Treat hosting an event as a civic project. Use the <a href="host.html">host guide</a>.</td></tr>
+          <tr><th scope="row">Art and design</th><td>Robot looks, team branding, posters, photos and CAD drawings.</td><td>Design a team logo or a pit display, and explain the choices.</td></tr>
+          <tr><th scope="row">PE, health and SEL</th><td>Teamwork, sportsmanship, staying calm under pressure and bouncing back after a bad Match.</td><td>Run a short reflection: what helped our team, and what did we say when things went wrong?</td></tr>
+          <tr><th scope="row">Business and entrepreneurship</th><td>Budgets, timelines, roles, sponsors and communication.</td><td>Plan the cost and calendar of a team season, with a countdown like the <a href="host.html#todo">host to-do list</a>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ========== RUN A SESSION ========== -->
+<section id="try">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker mono" data-reveal><em>05</em> Run a session</p>
+      <h2 data-split>A 20-minute plan you can use today.</h2>
+      <p class="sub" data-reveal>For the person leading the session. It works with one or two robots and a clear patch of floor. <span class="tag suggested">Suggested</span></p>
+    </header>
+
+    <div class="table-scroll" data-reveal>
+      <table class="plain">
+        <caption class="visually-hidden">Run of show for a 20-minute teacher session</caption>
+        <thead><tr><th scope="col">Time</th><th scope="col">What happens</th><th scope="col">Tip</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">0:00 to 0:03</th><td>Welcome. What VEX is, and what our students do with it.</td><td>Show a robot. Let a student say one sentence about it.</td></tr>
+          <tr><th scope="row">0:03 to 0:07</th><td>Controller tour. Drive, turn, and use the robot's arm or tool. Work in pairs, one driver and one coach.</td><td>Let everyone touch a controller before the challenge.</td></tr>
+          <tr><th scope="row">0:07 to 0:16</th><td>Mini-challenge. Pick one card below, and swap drivers every couple of minutes.</td><td>Keep it silly and low-stakes. Cheer for misses.</td></tr>
+          <tr><th scope="row">0:16 to 0:20</th><td>Reflect. Which skill did you use? Where would it show up in your subject? What would your students need to try this?</td><td>Write ideas on sticky notes, grouped by subject.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid3" data-stagger style="margin-top:20px">
+      <article class="card">
+        <h3>Card 1 · Slalom</h3>
+        <p><b>Warm-up.</b> Drive around four cones and back, as smoothly as you can.</p>
+        <p class="note">Skills: control, spatial thinking, patience.</p>
+      </article>
+      <article class="card">
+        <h3>Card 2 · Bean Bag delivery</h3>
+        <p><b>Core.</b> Pick up a Bean Bag and deliver it to a Goal or a box. A bag on the floor Goal is worth 1 point, and higher is worth more. Carry <b>one bag at a time</b>, just like the students. <a href="index.html#rule-SG6">SG6</a></p>
+        <p class="note">Skills: planning, trial and error, estimating.</p>
+      </article>
+      <article class="card">
+        <h3>Card 3 · Driver and Loader</h3>
+        <p><b>Teamwork.</b> One person drives and another places bags in the Load Zone. Swap around the 30-second mark, like the real hand-off. <a href="index.html#rule-GG11">GG11</a> Use the <a href="timer.html">Match timer</a> for 60 seconds.</p>
+        <p class="note">Skills: communication, shared goals, timing.</p>
+      </article>
+    </div>
+
+    <div class="grid3" data-stagger style="margin-top:20px">
+      <article class="card">
+        <h3>What you need</h3>
+        <ul class="tips">
+          <li>One or two robots with controllers, with charged batteries and a spare.</li>
+          <li>A clear floor area. The Level Up Field is 6′ × 8′, and any open space works.</li>
+          <li>Cones or tape, a few Bean Bags and a box or Goal.</li>
+          <li>A timer, sticky notes and a pen.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Keep it safe</h3>
+        <ul class="tips">
+          <li>One driver at a time. Everyone else stays back.</li>
+          <li>Hands off the robot while it is moving.</li>
+          <li>The facilitator handles batteries and charging.</li>
+          <li>Clear bags and cords from walking paths afterward.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Ask your teachers</h3>
+        <ul class="tips">
+          <li>Which skill did you use just now?</li>
+          <li>Where would it show up in your subject?</li>
+          <li>What would your students need before trying this?</li>
+          <li>What worried you, and what surprised you?</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="card checklist" id="t2tList" data-store="levelup-t2t-checklist" style="margin-top:24px">
+      <div class="cl-head">
+        <h3>Session checklist</h3>
+        <div class="progress" aria-hidden="true"><i class="cl-bar"></i></div>
+        <p class="note cl-count" role="status">0 of 0 checked</p>
+      </div>
+      <div class="cl-cols">
+        <fieldset>
+          <legend>Before</legend>
+          <label><input type="checkbox" data-id="t2t-b0"> Room and time confirmed, and a clear floor area marked</label>
+          <label><input type="checkbox" data-id="t2t-b1"> Robots tested, batteries charged, a spare ready</label>
+          <label><input type="checkbox" data-id="t2t-b2"> Controllers paired and labeled</label>
+          <label><input type="checkbox" data-id="t2t-b3"> Cones, Bean Bags, a box or Goal and the timer set out</label>
+          <label><input type="checkbox" data-id="t2t-b4"> Student helpers briefed on their role</label>
+        </fieldset>
+        <fieldset>
+          <legend>During</legend>
+          <label><input type="checkbox" data-id="t2t-d0"> Welcome in three minutes or less</label>
+          <label><input type="checkbox" data-id="t2t-d1"> Everyone touches a controller before the challenge</label>
+          <label><input type="checkbox" data-id="t2t-d2"> Swap drivers often so everyone gets a turn</label>
+          <label><input type="checkbox" data-id="t2t-d3"> Keep time, and keep it low-stakes</label>
+          <label><input type="checkbox" data-id="t2t-d4"> Collect reflections on sticky notes</label>
+        </fieldset>
+        <fieldset>
+          <legend>After</legend>
+          <label><input type="checkbox" data-id="t2t-a0"> Thank teachers and student helpers</label>
+          <label><input type="checkbox" data-id="t2t-a1"> Share the page link and the event dates</label>
+          <label><input type="checkbox" data-id="t2t-a2"> Write down questions and ideas for next time</label>
+          <label><input type="checkbox" data-id="t2t-a3"> Charge and pack away the robots</label>
+        </fieldset>
+      </div>
+      <div class="row-btns">
+        <button type="button" class="btn ghost cl-reset">Clear</button>
+        <button type="button" class="btn" data-print>Print the checklist</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section id="faq" class="band">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker mono" data-reveal><em>06</em> Questions</p>
+      <h2 data-split>Questions teachers ask.</h2>
+    </header>
+    <div class="faq" data-reveal>
+      <details><summary>Do I need to know how to code?</summary><p>No. The session is about driving and thinking, not programming. If a class later wants to code, students can start with blocks and move on to text languages. <span class="tag suggested">Suggested</span></p></details>
+      <details><summary>Is robotics only for students who like technology?</summary><p>No. Teams need designers, builders, coders, notebook writers, strategists, drivers and loaders. Many students find their place through a role that is not coding. <a href="students.html#roles">See the jobs</a>.</p></details>
+      <details><summary>How does this connect to my subject?</summary><p>See the <a href="#subjects">table above</a>, which lists ten subjects with a small idea for each. Start with one idea, and ask the students what they notice.</p></details>
+      <details><summary>Why do students compete instead of just building?</summary><p>Competition gives students a real goal, a deadline and a partner team. It also gives them a reason to test, fix and explain their work. VEX describes competition as a way to build STEM identity and soft skills. <span class="tag official">Official</span></p></details>
+      <details><summary>Do students do the work themselves?</summary><p>Yes. The competition rules say students design, build, program and plan. Adults teach, ask questions and support. <span class="tag official">Official</span> <a href="index.html#rule-G2">G2</a></p></details>
+      <details><summary>How can I help or learn more?</summary><p>Volunteer at an upcoming competition, no robot knowledge needed. See the <a href="index.html#competitions">events and sign-up links</a> and the <a href="volunteers.html">volunteer jobs</a>. You can also read the <a href="coaches.html">coach guide</a> to see how a team works through a season.</p></details>
+      <details><summary>Where can I read the official information?</summary><p>On VEX's competition page and in each season's Game Manual. <a href="https://www.vexrobotics.com/competition" rel="noopener" target="_blank">vexrobotics.com/competition ↗</a> · <a href="https://link.vex.com/docs/26-27/viqrc/game-manual" rel="noopener" target="_blank">Level Up Game Manual ↗</a></p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ========== JOIN ========== -->
+<section id="join">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker mono" data-reveal><em>07</em> Get involved</p>
+      <h2 data-split>Come see it for real.</h2>
+    </header>
+    <div class="grid3" data-stagger>
+      <article class="card"><h3>Volunteer at an event</h3><p>Help run a competition day. No robotics experience needed.</p><p class="row-btns"><a class="btn btn-primary" href="index.html#competitions">Dates and sign-up →</a></p></article>
+      <article class="card"><h3>Meet the students' work</h3><p>See the team jobs, the checklists and how students behave in a Match.</p><p class="row-btns"><a class="btn" href="students.html">Student zone →</a></p></article>
+      <article class="card"><h3>Ask us anything</h3><p>Please contact <b>Mr. Jan</b>, <b>Ms. Kseniya</b> and <b>Ms. Shigeta</b> for more information.</p></article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer on-ink">
+  <div class="wrap">
+    <p class="foot-mark" aria-hidden="true">Level Up<i>.</i></p>
+    <div class="foot-top">
+      <p>Curious first. Competent later.</p>
+      <a class="btn btn-primary magnetic" href="index.html">Back to the field manual <span class="arr" aria-hidden="true">→</span></a>
+    </div>
+    <div class="foot-cols">
+      <p class="small"><b>Unofficial guide for teachers.</b> Statements marked Official come from VEX's website or the Game Manual. The rest are this guide's ideas. It is not affiliated with VEX Robotics, Innovation First, Inc. or the REC Foundation.</p>
+      <ul><li><b>Pages</b></li><li><a href="coaches.html">Coaches</a></li><li><a href="students.html">Students</a></li><li><a href="volunteers.html">Volunteers</a></li><li><a href="host.html">Hosts</a></li></ul>
+      <ul><li><b>Official</b></li><li><a href="https://www.vexrobotics.com/competition" rel="noopener">VEX competitions</a></li><li><a href="https://link.vex.com/docs/26-27/viqrc/game-manual" rel="noopener">Game Manual (PDF)</a></li></ul>
+    </div>
+  </div>
+</footer>
+
+<script defer src="lists.js"></script>
+<script defer src="volunteers.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="motion.js"></script>
+</body>
+</html>
