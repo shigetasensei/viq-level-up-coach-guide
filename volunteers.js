@@ -28,7 +28,7 @@
     b.addEventListener("click", function () {
       var f = document.createElement("iframe");
       f.src = "https://www.youtube-nocookie.com/embed/" + b.dataset.yt + "?autoplay=1&rel=0";
-      f.title = "VEX IQ Robotics Competition: Level Up | 2026-2027 Game (official video)";
+      f.title = b.dataset.title || "Official game video";
       f.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen";
       f.allowFullscreen = true; f.referrerPolicy = "strict-origin-when-cross-origin";
       b.replaceWith(f);
