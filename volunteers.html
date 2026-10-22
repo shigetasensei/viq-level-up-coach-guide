@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400..700&display=swap">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0e1d'/%3E%3Crect x='10' y='20' width='14' height='24' rx='5' fill='%23ff3b52' transform='rotate(-10 17 32)'/%3E%3Crect x='25' y='16' width='14' height='28' rx='5' fill='%233a74ff'/%3E%3Crect x='40' y='20' width='14' height='24' rx='5' fill='%23ffc20e' transform='rotate(10 47 32)'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="styles.css?v=20261022c">
+<link rel="stylesheet" href="styles.css?v=20261022g">
 <script>document.documentElement.classList.add('js');try{if(sessionStorage.getItem('curtain')){document.documentElement.classList.add('entering');sessionStorage.removeItem('curtain');}}catch(e){}</script>
 </head>
 <body>
@@ -41,6 +41,7 @@
     <a class="hdr-link" href="students.html">Students</a>
     <a class="hdr-link" href="volunteers.html" aria-current="page">Volunteers</a>
     <a class="hdr-link" href="host.html">Hosts</a>
+    <a class="hdr-link" href="teachers.html">Teachers</a>
     <a class="hdr-link" href="index.html#rules">Rules</a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span class="ml-t">Menu</span><span class="ml" aria-hidden="true"></span></button>
   </div>
@@ -48,16 +49,17 @@
 
 <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu" aria-hidden="true">
   <nav class="menu-grid" aria-label="Sections">
-    <div class="menu-group"><p class="mg">Everyone</p><ul><li><a href="index.html#competitions">Events &amp; volunteer sign-up</a></li><li><a href="teachers.html">VEX intro for teachers</a></li><li><a href="index.html#briefing">5-minute briefing</a></li><li><a href="index.html#game">The game</a></li><li><a href="index.html#scoring">Scoring</a></li><li><a href="index.html#lab">3D lab</a></li><li><a href="index.html#match">The Match</a></li><li><a href="index.html#rules">Rules explorer</a></li><li><a href="timer.html">Match timer</a></li></ul></div>
+    <div class="menu-group"><p class="mg">Everyone</p><ul><li><a href="index.html#competitions">Events &amp; volunteer sign-up</a></li><li><a href="index.html#briefing">5-minute briefing</a></li><li><a href="index.html#game">The game</a></li><li><a href="index.html#scoring">Scoring</a></li><li><a href="index.html#lab">3D lab</a></li><li><a href="index.html#match">The Match</a></li><li><a href="index.html#rules">Rules explorer</a></li><li><a href="timer.html">Match timer</a></li></ul></div>
     <div class="menu-group"><p class="mg">Coaches</p><ul><li><a href="coaches.html#new">New coaches</a></li><li><a href="coaches.html#robot">Robot &amp; inspection</a></li><li><a href="coaches.html#notebook">Engineering notebook</a></li><li><a href="coaches.html#coaching">Coaching</a></li><li><a href="coaches.html#events">Events &amp; rankings</a></li><li><a href="schedule.html">Schedule planner</a></li></ul></div>
     <div class="menu-group"><p class="mg">Team</p><ul><li><a href="students.html">Student zone</a></li><li><a href="students.html#match">In the Match</a></li></ul></div>
     <div class="menu-group"><p class="mg">Volunteers</p><ul><li><a href="volunteers.html">Volunteer jobs</a></li><li><a href="#rolesheets">Role sheets</a></li><li><a href="#v5">V5 Override volunteers</a></li><li><a href="referee.html">Referee zone</a></li></ul></div>
     <div class="menu-group"><p class="mg">Hosts</p><ul><li><a href="host.html">Host zone</a></li><li><a href="host.html#todo">To-do list</a></li><li><a href="schedule.html">Schedule planner</a></li></ul></div>
+    <div class="menu-group"><p class="mg">Teachers</p><ul><li><a href="teachers.html">VEX intro for teachers</a></li><li><a href="teachers.html#why">Why compete</a></li><li><a href="teachers.html#subjects">Your subject</a></li><li><a href="teachers.html#try">Run a session</a></li></ul></div>
   </nav>
   <div class="menu-foot mono"><span>Unofficial guide · checked against Game Manual v2.1</span><a href="https://link.vex.com/docs/26-27/viqrc/game-manual" rel="noopener">Official manual ↗</a></div>
 </div>
 
-<nav class="tabbar" aria-label="Main pages"><a href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8M5 10v10h14V10M10 20v-6h4v6"/></svg><span>Home</span></a><a href="coaches.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6v3H9zM9 5.5H6a1 1 0 0 0-1 1V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6.500a1 1 0 0 0-1-1h-3M9 12h6M9 16h4"/></svg><span>Coaches</span></a><a href="students.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1zM12 9V5M12 5h.01M9 14h.01M15 14h.01"/></svg><span>Team</span></a><a href="volunteers.html" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.400-7-10a4 4 0 0 1 7-2.600A4 4 0 0 1 19 10c0 5.600-7 10-7 10z"/></svg><span>Volunteers</span></a><a href="host.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg><span>Hosts</span></a></nav>
+<nav class="tabbar" aria-label="Main pages"><a href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8M5 10v10h14V10M10 20v-6h4v6"/></svg><span>Home</span></a><a href="coaches.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6v3H9zM9 5.5H6a1 1 0 0 0-1 1V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6.500a1 1 0 0 0-1-1h-3M9 12h6M9 16h4"/></svg><span>Coaches</span></a><a href="students.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1zM12 9V5M12 5h.01M9 14h.01M15 14h.01"/></svg><span>Team</span></a><a href="volunteers.html" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.400-7-10a4 4 0 0 1 7-2.600A4 4 0 0 1 19 10c0 5.600-7 10-7 10z"/></svg><span>Volunteers</span></a><a href="host.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg><span>Hosts</span></a><a href="teachers.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5zM6 11.500v4.500c0 1.500 3 3 6 3s6-1.500 6-3v-4.500"/></svg><span>Teachers</span></a></nav>
 
 <main id="main">
 
@@ -920,10 +922,10 @@
   </div>
 </footer>
 
-<script defer src="lists.js?v=20261022c"></script>
-<script defer src="volunteers.js?v=20261022c"></script>
+<script defer src="lists.js?v=20261022g"></script>
+<script defer src="volunteers.js?v=20261022g"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script defer src="motion.js?v=20261022c"></script>
+<script defer src="motion.js?v=20261022g"></script>
 </body>
 </html>
