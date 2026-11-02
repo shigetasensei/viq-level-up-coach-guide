@@ -1,9 +1,13 @@
 /* Plain-language summaries of the VEX IQ Level Up (2026-27) game rules.
    Summaries are paraphrased for coaches; the official rule text is always the authority.
-   Source: live rules site (Game Manual v2.1) + manual changelog, checked 16 Oct 2026.   */
+   Source: manuals.vex.com (Game Manual v2.1) + its changelog, checked 2 Nov 2026.   */
 
-window.RULE_BASE =
-  "https://events.vex.com/storage/game_manual/VEX_IQ_Robotics_Competition_2026-2027_Level_Up/rules/";
+/* Deep links go to the online manual's "latest" alias, which redirects to the current version and keeps the rule anchor. */
+window.RULE_MANUAL = "https://manuals.vex.com/iq/level-up/latest/";
+window.RULE_URL = function (id) {
+  var section = /^RSC/.test(id) ? "skills" : /^R\d/.test(id) ? "robot" : /^T\d/.test(id) ? "event" : "game";
+  return window.RULE_MANUAL + section + "/#" + id.toLowerCase();
+};
 
 window.RULE_CATS = [
   { key: "SC",  label: "Scoring" },

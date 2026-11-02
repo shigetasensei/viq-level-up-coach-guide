@@ -31,7 +31,7 @@
 
   /* ---------- rules explorer ---------- */
   if ($("#ruleList")) {
-  var RULES = window.RULES, CATS = window.RULE_CATS, BASE = window.RULE_BASE;
+  var RULES = window.RULES, CATS = window.RULE_CATS;
   var list = $("#ruleList"), filtersEl = $("#ruleFilters"), search = $("#ruleSearch");
   var countEl = $("#ruleCount"), emptyEl = $("#ruleEmpty");
   var activeCat = "all";
@@ -86,7 +86,7 @@
       c.appendChild(lab); c.appendChild(hl(r.coach, terms)); body.appendChild(c);
     }
     var a = document.createElement("a");
-    a.href = BASE + r.id + ".html"; a.rel = "noopener"; a.target = "_blank";
+    a.href = window.RULE_URL(r.id); a.rel = "noopener"; a.target = "_blank";
     a.textContent = "Read the official rule " + r.id + " ↗";
     var ap = document.createElement("p"); ap.appendChild(a); body.appendChild(ap);
     d.appendChild(body);

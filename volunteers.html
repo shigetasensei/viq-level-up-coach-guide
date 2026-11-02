@@ -17,14 +17,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400..700&display=swap">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0e1d'/%3E%3Crect x='10' y='20' width='14' height='24' rx='5' fill='%23ff3b52' transform='rotate(-10 17 32)'/%3E%3Crect x='25' y='16' width='14' height='28' rx='5' fill='%233a74ff'/%3E%3Crect x='40' y='20' width='14' height='24' rx='5' fill='%23ffc20e' transform='rotate(10 47 32)'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="styles.css?v=20261022i">
+<link rel="stylesheet" href="styles.css?v=20261102a">
 <script>document.documentElement.classList.add('js');try{if(sessionStorage.getItem('curtain')){document.documentElement.classList.add('entering');sessionStorage.removeItem('curtain');}}catch(e){}</script>
 </head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<div class="curtain" aria-hidden="true"></div>
-<div class="progress-top" aria-hidden="true"><i></i></div>
-
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="curtain" aria-hidden="true"></div>
@@ -133,6 +128,7 @@
           </button>
         </div>
         <p class="note">The video loads from YouTube only after you press play. <a href="https://www.youtube.com/watch?v=KP0FYPW604E" rel="noopener" target="_blank">Watch on YouTube ↗</a></p>
+        <p class="note">New to the rules? The manual has a <a href="https://manuals.vex.com/iq/level-up/latest/appendix-b/" rel="noopener" target="_blank">Simplified Edition ↗</a> in plain language.</p>
       </article>
       <article class="card vol-field" id="field-diagram">
         <h3>Where everything starts</h3>
@@ -749,25 +745,39 @@
       <div class="ms-auto"><b>0:15</b><span>Autonomous</span></div>
       <div class="ms-drive"><b>1:45</b><span>Driver Control</span></div>
     </div>
-    <p class="note"><span class="tag official">Official</span> Two Alliances, one red and one blue, with two teams each, play on a 12′ × 12′ square field. The Alliance with more points in Autonomous earns a 12-point bonus. Each Alliance can also earn an Autonomous Win Point by completing assigned tasks.</p>
+    <p class="note"><span class="tag official">Official</span> Two Alliances, one red and one blue, with two teams each, play on a 12′ × 12′ square field. The Alliance with more points after Autonomous earns a 12-point bonus, and a tie gives each Alliance 6. Each Alliance can also earn an Autonomous Win Point by completing assigned tasks.</p>
 
     <div class="table-scroll" data-reveal style="margin-top:20px">
       <table class="plain">
         <caption class="visually-hidden">Override scoring values</caption>
         <thead><tr><th scope="col">What</th><th scope="col">Points</th><th scope="col">Notes</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Alliance-colored Pin in a Goal</th><td><b>5</b></td><td>Each Pin scored in a Goal.</td></tr>
-          <tr><th scope="row">Owned yellow Pin</th><td><b>10</b></td><td>A yellow Pin in a Goal is worth 10 for the Alliance that owns the Toggle in that Quadrant.</td></tr>
-          <tr><th scope="row">Robot in the Midfield</th><td><b>8</b></td><td>For ending the Match in the Midfield.</td></tr>
-          <tr><th scope="row">Autonomous Bonus</th><td><b>12</b></td><td>For the Alliance with more points in the Autonomous Period.</td></tr>
+          <tr><th scope="row">Alliance-colored Pin Half</th><td><b>5</b></td><td>Each scored half in your Alliance's color. A Pin has two halves.</td></tr>
+          <tr><th scope="row">Owned yellow Pin Half</th><td><b>10</b></td><td>A scored yellow half counts only for the Alliance that owns it (see below).</td></tr>
+          <tr><th scope="row">Each Robot ending in the Midfield</th><td><b>8</b></td><td>A Robot counts if any part of it is inside the Midfield when the Match ends.</td></tr>
+          <tr><th scope="row">Autonomous Bonus</th><td><b>12</b></td><td>For the Alliance with more points at the end of the Autonomous Period. A tie gives 6 to each Alliance.</td></tr>
         </tbody>
       </table>
+    </div>
+    <div class="grid3" data-stagger style="margin-top:20px">
+      <article class="card">
+        <h3>Pin Halves</h3>
+        <p><span class="tag official">Official</span> Each Pin has two halves, in one of four color pairs: red and yellow, blue and yellow, red and blue, or yellow and yellow. Each <b>visible half</b> of a Pin placed in a Goal scores by its own color. Red halves score for red, and blue halves score for blue.</p>
+      </article>
+      <article class="card">
+        <h3>Who owns yellow?</h3>
+        <p><span class="tag official">Official</span> Yellow halves score only for the Alliance that <b>owns</b> them. In a Quadrant Goal, that is the Alliance whose color the Toggle is set to. In the Midfield Goal, it is the Alliance with more Robots in the Midfield at the end. If the Toggle is yellow, or the Robots are tied, nobody owns them.</p>
+      </article>
+      <article class="card">
+        <h3>When the score is counted</h3>
+        <p><span class="tag official">Official</span> Scores are counted <b>five seconds after the Match ends</b>, or once everything has come to rest, whichever comes first. The timer holds 0:00 for those five seconds. It is a short benefit of the doubt, not extra Match time.</p>
+      </article>
     </div>
 
     <div class="grid3" data-stagger style="margin-top:20px">
       <article class="card">
         <h3>On the field</h3>
-        <ul class="tips"><li><b>56</b> Cups and <b>63</b> Pins.</li><li><b>9</b> Goals: 4 neutral Short Goals, 1 neutral Tall Goal, 2 red and 2 blue Alliance Goals.</li><li><b>4</b> Toggles, one at the center of each field wall.</li><li>Loaders next to each Alliance Station.</li></ul>
+        <ul class="tips"><li><b>56</b> Cups and <b>63</b> Pins.</li><li><b>9</b> Goals: 4 neutral Short Goals, 1 neutral Tall Goal, 2 red and 2 blue Alliance Goals.</li><li><b>4</b> Toggles, one at the center of each field wall.</li><li>Some Pins and Cups are <b>Match Loads</b>. They start in the Alliance Stations, and Drive Team Members add them through the <b>4 Loaders</b>, two next to each Alliance Station.</li></ul>
         <p class="note"><span class="tag official">Official</span> Check the field figures in the Game Manual before you reset.</p>
       </article>
       <article class="card vol-video" id="v5-video">
@@ -784,6 +794,7 @@
       <article class="card">
         <h3>Official links</h3>
         <ul class="tips">
+          <li><a href="https://manuals.vex.com/v5/override/latest/game/" rel="noopener" target="_blank">Override Game Manual (online) ↗</a></li>
           <li><a href="https://link.vex.com/docs/26-27/v5rc/game-manual" rel="noopener" target="_blank">Override Game Manual (PDF) ↗</a></li>
           <li><a href="https://link.vex.com/docs/26-27/v5rc/buildinstructions" rel="noopener" target="_blank">Field assembly instructions ↗</a></li>
           <li><a href="https://www.vexrobotics.com/v5/competition/vrc-current-game" rel="noopener" target="_blank">VEX Override game page ↗</a></li>
@@ -802,6 +813,7 @@
           <tr><th scope="row">Match</th><td>60 seconds, driver controlled in Teamwork Matches</td><td>15 s Autonomous, then 1:45 Driver Control</td></tr>
           <tr><th scope="row">Who plays</th><td>Two teams, one robot each, as one Alliance</td><td>Two Alliances of two teams each, so four robots</td></tr>
           <tr><th scope="row">Scoring objects</th><td>38 Bean Bags</td><td>63 Pins and 56 Cups</td></tr>
+          <tr><th scope="row">When the score is counted</th><td>After everything comes to rest</td><td>Five seconds after the Match ends, or when everything is at rest, whichever is first</td></tr>
           <tr><th scope="row">Event field system</th><td>None listed on the event page</td><td>Smart Field Control, per the event pages</td></tr>
         </tbody>
       </table>
@@ -818,7 +830,7 @@
           <tr><th scope="row">Queuer</th><td>Every Match has four teams, two per Alliance. Call all four a few Matches ahead and check each robot is with its team.</td></tr>
           <tr><th scope="row">Field reset crew</th><td>More to reset: Pins, Cups, nine Goals and four Toggles. Resets take longer, so work in pairs and use the Game Manual's field figures.</td></tr>
           <tr><th scope="row">Timer and display</th><td>Ask your lead how the Match timer and field control are run at your event. Never start or stop a Match yourself unless the Head Referee tells you to.</td></tr>
-          <tr><th scope="row">Scoring helper</th><td>Learn the four score values above. Only the Head Referee decides what scores, and the scorekeeper records it.</td></tr>
+          <tr><th scope="row">Scoring helper</th><td>Learn the four score values above and the Pin Half idea. Scores are counted five seconds after the Match ends. Only the Head Referee decides what scores, and the scorekeeper records it.</td></tr>
           <tr><th scope="row">Referee helper</th><td>Training is needed. Watch where you are told and report to the Head Referee. Do not explain rulings to teams.</td></tr>
           <tr><th scope="row">Inspection helper</th><td>Work from the inspection checklist next to the inspector, who makes the decisions.</td></tr>
           <tr><th scope="row">Runner, guide, setup, first aid</th><td>Same as the <a href="#volunteers">jobs above</a>. Bigger fields and more teams mean more walking, so wear comfortable shoes.</td></tr>
@@ -934,10 +946,10 @@
   </div>
 </footer>
 
-<script defer src="lists.js?v=20261022i"></script>
-<script defer src="volunteers.js?v=20261022i"></script>
+<script defer src="lists.js?v=20261102a"></script>
+<script defer src="volunteers.js?v=20261102a"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script defer src="motion.js?v=20261022i"></script>
+<script defer src="motion.js?v=20261102a"></script>
 </body>
 </html>

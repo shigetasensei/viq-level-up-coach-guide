@@ -4,7 +4,7 @@ An unofficial, independent coaching guide for the **VEX IQ Robotics Competition 
 
 **Live site:** https://shigetasensei.github.io/viq-level-up-coach-guide/
 
-> Not affiliated with or endorsed by VEX Robotics, Innovation First, Inc. or the REC Foundation. Rule summaries are paraphrased and can go out of date. The official Game Manual and Q&A are the only authoritative sources. Content was checked against Game Manual v2.1 on 16 Oct 2026.
+> Not affiliated with or endorsed by VEX Robotics, Innovation First, Inc. or the REC Foundation. Rule summaries are paraphrased and can go out of date. The official Game Manual and Q&A are the only authoritative sources. Content was checked against Game Manual v2.1 (manuals.vex.com) on 2 Nov 2026.
 
 ## Concept
 
